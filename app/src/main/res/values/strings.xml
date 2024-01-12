@@ -1,0 +1,430 @@
+<resources>
+  <string name="app_name">Baz Dashboard Demo</string>
+  <string name="retry">Retry</string>
+  <string name="free_delivery">Free Delivery</string>
+  <string name="random_dashboard">Randomize</string>
+  <string name="gsmp_module_name">Mis compras</string>
+  <string name="gsmp_title_orders">Mis pedidos</string>
+  <string name="gsmp_title_help">Ayuda</string>
+  <string name="gsmp_title_shopping">Compras</string>
+  <string name="default_description">default_description</string>
+
+  <!--  region  Generals -->
+  <string name="gsml_edit">Editar</string>
+  <string name="gsmp_total_payable">Total a pagar</string>
+  <!-- endregion -->
+
+  <!--  region actions -->
+  <string name="gsmp_action_accept">Aceptar</string>
+
+  <!--  region  Datos de Contacto -->
+  <string name="gsmp_title_information_contact">Datos de contacto</string>
+  <string name="gsmp_label_to_receive_notifications">Para recibir notificaciones del estatus de este pedido</string>
+  <string name="gsmp_label_confirm_email">Confirma tu correo"</string>
+  <string name="gsmp_label_we_will_send_you_the_documentation_of_your_purchase">Enviaremos la documentación de tu compra y de tu crédito.</string>
+  <string name="gsmp_label_if_you_want_to_receive_the_documents">Si quieres recibir los documentos en otro correo, actualizalo desde tu perfil.</string>
+  <string name="gsmp_label_number_phone">Número celular</string>
+  <string name="gsmp_label_10_digits_number">A 10 números</string>
+
+  <string name="gsmp_action_editar">Editar</string>
+  <!-- endregion -->
+
+  <!--  region  Direcciones -->
+  <string name="gsmp_label_new_address_title">Nueva dirección</string>
+  <string name="gsmp_address_deleted">Domicilio eliminado.</string>
+  <string name="gsmp_label_add_new_address">Agregar domicilio</string>
+  <string name="gsmp_label_change_address">Editar domicilio</string>
+  <string name="gsmp_label_address_complete">Tu domicilio se actualizó.</string>
+  <string name="gsmp_label_btn_add_new_address">Agregar un nuevo domicilio</string>
+  <string name="gsmp_label_update_address">Actualizar domicilio</string>
+  <string name="gsmp_label_description_delete_address">Tienes un límite de 10 domicilios, elimina uno para continuar o edita uno de los existentes.</string>
+  <string name="gsmp_label_select">Selecciona</string>
+  <string name="gsmp_label_save">Guardar</string>
+  <string name="gsmp_address_shipping_address">Dirección de entrega</string>
+  <string name="gsmp_address_shipping_method">Forma de entrega</string>
+  <string name="gsmp_address_button_add">+ Agregar dirección</string>
+  <string name="gsmp_label_new_address_enter_data">Ingresa los siguientes datos.</string>
+  <string name="gsmp_label_new_address_why">"¿Por qué me piden están información?"</string>
+  <string name="gsmp_label_new_address_street_between">¿Entre qué calle está?</string>
+  <string name="gsmp_label_new_address_add_address">Agregar dirección</string>
+  <string name="gsmp_label_new_address_optional_additional_indications">"Indicaciones adicionales para las entregas en esta dirección (Opcional)"</string>
+  <!-- endregion -->
+
+  <!--  region  Address Error-->
+  <string name="gsmp_label_error_et_empty">Ingresa el código postal</string>
+  <string name="gsmp_label_error_postal_code">Deben ser 5 números</string>
+  <string name="gsmp_label_error_alias">Ingresa el alias del domicilio</string>
+  <string name="gsmp_label_error_address">Ingresa la referencia</string>
+  <string name="gsmp_label_error_et_length">Captura al menos %d caracteres</string>
+  <string name="gsmp_label_error_person">Ingresa la persona que recibe</string>
+  <string name="gsmp_label_error_empty">Ingresa un valor</string>
+  <string name="gsmp_label_error_neighborhood">Selecciona la colonia</string>
+  <string name="gsmp_error_invalid_email">El correo es incorrecto, inténtalo de nuevo</string>
+  <string name="gsmp_shipping_date_label">Entrega estimada: </string>
+  <!-- endregion -->
+
+  <!--  region  Validations -->
+  <string name="gsmp_error_empty_field">Captura este dato</string>
+  <string name="gsmp_error_invalid_phone_number">Captura un teléfono de 10 números</string>
+  <!-- endregion -->
+
+  <!--  region Cancel Orders -->
+  <string name="gsmp_label_error_cancellation_reason">Selecciona un motivo de cancelación</string>
+  <string name="gsmp_label_email_cancel_order">Correo electrónico</string>
+  <string name="gsmp_label_cancellation_reason_detail">Detalles</string>
+  <string name="gsmp_label_cancellation_reason_detail_form_message">Máximo 50 caracteres</string>
+  <string name="gsmp_legal_info_cancel_order">Información legal sobre la cancelación y \ndevolución</string>
+  <!-- endregion -->
+
+  <!--  region  Cancel order validations -->
+  <string name="gsmp_error_cancel_order_email_empty">Ingresa el correo electrónico</string>
+  <string name="gsmp_error_cancel_order_invalid_email">Correo incorrecto, intenta de nuevo</string>
+  <!-- endregion -->
+
+  <!--  region  Invoicing -->
+  <string name="gsmp_label_error_rfc">Son 13 números y letras</string>
+  <string name="gsmp_error_invoicing_invalid_rfc">RFC incorrecto, intenta de nuevo</string>
+  <string name="gsmp_tv_invoicing_title">Datos de facturación</string>
+  <string name="gsmp_tv_physical_entity">Física</string>
+  <string name="gsmp_label_invoicing_toolbar_title">Solicita tu factura</string>
+  <string name="gsmp_label_invoicing">Solicitar factura</string>
+  <string name="gsmp_label_invoicing_cdfi">Uso CFDI</string>
+  <string name="gsmp_label_invoicing_rfc">RFC</string>
+  <string name="gsmp_label_invoicing_remember_rfc">No recuerdo mi RFC</string>
+  <string name="gsmp_label_invoicing_name">Nombre (s)</string>
+  <string name="gsmp_label_invoicing_last_name">Primer apellido</string>
+  <string name="gsmp_label_invoicing_second_last_name">Segundo apellido</string>
+  <string name="gsmp_label_invoicing_type_economic_activity">Persona</string>
+  <string name="gsmp_label_invoicing_regim">Régimen fiscal</string>
+  <string name="gsmp_label_invoicing_purchase_type">Tipo de compra</string>
+  <string name="gsmp_label_invoicing_address">Dirección</string>
+  <string name="gsmp_label_invoicing_natural_person">Persona física</string>
+  <string name="gsmp_card_view_info_invoicing">Enviaremos tu factura a este\ncorreo en formato PDF y XML.</string>
+  <string name="gsmp_card_view_info_invoice_requested">Cuando tu factura esté lista la enviaremos a tu correo electrónico.</string>
+  <string name="gsmp_card_view_info_invoice_message">Importante: en caso de cancelación o cambios en la factura, deberás ingresar a tu Buzón Tributario.</string>
+  <!-- endregion -->
+
+  <!--  region  Snacks -->
+  <string name="gsmp_snack_error_invoicing_not_add">No fue posible agregar los datos de Facturación. Inténtalo de nuevo.</string>
+  <string name="gsmp_snack_error_invoicing_add">Los datos de facturación se agregaron exitosamente.</string>
+  <string name="gsmp_snack_error_address_code">Ingresa un código postal válido</string>
+  <string name="gsmp_snack_error_address_add">Agregada exitosamente</string>
+
+  <!--  region  PDP -->
+  <string name="gsmp_action_go_to_redeem_product">Canjear</string>
+  <string name="gsmp_action_go_to_pay">Ir a pagar</string>
+  <string name="gsmp_label_home_shipment">Envío a domicilio</string>
+  <string name="gsmp_address_and_date_of_shipment">Recibe en %s antes del %s</string>
+  <string name="gsmp_address_and_date_of_shipment_short">Recíbelo antes del %s</string>
+  <string name="gsmp_seller_advantage_purchase_protected">Tu compra está 100% protegida</string>
+  <string name="gsmp_label_deliver_store">Entrega en tienda</string>
+  <string name="gsmp_pick_up_today">Recoge hoy mismo</string>
+  <string name="gsmp_show_availability">Mostrar disponibilidad en tiendas</string>
+  <string name="gsmp_label_characteristics">Características</string>
+  <string name="gsmp_action_continuar">Continuar</string>
+  <string name="gsmp_product_share_subject">Mira, cómpralo en baz: \n %s \n %s </string>
+  <string name="gsmp_product_lighting_deal_timer_label">Termina en %02d:%02d:%02d</string>
+  <string name="gsmp_alert_no_coverage_at_this_address">Este producto aún no tiene cobertura de envío para el código postal de domicilio que tienes actualmente.</string>
+  <string name="gsmp_help_alert_body">Ponte en contacto con baz llamando al 55 6377 4447 y uno de nuestros asesores te ayudará.\n\nHorario: Lunes a Domingo de 9:00 a.m. a 9:00 p.m.\n\nAplican restricciones, para más información consulta TyC en elektra.mx</string>
+  <!-- endregion -->
+
+  <!--  region  Resumen de Compra -->
+  <string name="gsmp_label_verify_your_prize_title">Verifica y canjea tu regalo</string>
+  <string name="gsmp_label_verify_your_purchase_title">Verifica y finaliza tu compra</string>
+  <string name="gsmp_resume_add_address">Agrega una dirección para que recibas tu pedido.</string>
+  <string name="gsmp_resume_who_receive_purchase">¿Quién recibe?</string>
+  <string name="gsmp_resume_add_discount_coupon">¿Tienes un cupón o bono de regalo?</string>
+  <string name="gsmp_resume_title_header">Detalle del pedido</string>
+  <!-- endregion -->
+
+  <!--  region  label -->
+  <string name="gsmp_label_promotion">Promoción</string>
+  <string name="gsmp_label_points">Puntos</string>
+  <string name="gsmp_label_take_it_for">Llévatelo por</string>
+  <string name="gsmp_label_sold_by_with_points">Vendido por: </string>
+  <string name="gsmp_label_sold_by_with_name">Vendido por: %s</string>
+  <string name="gsmp_label_see_more">Ver más</string>
+  <string name="gsmp_label_see_less">Ver menos</string>
+  <string name="gsmp_label_description">Descripción</string>
+  <string name="gsmp_label_details_of_product">Detalles del producto</string>
+  <string name="gsmo_label_success">¡Listo!</string>
+  <string name="gsmo_label_success_text">Recibimos tu solicitud.</string>
+  <string name="gsmp_label_discounts_purchase">Descuentos</string>
+  <string name="gsmp_label_item">%s artículo</string>
+  <string name="gsmp_label_items">%s artículos</string>
+  <string name="gsmp_title_detail_purchase">Detalle de tu compra</string>
+  <string name="gsmp_label_shipping">Envío</string>
+  <string name="gsmp_label_free">Gratis</string>
+  <string name="gsmp_label_total">Total</string>
+  <string name="gsmp_label_vat_include">IVA incluído</string>
+  <string name="gsmp_label_folio">Folio:</string>
+  <string name="gsmp_label_choose_other_address">Elige otro domicilio</string>
+  <string name="gsmp_label_change">Cambiar</string>
+  <string name="gsmp_label_default">Predeterminada</string>
+  <string name="gsmp_modal_price_info_title">Conoce cómo puedes pagar con Crédito*</string>
+  <string name="gsmp_modal_price_info_body">*Abono digital calculado %s semanas con 10% de enganche pagando con la App de Banco Azteca. \n\nSujeto a aprobación de crédito.</string>
+  <string name="gsmp_modal_protected_purchase_title">Tu compra está 100% protegida.</string>
+  <string name="gsmp_modal_protected_purchase_body">Elektra utiliza las mejores empresas de distribución y mensajería para que recibas tus productos en óptimas condiciones y en el tiempo establecido.</string>
+  <string name="gsmp_label_terms_and_conditions">Términos y condiciones</string>
+  <string name="gsmp_label_delivery_store">Entrega en tienda</string>
+  <string name="gsmp_label_search">Buscar</string>
+  <string name="gsmp_label_select_store">Seleccionar tienda</string>
+  <string name="gsmp_label_zip_code">Código Postal</string>
+  <!-- endregion -->
+
+  <!--  region  Errors -->
+  <string name="gsmp_label_error_exit">Salir</string>
+  <string name="gsmp_label_error_fail_title">Algo falló</string>
+  <string name="gsmp_label_error_fincado_try_another_time">Intenta más tarde.</string>
+  <string name="gsmp_label_error_retry">Reintentar</string>
+  <string name="gsmp_label_error_ups">¡Ups!</string>
+  <string name="gsmp_label_error_process_fail">Algo falló en el proceso</string>
+  <string name="gsmp_label_error_edit_phone">Ingresa de nuevo tu número celular.</string>
+
+  <!--  region  GENERIC ERROR-->
+  <string name="gsmp_label_error_stock">El producto que seleccionaste se ha agotado, puedes elegir uno distinto.</string>
+  <string name="gsmp_label_error_intents">Excediste el número de intentos. Por tu seguridad espera 24 horas para volver a intentarlo.</string>
+  <string name="gsmp_label_error_identidad">Tu identidad no pudo confirmarse</string>
+  <string name="gsmp_label_error_rewards">Estamos trabajando para resolverlo.</string>
+  <string name="gsmp_label_error_fail_title_rewards">Algo salió mal</string>
+  <string name="gsmp_label_error_card_rewards">Por favor inténtalo de nuevo.</string>
+  <string name="gsmp_label_error_cash">Saldo insuficiente.\n\n Te recomendamos \n\n recargar tu cuenta.</string>
+  <string name="gsmp_label_error_claim_prize">No fue posible solicitar el regalo.\nInténtelo más tarde.</string>
+
+  <string name="gsmp_label_error_salio_mal">Error al realizar el pago, el pedido fue cancelado.</string>
+  <string name="gsmp_label_error_salio_mal_setOrder">No orden no pudo completarse, el pedido fue cancelado.</string>
+  <!-- endregion -->
+
+  <!-- endregion -->
+
+  <!--  region  Filters -->
+  <string name="gsmp_label_filters">Filtrar y ordenar</string>
+  <string name="gsmp_label_apply_filters">Aplicar</string>
+  <string name="gsmp_label_filters_confirmado">Confirmado</string>
+  <string name="gsmp_label_filters_en_camino">En camino</string>
+  <string name="gsmp_label_filters_enviado">Enviado</string>
+  <string name="gsmp_label_filters_entregado">Entregado</string>
+  <string name="gsmp_label_filters_cancelado">Cancelado</string>
+  <string name="gsmp_label_filters_devuelto">Devuelto</string>
+  <string name="gsmp_label_filters_mes">Último mes</string>
+  <string name="gsmp_label_filters_semestre">Últimos 6 meses</string>
+  <string name="gsmp_label_filters_year">2022</string>
+  <string name="gsmp_label_filters_last_year">2021</string>
+  <string name="gsmp_label_filters_status">Por estatus</string>
+  <string name="gsmp_label_filters_date">Por fecha de compra</string>
+  <!-- endregion -->
+
+  <!--  region  Order validations -->
+  <string name="gsmp_label_no_orders_1">Actualmente no tienes compras, revisa las ofertas que tenemos para ti.</string>
+  <!-- endregion -->
+
+  <!--  region  Orders -->
+  <string name="gsmp_label_show_oferts">ver Ofertas</string>
+  <string name="gsmp_label_title_orders_on_way">En camino</string>
+  <string name="gsmp_label_title_orders_redeem">Solicitar</string>
+  <string name="gsmp_label_order_detail_one_item">1 artículo</string>
+  <string name="gsmp_label_order_detail_payment_detail">Detalles del pago</string>
+  <string name="gsmp_label_order_detail_free_shipping">Envío ¡Gratis!</string>
+  <string name="gsmp_order_detail_free_shipping">$0.00</string>
+  <string name="gsmp_label_order_detail_total_amount">Total</string>
+  <string name="gsmp_label_order_detail_taxes_included">IVA incluido</string>
+  <string name="gsmp_label_order_detail_payment_method">Método de pago</string>
+  <string name="gsmp_label_order_detail_payment_method_account_type">Cuenta de débito</string>
+  <string name="gsmp_action_order_detail_invoicing">Solicitar factura</string>
+  <string name="gsmp_action_order_detail_report_a_problem">¿Problemas con tu pedido?</string>
+  <string name="gsmp_label_order_detail_order_sold_by">Vendido por: <b>%s</b></string>
+  <string name="gsmp_label_order_detail_purchase_date">Compra %s</string>
+  <string name="gsmp_label_order_detail_estimated_delivery_date">Entrega estimada entre %s</string>
+  <string name="gsmp_label_order_detail_cost_free">$0.00</string>
+  <string name="gsmp_label_order_detail_one_prize">1 Regalo</string>
+  <string name="gsmp_label_order_detail_points_redeemed">Puntos canjeados</string>
+  <string name="gsmp_label_title_orders_confirmed">Confirmados</string>
+  <string name="gsmp_label_title_orders_gifted">Regalos</string>
+  <string name="gsmp_label_title_orders_delivered">Entregados</string>
+  <string name="gsmp_label_title_orders_canceled">Cancelados o devueltos</string>
+  <!-- endregion -->
+
+  <!--  region  Order detail -->
+  <string name="gsmp_label_order_detail_copied_tracking_number">El número de guía se copió al portapapeles</string>
+  <string name="gsmp_label_order_detail_order_id">Pedido: %s</string>
+  <string name="gsmp_action_order_detail_help">Ayuda</string>
+  <string name="gsmp_label_free_home_delivery">Envío gratis a domicilio</string>
+  <string name="gsmp_label_free_return">Devolución gratis</string>
+  <string name="gsmp_label_satisfaction_guarantee">Garantía de satisfacción</string>
+  <string name="gsmp_label_order_detail_toolbar_title">Detalle de la compra</string>
+  <string name="gsmp_label_order_detail_delivery_detail">Detalles de la entrega</string>
+  <string name="gsmp_label_order_detail_default_delivery_address">Domicilio predefinido</string>
+  <!-- endregion -->
+
+  <!--  region  Confirmed order detail -->
+  <string name="gsmp_label_order_detail_confirmed_status">Confirmado</string>
+  <!-- endregion -->
+
+  <!--  region  Ticket -->
+  <string name="gsmp_ticket_label_purchase">Compra realizada</string>
+  <string name="gsmp_ticket_sold_by">Vendido por: </string>
+  <string name="gsmp_ticket_folio">Folio de operación: %1$s</string>
+  <string name="gsmp_ticket_order">Pedido: %1$s</string>
+  <!-- endregion -->
+
+  <!--  region  On Way order detail -->
+  <string name="gsmp_label_order_detail_on_way_status">En camino</string>
+  <string name="gsmp_label_order_detail_shipping_detail">Detalles del pedido</string>
+  <string name="gsmp_action_order_detail_track_order">Seguir pedido</string>
+  <string name="gsmp_label_order_detail_shipping_enterprise">Por: %s</string>
+  <string name="gsmp_label_order_detail_shipping_tracking_number">Nº de guía: %s</string>
+  <!-- endregion -->
+
+  <!--  region  Delivered order detail -->
+  <string name="gsmp_label_order_detail_delivered_status">Entregado</string>
+  <string name="gsmp_label_order_detail_order_delivered">Pedido entregado</string>
+  <!-- endregion -->
+
+  <!--  region  Cancelled order detail -->
+  <string name="gsmp_label_order_detail_cancelled_status">Cancelado</string>
+  <string name="gsmp_label_order_detail_cancelled_status_validation_info">Tu solicitud de cancelación ya está en proceso</string>
+  <!-- endregion -->
+
+  <!--  region  Cancelled order detail -->
+  <string name="gsmp_label_order_detail_cancelled_status_card_info">Consulta los detalles de la cancelación en tu correo electrónico</string>
+  <!-- endregion -->
+
+  <!--  region  Return Order detail Dialogs-->
+  <string name="gsmp_label_order_detail_track_order_dialog_title">Seguimiento de pedido</string>
+  <string name="gsmp_label_order_detail_track_order_dialog_message">Estás por salir de la aplicación baz, ¿deseas continuar?</string>
+  <string name="gsmp_action_order_detail_track_order_dialog_negative_option">Cancelar</string>
+  <string name="gsmp_action_order_detail_track_order_dialog_positive_option">Aceptar</string>
+  <!-- endregion -->
+
+
+  <!--  region  Returned order detail -->
+  <string name="gsmp_label_order_detail_returned_status">Devuelto</string>
+  <string name="gsmp_label_order_detail_returned_status_card_info">Consulta los detalles de la devolución en tu correo electrónico</string>
+  <string name="gsmp_label_order_detail_delivery_address">Domicilio de entrega</string>
+  <string name="gsmp_label_order_detail_order_summary">Resumen del pedido</string>
+  <!-- endregion -->
+
+  <!--  region  Return order validations -->
+  <string name="gsmp_label_how_to_pay">1. ¿Cómo quieres pagar?</string>
+  <string name="gsmp_error_return_order_detail_empty">Ingresa los detalles</string>
+  <!-- endregion -->
+  <!-- endregion -->
+
+  <!--  region  Shipping -->
+  <string name="gsmp_shipping_error">Sin fecha de entrega</string>
+  <string name="gsmp_shipping_tomorrow">Recíbelo mañana</string>
+  <string name="gsmp_free_shipping">Envío gratis</string>
+  <string name="gsmp_label_from">o desde</string>
+  <string name="search_placeholder">Buscar en la tienda</string>
+  <!-- endregion -->
+
+  <!--  region  Scoring ButtonSheet-->
+  <string name="gsmp_label_scoring_title">Información servicio de evaluación crediticia</string>
+  <string name="gsmp_label_scoring_body">El cliente, en este acto, acepta los <![CDATA[<font color="#8200FF">términos y condiciones</font>]]> para contrartar el servicio de análisis y evaluación crediticia proveído por Gumery, S,A.<![CDATA[<br/> <br/>]]> Esta oferta es única y personalizada, si requiere contratar solo el producto de crédito acude a una sucursal de Banco Azteca.</string>
+  <!-- endregion -->
+
+  <!--  region  Add card-->
+  <string name="gsmp_add_card_label_digital_active">Tarjeta digital activa</string>
+  <string name="gsmp_add_card_info">Usa los datos de la tarjeta para llenar el formulario</string>
+  <string name="gsmp_add_card_cvv">CVV Dinámico:</string>
+  <string name="gsmp_add_card_balance">Disponible</string>
+  <!-- endregion -->
+
+  <!--  region  Report Problem -->
+  <string name="gsmp_label_add_images_report_problem">Puedes agregar una foto o captura de pantalla que complemente tus comentarios (Opcional)</string>
+  <string name="gsmp_add_photo">Agregar foto</string>
+  <string name="gsmp_title_report_problem">Reportar un problema</string>
+  <string name="gsmp_label_report_problem">El pedido con el que tiene relación tu problema es</string>
+  <string name="gsmp_card_view_info_report_problem">Te notificaremos sobre el estatus de tu reporte en este correo electrónico.</string>
+  <string name="gsmp_report">Reportar</string>
+  <!-- endregion -->
+
+  <!--  region  Azteca -->
+  <string name="gsmp_azteca_product_with_interest_free_months">Producto con meses sin intereses</string>
+  <string name="gsmp_azteca_card_number">Número de tarjeta</string>
+  <string name="gsmp_azteca_card_code">Código de Seguridad</string>
+  <string name="gsmp_azteca_holder_name">Nombre del titular</string>
+  <string name="gsmp_azteca_holder_last_name">Primer Apellido</string>
+  <string name="gsmp_azteca_holder_second_last_name">Segundo Apellido</string>
+  <string name="gsmp_azteca_holder_cvv">cvv</string>
+  <string name="gsmp_azteca_hint_card_validity">MM/AA</string>
+  <string name="gsmp_azteca_card_validity">Vigencia de la tarjeta</string>
+  <string name="gsmp_azteca_card_validity_helper">Valida tu número de tarjeta</string>
+  <string name="gsmp_azteca_not_amex">No se permiten AMEX</string>
+  <!-- endregion -->
+
+  <!--  region  Payment Methods -->
+  <string name="gsmp_label_insufficient_cash">Saldo insuficiente</string>
+  <string name="gsmp_label_select_payment_method_credit_renewal">Esta opción se calculó con una renovación de tu Crédito</string>
+  <string name="gsmp_label_other_cards">Agrega tu tarjeta baz u otras tarjetas</string>
+  <string name="gsmp_label_remaining_reward_points">Puntos por canjear</string>
+  <string name="gsmp_label_checkout_payment_with_reward_points">Pago con puntos</string>
+  <string name="gsmp_label_how_much_to_pay">2. ¿Cuánto quieres pagar?</string>
+  <string name="gsmp_label_baz_credit">Crédito</string>
+  <string name="gsmp_label_personalize_your_payments1">"Pagos desde"</string>
+  <string name="gsmp_label_insufficient_balance">Saldo insuficiente en tu cuenta.</string>
+  <string name="gsmp_label_fund_your_account">Ingresar dinero a baz</string>
+  <string name="gsmp_label_insufficient_points">Puntos insuficientes. Sigue usando baz para ganar más puntos</string>
+  <!-- endregion -->
+
+  <!--  region  Weekly Payment -->
+  <string name="gsmp_discounted_weekly_payment_detail">Detalle de pago</string>
+  <string name="gsmp_discounted_weekly_payment_detail_digital">Paga con baz antes o hasta el día de tu pago semanal con un beneficio de descuento que no tendrás en otros medios de pago. ¡Aprovecha este beneficio! Consulta más información del pago digital en www.bancoazteca.com.mx</string>
+  <string name="gsmp_discounted_weekly_payment_detail_week">Corresponde a pago normal. Es el pago que debes realizar cada semana sin beneficio de descuento.</string>
+  <string name="gsmp_discounted_weekly_payment_detail_descuento">Corresponde a pago puntual. Paga antes o hasta el día de tu pago semanal con un beneficio de descuento. </string>
+  <string name="gsmp_discounted_weekly_best_amount">Promoción \"Tu mejor abono\" aplicada</string>
+  <string name="gsmp_discounted_weekly_best_promotion">Obtén un descuento en el pago de tu crédito durante el plazo que elijas.</string>
+  <!-- endregion -->
+
+  <!--  region  Weekly payment-ButtonSheet-->
+  <string name="gsmp_weekly_payment">Pago semanal</string>
+  <string name="gsmp_corresponds_to_normal_payment">Corresponde a pago normal calculado a las semanas indicadas en la oferta.</string>
+  <string name="gsmp_label_pay_before_the_day_of_your_weekly_payment">Es el pago que debes realizar cada semana, sin un beneficio de descuento.</string>
+  <!-- endregion -->
+
+  <!--  region  Weekly credit legal ButtonSheet -->
+  <string name="gsmp_weekly_credit_legal_title">Información legal de Crédito</string>
+  <string name="gsmp_weekly_credit_legal_content">Paga con la App antes o hasta el día de tu pago semanal con un beneficio de descuento que no tendrás en otros medios de pago. ¡Aprovecha este beneficio! Consulta más información del pago digital en www.bancoazteca.com.mx</string>
+  <string name="gsmp_weekly_credit_legal_content_new">Tu Crédito al Consumo (CREDIMAX) es operado por Banco Azteca, S.A., Institución de Banca Múltiple, más información en www.bancoazteca.com.mx</string>
+  <string name="gsmp_label_payment_to_weekly">a <b>%1$s</b> semanas</string>
+  <string name="gsmp_label_payment_total"><b>%1$s</b> en total</string>
+  <string name="gsmp_label_credit_alert_description">Al continuar entiendo que estoy realizando una renovación de crédito.</string>
+  <string name="gsmp_label_credit_expandable_card_title">Información legal Crédito</string>
+  <!-- endregion -->
+
+  <!-- Categories -->
+  <string name="gsmp_categories_best_selling_categories">Lo más vendido</string>
+  <string name="gsmp_categories">Categorías</string>
+  <string name="gsmp_categories_favorites">Favoritos</string>
+
+  <string name="gsmp_all_categories">Ver todos los productos</string>
+  <string name="gsmp_placeholder_search">Buscar en Elektra</string>
+
+  <!--Shopping Mall -->
+  <string name="gssma_all_categories">Categorías</string>
+  <string name="gssma_products_offer">Ofertas</string>
+  <string name="gssma_modal_close">Cerrar</string>
+  <string name="gssma_modal_filter">Filtrar</string>
+  <string name="gssma_modal_category">Categoría</string>
+  <string name="gssma_modal_subcategory">Sub-categoría</string>
+  <string name="gssma_label_offer">Oferta</string>
+  <string name="oferta">Oferta</string>
+  <string name="gssma_going_back">Ir hacia atrás</string>
+  <string name="gssma_filters_show_more">Mostrar más</string>
+  <string name="gssma_filters_show_less">Mostrar menos</string>
+  <string name="gssma_filters_aply_filters">Aplicar filtros</string>
+  <string name="gssma_filters_clean_filters">Quitar filtros</string>
+  <string name="gssma_try_again">Por el momento, no se pudo cargar la información. Intenta de nuevo.</string>
+  <string name="gssma_check_yout_connection">Revisa tu conexión a internet y vuelve a intentarlo.</string>
+  <string name="gssma_at_another_time">En otro momento</string>
+  <string name="gssma_retry">Reintentar</string>
+  <string name="gssma_dashboard">dashboard</string>
+  <string name="gssma_weekly_payment">\nPago semanal</string>
+  <string name="gssma_cash_payment">\nPago de contado</string>
+  <string name="gssma_show_all">Mostrar todos</string>
+  <string name="gssma_start_destination">START_DESTINATION</string>
+  <string name="gssma_store">STORE</string>
+  <string name="gssma_elektra">elektra</string>
+  <string name="gssma_sending_request">Envío a domicilio</string>
+
+</resources>
