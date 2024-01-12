@@ -93,5 +93,7 @@ object SDAColor {
     val GSVCInformation100 = Color(0xFFE6F2FB)
     val GSVCWarning200 = Color(0xFFFF9E00)
     val GSVCWarning100 = Color(0xFFFFF3E4)
+    val GSVCHeaderColor = Color(0xff65B42F)
+
 }
 

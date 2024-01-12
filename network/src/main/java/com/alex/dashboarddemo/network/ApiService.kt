@@ -8,7 +8,7 @@ import retrofit2.converter.moshi.MoshiConverterFactory
 import retrofit2.http.GET
 
 interface ApiService {
-    @GET("serverui")
+    @GET("dashbaz")
     suspend fun getDashboard(): Dashboard
 
     @GET("dashbaz_random")

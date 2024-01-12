@@ -23,6 +23,7 @@ import com.alex.dashboarddemo.network.model.SubItemViewType
 fun CategoriesElement(item: Dashboard.Item.SubItem) {
     Box(
         modifier = Modifier
+            .size(96.dp)
             .padding(0.dp)
             .clip(shape = RoundedCornerShape(5.dp)),
         contentAlignment = Alignment.Center,
@@ -34,6 +35,7 @@ fun CategoriesElement(item: Dashboard.Item.SubItem) {
             horizontalAlignment = Alignment.CenterHorizontally,
         ) {
             BannerImage(url = item.imageUrl)
+            Spacer(modifier = Modifier.height(4.dp))
             item.title?.let {
                 BannerText(
                     Modifier,
@@ -48,8 +50,8 @@ fun CategoriesElement(item: Dashboard.Item.SubItem) {
 private fun BannerImage(url: String) {
     LoadImage(
         modifier = Modifier
-            .width(60.dp)
-            .height(60.dp),
+            .width(70.dp)
+            .height(70.dp),
         image = url,
     )
 }

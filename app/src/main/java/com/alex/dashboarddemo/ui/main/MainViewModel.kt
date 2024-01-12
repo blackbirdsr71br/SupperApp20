@@ -22,7 +22,7 @@ class MainViewModel :
             // Esto es opcional
             setState {
                 copy(
-                    getInfo = HomeContract.DashBoardApiState.Idle,
+                    getInfo = HomeContract.DashBoardApiState.Idle
                 )
             }
             //
@@ -62,7 +62,7 @@ class MainViewModel :
         viewModelScope.launch {
             setState {
                 copy(
-                    getInfo = HomeContract.DashBoardApiState.OnNavigate(route),
+                    getInfo = HomeContract.DashBoardApiState.OnNavigate(route)
                 )
             }
         }
@@ -72,7 +72,7 @@ class MainViewModel :
         viewModelScope.launch {
             setState {
                 copy(
-                    getInfo = HomeContract.DashBoardApiState.OnNavigate(Route),
+                    getInfo = HomeContract.DashBoardApiState.OnNavigate(Route)
                 )
             }
         }
@@ -80,14 +80,14 @@ class MainViewModel :
 
     override fun createInitialState(): HomeContract.DashBoardState {
         return HomeContract.DashBoardState(
-            HomeContract.DashBoardApiState.Idle,
+            HomeContract.DashBoardApiState.Idle
         )
     }
 
     override fun handleEvent(event: HomeContract.Event) {
         when (event) {
             is HomeContract.Event.OnInit -> {
-                loadKData()
+                loadData()
             }
 
             is HomeContract.Event.OnUpdate -> {}
