@@ -90,7 +90,7 @@ fun GSDAContentCard(
                 horizontalArrangement = Arrangement.End
             ) {
                 TextButton(
-                    onClick = { /*TODO*/ }
+                    onClick = {  }
                 ) {
                     Text(
                         modifier = Modifier
