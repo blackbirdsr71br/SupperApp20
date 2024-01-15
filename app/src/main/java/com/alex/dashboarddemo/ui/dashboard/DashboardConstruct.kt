@@ -35,11 +35,13 @@ import com.example.basedemomaterial3.ui.theme.SDASpace
 @Composable
 fun ShowHorizontalElements(item: Dashboard.Item) {
     item.header?.let {
-        ShowHeader(
-            title = it.title,
-            hasMore = it.hasMore,
-            subtitle = it.subtitle,
-        )
+        it.title?.let { it1 ->
+            ShowHeader(
+                title = it1,
+                hasMore = it.hasMore,
+                subtitle = it.subtitle,
+            )
+        }
     }
     LazyRow(
         modifier = Modifier.fillMaxWidth(),
@@ -67,11 +69,13 @@ fun ShowHorizontalElements(item: Dashboard.Item) {
 @Composable
 fun ShowVerticalElements(item: Dashboard.Item) {
     item.header?.let {
-        ShowHeader(
-            title = it.title,
-            hasMore = it.hasMore,
-            subtitle = it.subtitle,
-        )
+        it.title?.let { it1 ->
+            ShowHeader(
+                title = it1,
+                hasMore = it.hasMore,
+                subtitle = it.subtitle,
+            )
+        }
     }
     item.data.forEachIndexed { index, data ->
         when (data.viewType) {
@@ -118,11 +122,13 @@ fun ShowVerticalGrid(item: Dashboard.Item) {
 @Composable
 fun ShowGridElements(item: Dashboard.Item) {
     item.header?.let {
-        ShowHeader(
-            title = it.title,
-            hasMore = it.hasMore,
-            subtitle = it.subtitle,
-        )
+        it.title?.let { it1 ->
+            ShowHeader(
+                title = it1,
+                hasMore = it.hasMore,
+                subtitle = it.subtitle,
+            )
+        }
     }
     item.data.forEachIndexed { index, data ->
         when (data.viewType) {
