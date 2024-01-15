@@ -11,7 +11,7 @@ data class Dashboard(
         val data: List<SubItem>,
     ) {
         data class Header(
-            val title: String,
+            val title: String?,
             val hasMore: Boolean,
             val subtitle: String,
         )

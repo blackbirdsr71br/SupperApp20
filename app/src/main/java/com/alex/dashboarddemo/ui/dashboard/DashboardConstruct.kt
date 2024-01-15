@@ -16,16 +16,13 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.input.nestedscroll.nestedScroll
 import androidx.compose.ui.platform.rememberNestedScrollInteropConnection
-import androidx.compose.ui.res.dimensionResource
 import androidx.compose.ui.semantics.contentDescription
 import androidx.compose.ui.semantics.semantics
 import androidx.compose.ui.unit.dp
-import com.alex.dashboarddemo.R
 import com.alex.dashboarddemo.components.ShowVerticalDivider
 import com.alex.dashboarddemo.data.DemoDataProvider
 import com.alex.dashboarddemo.data.DemoDataProvider.gridlist1
 import com.alex.dashboarddemo.data.GSDADataProvider
-import com.alex.dashboarddemo.data.GSDAGenericCardModel
 import com.alex.dashboarddemo.network.model.Dashboard
 import com.alex.dashboarddemo.network.model.SubItemViewType
 import com.alex.dashboarddemo.ui.dashboard.gsdaProductSlider.GSDASliderProductCard
@@ -35,15 +32,17 @@ import com.example.basedemomaterial3.ui.theme.SDASpace
 @Composable
 fun ShowHorizontalElements(item: Dashboard.Item) {
     item.header?.let {
-        ShowHeader(
-            title = it.title,
-            hasMore = it.hasMore,
-            subtitle = it.subtitle,
-        )
+        it.title?.let { it1 ->
+            ShowHeader(
+                title = it1,
+                hasMore = it.hasMore,
+                subtitle = it.subtitle,
+            )
+        }
     }
     LazyRow(
         modifier = Modifier.fillMaxWidth(),
-        contentPadding = PaddingValues(horizontal =  SDASpace.GSVCSmall),
+        contentPadding = PaddingValues(horizontal = SDASpace.GSVCSmall),
     ) {
         itemsIndexed(item.data) { index, data ->
             when (data.viewType) {
@@ -51,9 +50,10 @@ fun ShowHorizontalElements(item: Dashboard.Item) {
                     item = data,
                 )
 
-                SubItemViewType.BannersElement ->  GSDAGenericCard(
+                SubItemViewType.BannersElement -> GSDAGenericCard(
                     item = data,
-                    config =GSDADataProvider.configData)
+                    config = GSDADataProvider.configData,
+                )
 
                 else -> {
                     // do nothing
@@ -67,11 +67,13 @@ fun ShowHorizontalElements(item: Dashboard.Item) {
 @Composable
 fun ShowVerticalElements(item: Dashboard.Item) {
     item.header?.let {
-        ShowHeader(
-            title = it.title,
-            hasMore = it.hasMore,
-            subtitle = it.subtitle,
-        )
+        it.title?.let { it1 ->
+            ShowHeader(
+                title = it1,
+                hasMore = it.hasMore,
+                subtitle = it.subtitle,
+            )
+        }
     }
     item.data.forEachIndexed { index, data ->
         when (data.viewType) {
@@ -118,11 +120,13 @@ fun ShowVerticalGrid(item: Dashboard.Item) {
 @Composable
 fun ShowGridElements(item: Dashboard.Item) {
     item.header?.let {
-        ShowHeader(
-            title = it.title,
-            hasMore = it.hasMore,
-            subtitle = it.subtitle,
-        )
+        it.title?.let { it1 ->
+            ShowHeader(
+                title = it1,
+                hasMore = it.hasMore,
+                subtitle = it.subtitle,
+            )
+        }
     }
     item.data.forEachIndexed { index, data ->
         when (data.viewType) {
