@@ -2,96 +2,119 @@ apply plugin: 'com.android.application'
 apply plugin: 'kotlin-android'
 
 android {
+    defaultConfig {
+        compileSdk 34
+        applicationId "com.alex.dashboarddemo"
+        minSdkVersion 25
+        targetSdkVersion 34
+        versionCode 1
+        versionName "1.0"
 
-  defaultConfig {
-    compileSdk 34
-    applicationId "com.alex.dashboarddemo"
-    minSdkVersion 25
-    targetSdkVersion 34
-    versionCode 1
-    versionName "1.0"
-
-    testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
-  }
-
-  buildTypes {
-    release {
-      minifyEnabled false
-      proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
-  }
 
-
-  productFlavors{
-    ccFullVersion{
-      applicationId "com.alex.dashboarddemo.ccfull"
-
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
     }
-    ccBancaVersion{
-      applicationId "com.alex.dashboarddemo.ccbanca"
-    }
-  }
 
-  compileOptions {
-    sourceCompatibility JavaVersion.VERSION_1_8
-    targetCompatibility JavaVersion.VERSION_1_8
-  }
-  kotlinOptions {
-    jvmTarget = '1.8'
-  }
-  buildFeatures {
-    compose true
-    flavorDimensions = ["version"]
-  }
-  composeOptions {
-    kotlinCompilerExtensionVersion "1.4.7"
-  }
-  namespace 'com.alex.dashboarddemo'
+    productFlavors {
+        ccFullVersion {
+            applicationId "com.alex.dashboarddemo.ccfull"
+
+        }
+        ccBancaVersion {
+            applicationId "com.alex.dashboarddemo.ccbanca"
+        }
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+    kotlinOptions {
+        jvmTarget = '1.8'
+    }
+    buildFeatures {
+        compose true
+        flavorDimensions = ["version"]
+    }
+    composeOptions {
+        kotlinCompilerExtensionVersion "1.4.7"
+    }
+    namespace 'com.alex.dashboarddemo'
 }
 
 dependencies {
-  implementation "org.jetbrains.kotlin:kotlin-stdlib:${versions.kotlin.stdlib}"
-  implementation "androidx.appcompat:appcompat:${versions.androidx.appCompat}"
-  implementation "androidx.core:core-ktx:${versions.androidx.ktx.core}"
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    implementation "org.jetbrains.kotlin:kotlin-stdlib:${versions.kotlin.stdlib}"
+    implementation "androidx.appcompat:appcompat:${versions.androidx.appCompat}"
+    implementation "androidx.core:core-ktx:${versions.androidx.ktx.core}"
 
-  //compose
-  implementation "androidx.activity:activity-compose:${versions.androidx.compose.activity}"
-  implementation "androidx.compose.ui:ui-util:${versions.androidx.compose.core}"
-  implementation "androidx.compose.material:material-icons-extended:${versions.androidx.compose.core}"
+    //compose
+    implementation "androidx.activity:activity-compose:${versions.androidx.compose.activity}"
+    implementation "androidx.compose.ui:ui-util:${versions.androidx.compose.core}"
+    implementation "androidx.compose.material:material-icons-extended:${versions.androidx.compose.core}"
 
-  implementation "androidx.compose.material:material:${versions.androidx.compose.core}"
-  implementation "androidx.compose.ui:ui-tooling:${versions.androidx.compose.core}"
+    implementation "androidx.compose.material:material:${versions.androidx.compose.core}"
+    implementation "androidx.compose.ui:ui-tooling:${versions.androidx.compose.core}"
 
-  implementation "org.jetbrains.kotlinx:kotlinx-coroutines-core:${versions.kotlin.coroutines.core}"
-  implementation "org.jetbrains.kotlinx:kotlinx-coroutines-android:${versions.kotlin.coroutines.android}"
+    implementation "org.jetbrains.kotlinx:kotlinx-coroutines-core:${versions.kotlin.coroutines.core}"
+    implementation "org.jetbrains.kotlinx:kotlinx-coroutines-android:${versions.kotlin.coroutines.android}"
 
 
-  implementation "androidx.lifecycle:lifecycle-viewmodel-ktx:${versions.androidx.ktx.lifecycle}"
+    implementation "androidx.lifecycle:lifecycle-viewmodel-ktx:${versions.androidx.ktx.lifecycle}"
 
-  implementation "io.coil-kt:coil-compose:${versions.coil}"
+    implementation "io.coil-kt:coil-compose:${versions.coil}"
 
-  implementation project(path: ':network')
-  implementation 'androidx.compose.ui:ui-text-android:1.5.1'
+    implementation 'androidx.compose.ui:ui-text-android:1.5.1'
 
-  testImplementation 'junit:junit:4.13.2'
-  androidTestImplementation 'androidx.test.ext:junit:1.1.5'
-  androidTestImplementation 'androidx.test.espresso:espresso-core:3.5.1'
+    testImplementation 'junit:junit:4.13.2'
+    androidTestImplementation 'androidx.test.ext:junit:1.1.5'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.5.1'
 
-  implementation "androidx.compose.material3:material3:${versions.material}"
+    implementation "androidx.compose.material3:material3:${versions.material}"
 
-  // Navigation
-  implementation "androidx.navigation:navigation-compose:${versions.nav_version}"
+    // Navigation
+    implementation "androidx.navigation:navigation-compose:${versions.nav_version}"
 
-  // Glide
-  implementation "com.github.skydoves:landscapist-glide:${versions.glide_version}"
+    // Glide
+    implementation "com.github.skydoves:landscapist-glide:${versions.glide_version}"
 
-  implementation "androidx.wear.compose:compose-material:1.2.1"
+    implementation "androidx.wear.compose:compose-material:1.2.1"
 
-  //Accompanist
-  implementation "com.google.accompanist:accompanist-systemuicontroller:0.30.1"
+    //Accompanist
+    implementation "com.google.accompanist:accompanist-systemuicontroller:0.30.1"
 
-  // CleverTap
-  implementation 'com.clevertap.android:clevertap-android-sdk:5.2.2' // checkout the latest sdk version at https://github.com/CleverTap/clevertap-android-sdk/blob/master/README.md#-installation
-  implementation 'com.google.firebase:firebase-messaging:23.4.0'
+    // CleverTap
+    implementation 'com.clevertap.android:clevertap-android-sdk:5.2.2'
+    // checkout the latest sdk version at https://github.com/CleverTap/clevertap-android-sdk/blob/master/README.md#-installation
+    implementation 'com.google.firebase:firebase-messaging:23.4.0'
 
+    //okHttp
+    implementation "com.squareup.okhttp3:okhttp:${versions.okhttp}"
+    implementation "com.squareup.okhttp3:logging-interceptor:${versions.okhttp}"
+
+    //retrofit
+    implementation "com.squareup.retrofit2:retrofit:${versions.retrofit}"
+    implementation "com.squareup.retrofit2:converter-moshi:${versions.retrofit}"
+
+    implementation "io.ktor:ktor-client-core:${versions.ktor}"
+
+    // HTTP engine: The HTTP client used to perform network requests.
+    implementation "io.ktor:ktor-client-android:${versions.ktor}"
+    implementation "io.ktor:ktor-client-content-negotiation:2.3.6"
+
+    // The serialization engine used to convert objects to and from JSON.
+    implementation "io.ktor:ktor-client-serialization:${versions.ktor}"
+
+    // Logging
+    implementation "io.ktor:ktor-client-logging:${versions.ktor}"
+    implementation "io.ktor:ktor-client-json:${versions.ktor}"
+    implementation "io.ktor:ktor-client-okhttp:2.3.5"
 }
+
+sourceCompatibility = "17"
+targetCompatibility = "17"

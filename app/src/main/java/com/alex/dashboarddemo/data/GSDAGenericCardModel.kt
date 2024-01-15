@@ -1,7 +1,6 @@
 package com.alex.dashboarddemo.data
 
 import androidx.compose.ui.graphics.Color
-import com.alex.dashboarddemo.network.model.Dashboard
 
 data class GSDAGenericCardModel(
     val image: String? = null,

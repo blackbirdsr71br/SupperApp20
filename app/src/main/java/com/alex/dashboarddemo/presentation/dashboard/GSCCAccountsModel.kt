@@ -1,0 +1,1 @@
+package com.alex.dashboarddemo.presentation.dashboarddata class GSCCAccountsModel(    var balance: Double = 0.0,    var buttons: List<GSPMButtonModel> = emptyList(),    var isShowBalance: Boolean = false,)
