@@ -19,38 +19,38 @@ import com.alex.dashboarddemo.components.SecondaryText
 
 @Composable
 fun ShowHeader(
-    title: String,
+    title: String?,
     subtitle: String,
-    hasMore: Boolean,
+    hasMore: Boolean
 ) {
     Column(
         modifier = Modifier.padding(
-            horizontal = dimensionResource(id = R.dimen.padding),
-        ),
+            horizontal = dimensionResource(id = R.dimen.padding)
+        )
     ) {
         Row(
             modifier = Modifier.padding(
-                vertical = 2.dp,
-            ),
+                vertical = 0.dp
+            )
         ) {
             PrimaryText {
                 Text(
                     modifier = Modifier
                         .weight(1f)
                         .align(Alignment.CenterVertically),
-                    text = title,
-                    style = MaterialTheme.typography.h6,
+                    text = title ?: "",
+                    style = MaterialTheme.typography.h6
                 )
             }
             if (hasMore) {
                 TextButton(
                     onClick = {
-                    },
+                    }
                 ) {
                     Text(
                         modifier = Modifier,
                         text = "View All",
-                        style = MaterialTheme.typography.caption.copy(fontWeight = FontWeight.W600),
+                        style = MaterialTheme.typography.caption.copy(fontWeight = FontWeight.W600)
                     )
                 }
             }
@@ -58,7 +58,7 @@ fun ShowHeader(
         SecondaryText {
             Text(
                 text = subtitle,
-                style = MaterialTheme.typography.subtitle1,
+                style = MaterialTheme.typography.subtitle1
             )
         }
     }
@@ -70,6 +70,6 @@ private fun PreviewHeader() {
     ShowHeader(
         title = "Popular Restaurants Near You",
         subtitle = "Nuevo Subtitulo",
-        hasMore = true,
+        hasMore = true
     )
 }
