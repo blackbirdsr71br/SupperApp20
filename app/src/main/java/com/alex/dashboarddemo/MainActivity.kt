@@ -1,4 +1,4 @@
-package com.alex.dashboarddemo.presentation.main
+package com.alex.dashboarddemo
 
 import android.annotation.SuppressLint
 import android.os.Bundle
@@ -14,25 +14,27 @@ import androidx.compose.ui.graphics.Color
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.compose.currentBackStackEntryAsState
 import androidx.navigation.compose.rememberNavController
-import com.alex.dashboarddemo.R
 import com.alex.dashboarddemo.mvi.HomeContract
+import com.alex.dashboarddemo.navigation.NavigateScreens
+import com.alex.dashboarddemo.navigation.Screen
+import com.alex.dashboarddemo.presentation.components.AppBottomNavigation
 import com.alex.dashboarddemo.presentation.dashboard.header.GSDAHeaderModel
 import com.alex.dashboarddemo.presentation.dashboard.header.GSSAHeader
-import com.alex.dashboarddemo.presentation.navigation.AppBottomNavigation
-import com.alex.dashboarddemo.presentation.navigation.NavigateScreens
+import com.alex.dashboarddemo.presentation.screens.main.GSDADashboardViewModel
 import com.alex.dashboarddemo.ui.theme.JetDeliveryTheme
 import com.clevertap.android.sdk.CleverTapAPI
-import com.example.jetmoviesapp.presentation.navigation.Screen
-import java.util.Date
+import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.flow.collectLatest
+import java.util.Date
 
+@AndroidEntryPoint
 class MainActivity : ComponentActivity() {
-    private lateinit var viewModel: MainViewModel
+    private lateinit var viewModel: GSDADashboardViewModel
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
-        viewModel = ViewModelProvider(this)[MainViewModel::class.java]
+        viewModel = ViewModelProvider(this)[GSDADashboardViewModel::class.java]
 
         val cleverTapDefaultInstance: CleverTapAPI? =
             CleverTapAPI.getDefaultInstance(applicationContext)
@@ -69,7 +71,7 @@ class MainActivity : ComponentActivity() {
 
 @SuppressLint("UnusedMaterialScaffoldPaddingParameter")
 @Composable
-fun DashboardApp(viewModel: MainViewModel) {
+fun DashboardApp(viewModel: GSDADashboardViewModel) {
     val scope = rememberCoroutineScope()
 
     val showRandom by remember { mutableStateOf(false) }
@@ -108,7 +110,7 @@ fun DashboardApp(viewModel: MainViewModel) {
                         notificationsIndicator = true,
                         urlProfile = R.drawable.personperfil,
                         urlNotification = R.drawable.baseline_notifications_24,
-                        urlRewards = R.drawable.ic_gema
+                        urlRewards = R.drawable.ic_gema,
                     )
 
                 GSSAHeader(headerModel = headerModelPreview)
@@ -122,19 +124,19 @@ fun DashboardApp(viewModel: MainViewModel) {
                 AnimatedVisibility(
                     visible = showBottomBar.value,
                     enter = slideInVertically(initialOffsetY = { it }),
-                    exit = slideOutVertically(targetOffsetY = { it })
+                    exit = slideOutVertically(targetOffsetY = { it }),
                 ) {
                     AppBottomNavigation(
                         navController = navController,
-                        currentDestination = currentDestination
+                        currentDestination = currentDestination,
                     )
                 }
             },
-            backgroundColor = Color(0xFFE2E2E2)
+            backgroundColor = Color(0xFFE2E2E2),
         ) {
             NavigateScreens(
                 navController = navController,
-                viewModel = viewModel
+                viewModel = viewModel,
             )
         }
     }

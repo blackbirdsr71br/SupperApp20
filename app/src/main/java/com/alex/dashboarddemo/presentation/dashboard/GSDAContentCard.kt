@@ -28,15 +28,15 @@ import androidx.compose.ui.unit.sp
 import coil.compose.AsyncImage
 import coil.request.ImageRequest
 import com.alex.dashboarddemo.R
-import com.alex.dashboarddemo.data.GSDAGenericCardModel
-import com.alex.dashboarddemo.domain.model.Dashboard
+import com.alex.dashboarddemo.domain.model.GSDAGenericCard
+import com.alex.dashboarddemo.domain.model.GSDADashboard
 import com.alex.dashboarddemo.utils.getDrawableFromString
 import com.example.basedemomaterial3.ui.theme.SDASpace
 
 @Composable
 fun GSDAContentCard(
-    item: Dashboard.Item.SubItem? = null,
-    config: GSDAGenericCardModel
+    item: GSDADashboard.Item.SubItem? = null,
+    config: GSDAGenericCard
 ) {
     val mContext = LocalContext.current
     Column {
@@ -123,7 +123,7 @@ fun GSDAContentCardv() {
         )
     ) {
         GSDAContentCard( config =
-            GSDAGenericCardModel(
+            GSDAGenericCard(
                 title = "Wallet Bitcoin",
                 text = "Compra y vende con la red de pago Lightning"
             )

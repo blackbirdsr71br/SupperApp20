@@ -1,0 +1,55 @@
+package com.alex.dashboarddemo.di
+
+import com.alex.dashboarddemo.data.remote.GSDAApiService
+import com.alex.dashboarddemo.data.repository.GSDARemoteDataSourceImpl
+import com.alex.dashboarddemo.domain.repository.GSDARemoteDataSource
+import com.alex.dashboarddemo.utils.GSDAConstants.BASE_URL
+import dagger.Module
+import dagger.Provides
+import dagger.hilt.InstallIn
+import dagger.hilt.components.SingletonComponent
+import okhttp3.OkHttpClient
+import retrofit2.Retrofit
+import retrofit2.converter.moshi.MoshiConverterFactory
+import java.util.concurrent.TimeUnit
+import javax.inject.Singleton
+
+@Module
+@InstallIn(SingletonComponent::class)
+object GSDANetworkModula {
+
+    @Provides
+    @Singleton
+    fun gsdaProvidesHttpClient(): OkHttpClient {
+        return OkHttpClient.Builder()
+            .readTimeout(1, TimeUnit.SECONDS)
+            .connectTimeout(15, TimeUnit.SECONDS)
+            .build()
+    }
+
+    @Provides
+    @Singleton
+    fun gsdaProvidesRetrofitInstance(okHttpClient: OkHttpClient): Retrofit {
+        return Retrofit.Builder()
+            .baseUrl(BASE_URL)
+            .client(okHttpClient)
+            .addConverterFactory(MoshiConverterFactory.create())
+            .build()
+    }
+
+    @Provides
+    @Singleton
+    fun gsdaProvidesDashBoarApi(retrofit: Retrofit): GSDAApiService {
+        return retrofit.create(GSDAApiService::class.java)
+    }
+
+    @Provides
+    @Singleton
+    fun gsdaProvidesRemoteDataSource(
+        dashboardApi: GSDAApiService,
+    ): GSDARemoteDataSource {
+        return GSDARemoteDataSourceImpl(
+            dashboardApi = dashboardApi,
+        )
+    }
+}

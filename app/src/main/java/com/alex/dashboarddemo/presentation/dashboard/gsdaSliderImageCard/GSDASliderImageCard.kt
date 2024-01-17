@@ -16,12 +16,12 @@ import androidx.compose.ui.draw.clip
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import com.alex.dashboarddemo.data.mockdata.DemoDataProvider
-import com.alex.dashboarddemo.data.Item
+import com.alex.dashboarddemo.domain.model.GSDAItem
 import com.alex.dashboarddemo.presentation.dashboard.common.GSDAStoryPopup
 
 @Composable
 fun GSDASliderImageCard(
-    imageIds: List<Item>,
+    imageIds: List<GSDAItem>,
 ) {
     Card(
         modifier = Modifier
@@ -47,5 +47,5 @@ fun GSDASliderImageCard(
 @Composable
 fun SliderImagePreview(){
 
-    GSDASliderImageCard(DemoDataProvider.itemList.take(6))
+    GSDASliderImageCard(DemoDataProvider.GSDAItemModelLists.take(6))
 }

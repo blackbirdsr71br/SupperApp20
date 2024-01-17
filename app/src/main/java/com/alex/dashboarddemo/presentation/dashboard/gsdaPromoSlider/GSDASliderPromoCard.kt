@@ -15,12 +15,12 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import com.alex.dashboarddemo.data.mockdata.DemoDataProvider
-import com.alex.dashboarddemo.data.Item
+import com.alex.dashboarddemo.domain.model.GSDAItem
 import com.alex.dashboarddemo.presentation.dashboard.common.GSDAStoryPopup
 
 @Composable
 fun GSDASliderPromoCard(
-    imageIds: List<Item>,
+    imageIds: List<GSDAItem>,
     gsdaInfoCardModel: List<GSDAPromoInfoCardModel>,
 ) {
     Card(
@@ -51,7 +51,7 @@ fun GSDASliderPromoCard(
 @Composable
 fun PromoCardPreview() {
     GSDASliderPromoCard(
-        imageIds = DemoDataProvider.itemList.take(6),
+        imageIds = DemoDataProvider.GSDAItemModelLists.take(6),
         gsdaInfoCardModel = DemoDataProvider.gsdaInfoCardList,
     )
 }

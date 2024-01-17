@@ -1,8 +1,8 @@
-package com.alex.dashboarddemo.data
+package com.alex.dashboarddemo.domain.model
 
 import androidx.compose.ui.graphics.Color
 
-data class GSDAGenericCardModel(
+data class GSDAGenericCard(
     val image: String? = null,
     val backgroundColor: Color? = null,
     val title: String? = null,

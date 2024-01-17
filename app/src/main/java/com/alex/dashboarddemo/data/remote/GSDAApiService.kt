@@ -1,18 +1,19 @@
 package com.alex.dashboarddemo.data.remote
 
-import com.alex.dashboarddemo.domain.model.Dashboard
+import com.alex.dashboarddemo.domain.model.GSDADashboard
+import com.alex.dashboarddemo.utils.GSDAConstants.BASE_URL
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
 import retrofit2.Retrofit
 import retrofit2.converter.moshi.MoshiConverterFactory
 import retrofit2.http.GET
 
-interface ApiService {
+interface GSDAApiService {
     @GET("dashbaz")
-    suspend fun getDashboard(): Dashboard
+    suspend fun getDashboard(): GSDADashboard
 
     @GET("dashbaz_random")
-    suspend fun getRandomDashboard(): Dashboard
+    suspend fun getRandomDashboard(): GSDADashboard
 }
 
 object NetworkClient {
@@ -26,8 +27,8 @@ object NetworkClient {
             .addConverterFactory(MoshiConverterFactory.create())
             .client(okHttpClient)
 
-    val service: ApiService by lazy {
-        retrofit.baseUrl("https://demo5027027.mockable.io/")
-            .build().create(ApiService::class.java)
+    val service: GSDAApiService by lazy {
+        retrofit.baseUrl(BASE_URL)
+            .build().create(GSDAApiService::class.java)
     }
 }

@@ -1,21 +1,24 @@
-package com.alex.dashboarddemo.presentation.main
+package com.alex.dashboarddemo.presentation.screens.main
 
 import androidx.lifecycle.viewModelScope
-import com.alex.dashboarddemo.data.Repository
 import com.alex.dashboarddemo.data.Result
-import com.alex.dashboarddemo.domain.model.Dashboard
+import com.alex.dashboarddemo.domain.use_Case.GSDADashboardUseCase
 import com.alex.dashboarddemo.mvi.BaseViewModel
 import com.alex.dashboarddemo.mvi.HomeContract
 import com.alex.dashboarddemo.mvi.HomeHelper
-import kotlinx.coroutines.delay
+import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.launch
+import javax.inject.Inject
 
-class MainViewModel :
-    BaseViewModel<HomeContract.Event, HomeContract.DashBoardState, HomeContract.Effect>() {
-    private val _dashboardItems = MutableStateFlow<Result<List<Dashboard.Item>>>(Result.Loading)
-    val dashboardItems: StateFlow<Result<List<Dashboard.Item>>> = _dashboardItems
+@HiltViewModel
+class GSDADashboardViewModel @Inject constructor(
+    private val dashUseCase: GSDADashboardUseCase,
+) : BaseViewModel<HomeContract.Event, HomeContract.DashBoardState, HomeContract.Effect>() {
+
+    private val _dashboardModelItems = MutableStateFlow(GSDADashboardState())
+    val dashboardItems: StateFlow<GSDADashboardState> = _dashboardModelItems
 
     init {
         viewModelScope.launch {
@@ -36,14 +39,29 @@ class MainViewModel :
         }
     }
 
-    private fun loadData(showRandom: Boolean = false) {
-        _dashboardItems.value = Result.Loading
+    private fun loadData() {
         viewModelScope.launch {
-            delay(1000) // delay added to slow-down API request
-            Repository.getDashboardData(showRandom)
-                .collect {
-                    _dashboardItems.value = it
+            dashUseCase().collect { dash ->
+                when (dash) {
+                    is Result.Loading -> {
+                        _dashboardModelItems.value.copy(isLoading = true)
+                    }
+
+                    is Result.Success -> {
+                        _dashboardModelItems.value.copy(
+                            isLoading = false,
+                            items = dash.data,
+                        )
+                    }
+
+                    is Result.Failure -> {
+                        _dashboardModelItems.value.copy(
+                            isLoading = false,
+                            errorMessage = dash.error.message,
+                        )
+                    }
                 }
+            }
         }
     }
 
@@ -57,11 +75,11 @@ class MainViewModel :
         }
     }
 
-    private fun setNavigationExtern(Route: String) {
+    private fun setNavigationExtern(route: String) {
         viewModelScope.launch {
             setState {
                 copy(
-                    getInfo = HomeContract.DashBoardApiState.OnNavigate(Route),
+                    getInfo = HomeContract.DashBoardApiState.OnNavigate(route),
                 )
             }
         }
@@ -80,6 +98,7 @@ class MainViewModel :
             }
 
             is HomeContract.Event.OnUpdate -> {}
+
             is HomeContract.Event.OnNavigate -> {
                 navigation(event.route)
             }

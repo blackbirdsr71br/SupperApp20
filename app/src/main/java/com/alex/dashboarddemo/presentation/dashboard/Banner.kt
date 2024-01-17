@@ -14,13 +14,13 @@ import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-import com.alex.dashboarddemo.domain.model.Dashboard
+import com.alex.dashboarddemo.domain.model.GSDADashboard
 import com.alex.dashboarddemo.domain.model.DashboardAction
 import com.alex.dashboarddemo.domain.model.SubItemViewType
 import com.alex.dashboarddemo.presentation.components.LoadImage
 
 @Composable
-fun CategoriesElement(item: Dashboard.Item.SubItem) {
+fun CategoriesElement(item: GSDADashboard.Item.SubItem) {
     Box(
         modifier = Modifier
             .size(96.dp)
@@ -83,13 +83,13 @@ fun PreviewBanner() {
         type = "",
         value = "",
     )
-    val meta = Dashboard.Item.SubItem.Meta(
+    val meta = GSDADashboard.Item.SubItem.Meta(
         bgColor = "Color.White",
         rating = "",
         reviewCount = "",
         hasFreeDelivery = false,
     )
-    val item = Dashboard.Item.SubItem(
+    val item = GSDADashboard.Item.SubItem(
         viewType = SubItemViewType.CategoriesElement,
         action = dash,
         imageUrl = "R.drawable.lavadora",

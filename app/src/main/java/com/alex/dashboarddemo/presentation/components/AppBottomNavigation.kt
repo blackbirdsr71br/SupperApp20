@@ -1,4 +1,4 @@
-package com.alex.dashboarddemo.presentation.navigation
+package com.alex.dashboarddemo.presentation.components
 
 import androidx.compose.foundation.layout.navigationBarsPadding
 import androidx.compose.material.BottomNavigation
@@ -20,8 +20,8 @@ import androidx.navigation.NavController
 import androidx.navigation.NavDestination
 import androidx.navigation.NavDestination.Companion.hierarchy
 import androidx.navigation.NavGraph.Companion.findStartDestination
+import com.alex.dashboarddemo.navigation.Screen
 import com.alex.dashboarddemo.ui.theme.GSVCPrimary100
-import com.example.jetmoviesapp.presentation.navigation.Screen
 
 @Composable
 fun AppBottomNavigation(
@@ -33,11 +33,11 @@ fun AppBottomNavigation(
         backgroundColor = Color.White,
     ) {
         val items = listOf(
-            Screen.Explora.route to Icons.Filled.Home,
+            Screen.Explore.route to Icons.Filled.Home,
             Screen.Directory.route to Icons.Filled.Search,
             Screen.Credit.route to Icons.AutoMirrored.Filled.List,
             Screen.Benefits.route to Icons.Filled.AccountBox,
-            Screen.Perfil.route to Icons.Filled.Person,
+            Screen.Profile.route to Icons.Filled.Person,
         )
 
         items.forEach { pair: Pair<String, ImageVector> ->

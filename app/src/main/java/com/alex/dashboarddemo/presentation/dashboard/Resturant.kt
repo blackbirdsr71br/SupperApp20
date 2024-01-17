@@ -21,11 +21,11 @@ import com.alex.dashboarddemo.R
 import com.alex.dashboarddemo.presentation.components.LoadImage
 import com.alex.dashboarddemo.presentation.components.PrimaryText
 import com.alex.dashboarddemo.presentation.components.SecondaryText
-import com.alex.dashboarddemo.domain.model.Dashboard
+import com.alex.dashboarddemo.domain.model.GSDADashboard
 import com.alex.dashboarddemo.ui.theme.themeTypography
 
 @Composable
-fun ShowRestaurantElement(item: Dashboard.Item.SubItem) {
+fun ShowRestaurantElement(item: GSDADashboard.Item.SubItem) {
     Row(modifier = Modifier.padding(dimensionResource(id = R.dimen.padding))) {
         RestaurantImage(url = item.imageUrl)
         Column(
@@ -50,7 +50,7 @@ private fun RestaurantImage(url: String) {
 }
 
 @Composable
-private fun RestaurantInfo(item: Dashboard.Item.SubItem) {
+private fun RestaurantInfo(item: GSDADashboard.Item.SubItem) {
     val title = item.title ?: "Name"
     val subTitle = item.subTitle ?: "Caption"
     val rating = "${item.meta?.rating}"

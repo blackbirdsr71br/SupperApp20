@@ -1,4 +1,4 @@
-package com.alex.dashboarddemo.presentation.navigation
+package com.alex.dashboarddemo.navigation
 
 import android.widget.Toast
 import androidx.compose.foundation.layout.fillMaxSize
@@ -11,24 +11,24 @@ import androidx.compose.ui.unit.dp
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
-import com.alex.dashboarddemo.ModalBottomSheetD
+import com.alex.dashboarddemo.presentation.components.ModalBottomSheetD
 import com.alex.dashboarddemo.presentation.components.ShowError
 import com.alex.dashboarddemo.presentation.components.ShowLoading
-import com.alex.dashboarddemo.data.Result
 import com.alex.dashboarddemo.presentation.dashboard.GSSMAProductGenericScreen
-import com.alex.dashboarddemo.presentation.dashboard.ShowDashboard
 import com.alex.dashboarddemo.presentation.dashboard.categories
 import com.alex.dashboarddemo.presentation.dashboard.collapsingtoolbarincompose.ui.composables.standAloneStore.GSSMAStandAloneStoreScreen
 import com.alex.dashboarddemo.presentation.dashboard.products
 import com.alex.dashboarddemo.presentation.dashboard.standAloneStore
-import com.alex.dashboarddemo.presentation.main.MainViewModel
-import com.example.jetmoviesapp.presentation.navigation.Screen
+import com.alex.dashboarddemo.presentation.screens.main.GSDADashboardScreen
+import com.alex.dashboarddemo.presentation.screens.main.GSDADashboardViewModel
 
 @Composable
 fun NavigateScreens(
     navController: NavHostController,
-    viewModel: MainViewModel,
+    viewModel: GSDADashboardViewModel,
 ) {
+    val data = viewModel.dashboardItems.collectAsState().value
+
     NavHost(
         navController = navController,
         startDestination = Screen.Start.route,
@@ -38,20 +38,18 @@ fun NavigateScreens(
         }
 
         composable(Screen.Start.route) {
-            when (val data = viewModel.dashboardItems.collectAsState().value) {
-                is Result.Loading -> {
+            when {
+                data.isLoading -> {
                     ShowLoading()
                 }
 
-                is Result.Success -> {
-                    ShowDashboard(
-                        data = data.data ?: emptyList(),
-                    )
+                data.items != null -> {
+                    GSDADashboardScreen(dashboard = data.items)
                 }
 
-                is Result.Failure -> {
+                !data.errorMessage.isNullOrEmpty() -> {
                     ShowError(
-                        message = data.error.message ?: "",
+                        message = data.errorMessage,
                         onRetry = {
                             // viewModel.loadData(showRandom)
                         },
@@ -59,23 +57,21 @@ fun NavigateScreens(
                 }
             }
         }
-        composable(Screen.Explora.route) {
-            val data = viewModel.uiState
+        composable(Screen.Explore.route) {
+            val dataUI = viewModel.uiState
 
-            when (val data = viewModel.dashboardItems.collectAsState().value) {
-                is Result.Loading -> {
+            when {
+                data.isLoading -> {
                     ShowLoading()
                 }
 
-                is Result.Success -> {
-                    ShowDashboard(
-                        data = data.data ?: emptyList(),
-                    )
+                data.items != null -> {
+                    GSDADashboardScreen(dashboard = data.items,)
                 }
 
-                is Result.Failure -> {
+                !data.errorMessage.isNullOrEmpty() -> {
                     ShowError(
-                        message = data.error.message ?: "",
+                        message = data.errorMessage,
                         onRetry = {
                             // viewModel.loadData(showRandom)
                         },
@@ -114,7 +110,7 @@ fun NavigateScreens(
         composable(Screen.Benefits.route) {
             ModalBottomSheetD()
         }
-        composable(Screen.Perfil.route) {
+        composable(Screen.Profile.route) {
         }
     }
 }

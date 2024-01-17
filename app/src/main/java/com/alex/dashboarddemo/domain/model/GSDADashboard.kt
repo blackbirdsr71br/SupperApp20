@@ -2,7 +2,7 @@ package com.alex.dashboarddemo.domain.model
 
 import com.squareup.moshi.Json
 
-data class Dashboard(
+data class GSDADashboard(
     val data: List<Item>,
 ) {
     data class Item(

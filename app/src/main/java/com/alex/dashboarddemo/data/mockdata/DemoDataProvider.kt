@@ -2,7 +2,7 @@ package com.alex.dashboarddemo.data.mockdata
 
 import androidx.compose.ui.graphics.Color
 import com.alex.dashboarddemo.R
-import com.alex.dashboarddemo.data.Item
+import com.alex.dashboarddemo.domain.model.GSDAItem
 import com.alex.dashboarddemo.presentation.dashboard.GSVCFlatCard
 import com.alex.dashboarddemo.presentation.dashboard.GSVCFlatCardType
 import com.alex.dashboarddemo.presentation.dashboard.gsdaProductSlider.GSDAProductInfoCardModel
@@ -15,98 +15,98 @@ import com.alex.dashboarddemo.ui.theme.GSVCTitleBase100Left
 import com.alex.dashboarddemo.ui.theme.Purple500
 
 object DemoDataProvider {
-    val itemList = listOf(
-        Item(
+    val GSDAItemModelLists = listOf(
+        GSDAItem(
             1,
             "Fresh Vegges and Greens",
             "Very awesome list item has very awesome subtitle. This is bit long",
             R.drawable.food1,
         ),
-        Item(
+        GSDAItem(
             2,
             "Best blue berries",
             "Very awesome list item has very awesome subtitle. This is bit long",
             R.drawable.food2,
         ),
-        Item(
+        GSDAItem(
             3,
             "Cherries La Bloom",
             "Very awesome list item has very awesome subtitle. This is bit long",
             R.drawable.food3,
         ),
-        Item(
+        GSDAItem(
             4,
             "Fruits everyday",
             "Very awesome list item has very awesome subtitle. This is bit long",
             R.drawable.food4,
         ),
-        Item(
+        GSDAItem(
             5,
             "Sweet and sour",
             "Very awesome list item has very awesome subtitle. This is bit long",
             R.drawable.food5,
         ),
-        Item(
+        GSDAItem(
             6,
             "Pancakes for everyone",
             "Very awesome list item has very awesome subtitle. This is bit long",
             R.drawable.food6,
         ),
-        Item(
+        GSDAItem(
             7,
             "Cupcakes and sparkle",
             "Very awesome list item has very awesome subtitle. This is bit long",
             R.drawable.food7,
         ),
-        Item(
+        GSDAItem(
             8,
             "Best Burgers shop",
             "Very awesome list item has very awesome subtitle. This is bit long",
             R.drawable.food8,
         ),
-        Item(
+        GSDAItem(
             9,
             "Coffee of India",
             "Very awesome list item has very awesome subtitle. This is bit long",
             R.drawable.food9,
         ),
-        Item(
+        GSDAItem(
             10,
             "Pizza boy town",
             "Very awesome list item has very awesome subtitle. This is bit long",
             R.drawable.food10,
         ),
-        Item(
+        GSDAItem(
             11,
             "Burgers and Chips",
             "Very awesome list item has very awesome subtitle. This is bit long",
             R.drawable.food11,
         ),
-        Item(
+        GSDAItem(
             12,
             "Breads and butter",
             "Very awesome list item has very awesome subtitle. This is bit long",
             R.drawable.food12,
         ),
-        Item(
+        GSDAItem(
             13,
             "Cupcake factory",
             "Very awesome list item has very awesome subtitle. This is bit long",
             R.drawable.food13,
         ),
-        Item(
+        GSDAItem(
             14,
             "Breakfast paradise",
             "Very awesome list item has very awesome subtitle. This is bit long",
             R.drawable.food14,
         ),
-        Item(
+        GSDAItem(
             15,
             "Cake and Bake",
             "Very awesome list item has very awesome subtitle. This is bit long",
             R.drawable.food15,
         ),
-        Item(
+        GSDAItem(
             16,
             "Brunch and Stakes",
             "Very awesome list item has very awesome subtitle. This is bit long",
@@ -114,7 +114,7 @@ object DemoDataProvider {
         ),
     )
 
-    val item = Item(
+    val GSDAItemModel = GSDAItem(
         1,
         "Awesome List Item",
         "Very awesome list item has very awesome subtitle. This is bit long",
@@ -469,97 +469,97 @@ object DemoDataProvider {
     )
 
     val ProductList = listOf(
-        Item(
+        GSDAItem(
             1,
             "Fresh Vegges and Greens",
             "Very awesome list item has very awesome subtitle. This is bit long",
             R.drawable.galaxya23,
         ),
-        Item(
+        GSDAItem(
             2,
             "Best blue berries",
             "Very awesome list item has very awesome subtitle. This is bit long",
             R.drawable.iphone14,
         ),
-        Item(
+        GSDAItem(
             3,
             "Cherries La Bloom",
             "Very awesome list item has very awesome subtitle. This is bit long",
             R.drawable.refrigerador,
         ),
-        Item(
+        GSDAItem(
             4,
             "Fruits everyday",
             "Very awesome list item has very awesome subtitle. This is bit long",
             R.drawable.pantalla,
         ),
-        Item(
+        GSDAItem(
             5,
             "Sweet and sour",
             "Very awesome list item has very awesome subtitle. This is bit long",
             R.drawable.lavadora,
         ),
-        Item(
+        GSDAItem(
             6,
             "Pancakes for everyone",
             "Very awesome list item has very awesome subtitle. This is bit long",
             R.drawable.food6,
         ),
-        Item(
+        GSDAItem(
             7,
             "Cupcakes and sparkle",
             "Very awesome list item has very awesome subtitle. This is bit long",
             R.drawable.food7,
         ),
-        Item(
+        GSDAItem(
             8,
             "Best Burgers shop",
             "Very awesome list item has very awesome subtitle. This is bit long",
             R.drawable.food8,
         ),
-        Item(
+        GSDAItem(
             9,
             "Coffee of India",
             "Very awesome list item has very awesome subtitle. This is bit long",
             R.drawable.food9,
         ),
-        Item(
+        GSDAItem(
             10,
             "Pizza boy town",
             "Very awesome list item has very awesome subtitle. This is bit long",
             R.drawable.food10,
         ),
-        Item(
+        GSDAItem(
             11,
             "Burgers and Chips",
             "Very awesome list item has very awesome subtitle. This is bit long",
             R.drawable.food11,
         ),
-        Item(
+        GSDAItem(
             12,
             "Breads and butter",
             "Very awesome list item has very awesome subtitle. This is bit long",
             R.drawable.food12,
         ),
-        Item(
+        GSDAItem(
             13,
             "Cupcake factory",
             "Very awesome list item has very awesome subtitle. This is bit long",
             R.drawable.food13,
         ),
-        Item(
+        GSDAItem(
             14,
             "Breakfast paradise",
             "Very awesome list item has very awesome subtitle. This is bit long",
             R.drawable.food14,
         ),
-        Item(
+        GSDAItem(
             15,
             "Cake and Bake",
             "Very awesome list item has very awesome subtitle. This is bit long",
             R.drawable.food15,
         ),
-        Item(
+        GSDAItem(
             16,
             "Brunch and Stakes",
             "Very awesome list item has very awesome subtitle. This is bit long",

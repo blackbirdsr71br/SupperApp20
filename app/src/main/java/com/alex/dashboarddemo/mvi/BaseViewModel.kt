@@ -13,7 +13,7 @@ abstract class BaseViewModel<Event : UiEvent, State : UiState, Effect : UiEffect
     abstract fun createInitialState(): State
 
     // Get Current State
-    val currentState: State
+    private val currentState: State
         get() = uiState.value
 
     private val _uiState: MutableStateFlow<State> = MutableStateFlow(initialState)

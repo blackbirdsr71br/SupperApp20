@@ -19,14 +19,14 @@ import androidx.compose.ui.platform.LocalDensity
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
-import com.alex.dashboarddemo.data.Item
+import com.alex.dashboarddemo.domain.model.GSDAItem
 import com.alex.dashboarddemo.data.mockdata.DemoDataProvider
 import com.alex.dashboarddemo.ui.theme.GSVCBase100
 import kotlinx.coroutines.launch
 
 @Composable
 fun GSDAStoryPopup(
-    imageIds: List<Item>,
+    imageIds: List<GSDAItem>,
     contentScale: ContentScale = ContentScale.Crop,
     colorSlider: Color = GSVCBase100
 ): Int {

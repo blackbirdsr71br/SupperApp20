@@ -1,10 +1,10 @@
-package com.alex.dashboarddemo.data
+package com.alex.dashboarddemo.data.mockdata
 
 import androidx.compose.ui.graphics.Color
-
+import com.alex.dashboarddemo.domain.model.GSDAGenericCard
 
 object GSDADataProvider {
-    val configData = GSDAGenericCardModel(
+    val configData = GSDAGenericCard(
         image = "ic_bitcoin",
         backgroundColor = Color(0xFF0C0623),
         title = "Wallet Bitcoin",
@@ -12,7 +12,7 @@ object GSDADataProvider {
         textButton = "Conocer más",
     )
 
-    val configData2 = GSDAGenericCardModel(
+    val configData2 = GSDAGenericCard(
         image = "ic_bet365",
         backgroundColor = Color(0xFF126E51),
         title = "bet365",
@@ -20,11 +20,11 @@ object GSDADataProvider {
         textButton = "Conocer más",
     )
 
-    val configImgComplete = GSDAGenericCardModel(
+    val configImgComplete = GSDAGenericCard(
         image = "ic_bitcoin_complete",
     )
 
-    val configImgComplete2 = GSDAGenericCardModel(
+    val configImgComplete2 = GSDAGenericCard(
         image = "ic_bet365_complete",
     )
 }

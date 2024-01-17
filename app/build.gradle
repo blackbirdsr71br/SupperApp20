@@ -1,5 +1,7 @@
 apply plugin: 'com.android.application'
 apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-kapt'
+apply plugin: 'com.google.dagger.hilt.android'
 
 android {
     defaultConfig {
@@ -31,11 +33,11 @@ android {
     }
 
     compileOptions {
-        sourceCompatibility JavaVersion.VERSION_1_8
-        targetCompatibility JavaVersion.VERSION_1_8
+        sourceCompatibility JavaVersion.VERSION_17
+        targetCompatibility JavaVersion.VERSION_17
     }
     kotlinOptions {
-        jvmTarget = '1.8'
+        jvmTarget = '17'
     }
     buildFeatures {
         compose true
@@ -114,6 +116,17 @@ dependencies {
     implementation "io.ktor:ktor-client-logging:${versions.ktor}"
     implementation "io.ktor:ktor-client-json:${versions.ktor}"
     implementation "io.ktor:ktor-client-okhttp:2.3.5"
+
+    // Dagger - Hilt
+    implementation("com.google.dagger:hilt-android:2.47")
+    kapt "com.google.dagger:hilt-android-compiler:2.47"
+    kapt "androidx.hilt:hilt-compiler:1.2.0-alpha01"
+    implementation("androidx.hilt:hilt-navigation-compose:1.2.0-alpha01")
+}
+
+// Allow references to generated code
+kapt {
+    correctErrorTypes true
 }
 
 sourceCompatibility = "17"

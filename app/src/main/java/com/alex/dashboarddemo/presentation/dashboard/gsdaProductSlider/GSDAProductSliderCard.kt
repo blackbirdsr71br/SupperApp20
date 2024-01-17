@@ -19,12 +19,12 @@ import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import com.alex.dashboarddemo.data.mockdata.DemoDataProvider
-import com.alex.dashboarddemo.data.Item
+import com.alex.dashboarddemo.domain.model.GSDAItem
 import com.alex.dashboarddemo.presentation.dashboard.common.GSDAStoryPopup
 
 @Composable
 fun GSDASliderProductCard(
-    imageIds: List<Item>,
+    imageIds: List<GSDAItem>,
     gsdaInfoCardModel: List<GSDAProductInfoCardModel>,
 ) {
     var index = 0

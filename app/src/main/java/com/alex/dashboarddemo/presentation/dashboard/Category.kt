@@ -13,10 +13,10 @@ import androidx.compose.ui.unit.dp
 import com.alex.dashboarddemo.presentation.components.LoadImage
 import com.alex.dashboarddemo.presentation.components.PrimaryText
 import com.alex.dashboarddemo.presentation.components.SecondaryText
-import com.alex.dashboarddemo.domain.model.Dashboard
+import com.alex.dashboarddemo.domain.model.GSDADashboard
 
 @Composable
-fun ShowCategoryElement(item: Dashboard.Item.SubItem) {
+fun ShowCategoryElement(item: GSDADashboard.Item.SubItem) {
     Column {
         Spacer(modifier = Modifier.height(5.dp)) // added to support space for header
         CategoryImage(item = item)
@@ -29,7 +29,7 @@ fun ShowCategoryElement(item: Dashboard.Item.SubItem) {
 }
 
 @Composable
-private fun CategoryImage(item: Dashboard.Item.SubItem) {
+private fun CategoryImage(item: GSDADashboard.Item.SubItem) {
     val bgColor = item.meta?.bgColor?.let { color ->
         getColor(color)
     } ?: Color.Blue

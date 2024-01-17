@@ -22,15 +22,15 @@ import androidx.compose.ui.unit.dp
 import com.alex.dashboarddemo.presentation.components.ShowVerticalDivider
 import com.alex.dashboarddemo.data.mockdata.DemoDataProvider
 import com.alex.dashboarddemo.data.mockdata.DemoDataProvider.gridlist1
-import com.alex.dashboarddemo.data.GSDADataProvider
-import com.alex.dashboarddemo.domain.model.Dashboard
+import com.alex.dashboarddemo.data.mockdata.GSDADataProvider
+import com.alex.dashboarddemo.domain.model.GSDADashboard
 import com.alex.dashboarddemo.domain.model.SubItemViewType
 import com.alex.dashboarddemo.presentation.dashboard.gsdaProductSlider.GSDASliderProductCard
 import com.alex.dashboarddemo.presentation.dashboard.gsdaPromoSlider.GSDASliderPromoCard
 import com.example.basedemomaterial3.ui.theme.SDASpace
 
 @Composable
-fun ShowHorizontalElements(item: Dashboard.Item) {
+fun ShowHorizontalElements(item: GSDADashboard.Item) {
     item.header?.let {
         it.title?.let { it1 ->
             ShowHeader(
@@ -52,7 +52,7 @@ fun ShowHorizontalElements(item: Dashboard.Item) {
 
                 SubItemViewType.BannersElement ->  GSDAGenericCard(
                     item = data,
-                    config =GSDADataProvider.configData)
+                    config = GSDADataProvider.configData)
 
                 else -> {
                     // do nothing
@@ -64,7 +64,7 @@ fun ShowHorizontalElements(item: Dashboard.Item) {
 }
 
 @Composable
-fun ShowVerticalElements(item: Dashboard.Item) {
+fun ShowVerticalElements(item: GSDADashboard.Item) {
     item.header?.let {
         it.title?.let { it1 ->
             ShowHeader(
@@ -81,7 +81,7 @@ fun ShowVerticalElements(item: Dashboard.Item) {
             )
 
             SubItemViewType.SlidePromoCard -> GSDASliderPromoCard(
-                imageIds = DemoDataProvider.itemList.take(6),
+                imageIds = DemoDataProvider.GSDAItemModelLists.take(6),
                 gsdaInfoCardModel = DemoDataProvider.gsdaInfoCardList,
             )
 
@@ -99,7 +99,7 @@ fun ShowVerticalElements(item: Dashboard.Item) {
 }
 
 @Composable
-fun ShowVerticalGrid(item: Dashboard.Item) {
+fun ShowVerticalGrid(item: GSDADashboard.Item) {
     val lazyGState = rememberLazyGridState()
     val nestedScroll = rememberNestedScrollInteropConnection()
     LazyVerticalGrid(
@@ -117,7 +117,7 @@ fun ShowVerticalGrid(item: Dashboard.Item) {
 }
 
 @Composable
-fun ShowGridElements(item: Dashboard.Item) {
+fun ShowGridElements(item: GSDADashboard.Item) {
     item.header?.let {
         it.title?.let { it1 ->
             ShowHeader(
@@ -134,7 +134,7 @@ fun ShowGridElements(item: Dashboard.Item) {
             )
 
             SubItemViewType.SlidePromoCard -> GSDASliderPromoCard(
-                imageIds = DemoDataProvider.itemList.take(6),
+                imageIds = DemoDataProvider.GSDAItemModelLists.take(6),
                 gsdaInfoCardModel = DemoDataProvider.gsdaInfoCardList,
             )
 

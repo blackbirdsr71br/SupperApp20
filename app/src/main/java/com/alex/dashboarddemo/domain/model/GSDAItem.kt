@@ -1,6 +1,6 @@
-package com.alex.dashboarddemo.data
+package com.alex.dashboarddemo.domain.model
 
-data class Item(
+data class GSDAItem(
     val id: Int,
     val title: String,
     val subtitle: String,
