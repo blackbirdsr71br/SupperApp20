@@ -34,8 +34,7 @@ fun NavigateScreens(
         startDestination = Screen.Start.route,
         modifier = Modifier.padding(0.dp),
     ) {
-        composable(Screen.LoginScreen.route) {
-        }
+        composable(Screen.LoginScreen.route) {}
 
         composable(Screen.Start.route) {
             when {
@@ -66,7 +65,7 @@ fun NavigateScreens(
                 }
 
                 data.items != null -> {
-                    GSDADashboardScreen(dashboard = data.items,)
+                    GSDADashboardScreen(dashboard = data.items)
                 }
 
                 !data.errorMessage.isNullOrEmpty() -> {

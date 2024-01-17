@@ -1,4 +1,4 @@
-package com.alex.dashboarddemo.data
+package com.alex.dashboarddemo.data.remote
 
 sealed class Result<out T> {
     object Loading : Result<Nothing>()

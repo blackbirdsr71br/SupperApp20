@@ -1,6 +1,6 @@
 package com.alex.dashboarddemo.data.repository
 
-import com.alex.dashboarddemo.data.Result
+import com.alex.dashboarddemo.data.remote.Result
 import com.alex.dashboarddemo.data.remote.GSDAApiService
 import com.alex.dashboarddemo.domain.model.GSDADashboard
 import com.alex.dashboarddemo.domain.repository.GSDARemoteDataSource
@@ -12,6 +12,7 @@ class GSDARemoteDataSourceImpl(
 ) : GSDARemoteDataSource {
 
     override fun getDashboardData(): Flow<Result<GSDADashboard>> = flow {
+        emit(Result.Loading)
         try {
             emit(Result.Success(dashboardApi.getDashboard()))
         } catch (e: Exception) {

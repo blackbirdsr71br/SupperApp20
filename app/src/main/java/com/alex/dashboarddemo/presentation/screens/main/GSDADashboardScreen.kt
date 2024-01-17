@@ -1,77 +1,33 @@
-package com.alex.dashboarddemo
+package com.alex.dashboarddemo.presentation.screens.main
 
 import android.annotation.SuppressLint
-import android.os.Bundle
-import androidx.activity.ComponentActivity
-import androidx.activity.compose.setContent
 import androidx.compose.animation.AnimatedVisibility
 import androidx.compose.animation.slideInVertically
 import androidx.compose.animation.slideOutVertically
 import androidx.compose.material.Scaffold
-import androidx.compose.runtime.*
+import androidx.compose.runtime.Composable
+import androidx.compose.runtime.LaunchedEffect
+import androidx.compose.runtime.getValue
+import androidx.compose.runtime.mutableStateOf
+import androidx.compose.runtime.remember
+import androidx.compose.runtime.rememberCoroutineScope
 import androidx.compose.runtime.saveable.rememberSaveable
 import androidx.compose.ui.graphics.Color
-import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.compose.currentBackStackEntryAsState
 import androidx.navigation.compose.rememberNavController
+import com.alex.dashboarddemo.R
 import com.alex.dashboarddemo.mvi.HomeContract
 import com.alex.dashboarddemo.navigation.NavigateScreens
 import com.alex.dashboarddemo.navigation.Screen
 import com.alex.dashboarddemo.presentation.components.AppBottomNavigation
 import com.alex.dashboarddemo.presentation.dashboard.header.GSDAHeaderModel
 import com.alex.dashboarddemo.presentation.dashboard.header.GSSAHeader
-import com.alex.dashboarddemo.presentation.screens.main.GSDADashboardViewModel
 import com.alex.dashboarddemo.ui.theme.JetDeliveryTheme
-import com.clevertap.android.sdk.CleverTapAPI
-import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.flow.collectLatest
-import java.util.Date
-
-@AndroidEntryPoint
-class MainActivity : ComponentActivity() {
-    private lateinit var viewModel: GSDADashboardViewModel
-
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-
-        viewModel = ViewModelProvider(this)[GSDADashboardViewModel::class.java]
-
-        val cleverTapDefaultInstance: CleverTapAPI? =
-            CleverTapAPI.getDefaultInstance(applicationContext)
-        CleverTapAPI.setDebugLevel(CleverTapAPI.LogLevel.DEBUG)
-        // each of the below mentioned fields are optional
-        val profileUpdate = HashMap<String, Any>()
-        profileUpdate["Name"] = "Alejandro Pozas" // String
-        profileUpdate["Identity"] = 61026032 // String or number
-        profileUpdate["Email"] = "apozas@gmail.com" // Email address of the user
-        profileUpdate["Phone"] = "+14155551234" // Phone (with the country code, starting with +)
-        profileUpdate["Gender"] = "M" // Can be either M or F
-        profileUpdate["DOB"] =
-            Date() // Date of Birth. Set the Date object to the appropriate value first
-// optional fields. controls whether the user will be sent email, push etc.
-// optional fields. controls whether the user will be sent email, push etc.
-        profileUpdate["MSG-email"] = false // Disable email notifications
-        profileUpdate["MSG-push"] = true // Enable push notifications
-        profileUpdate["MSG-sms"] = false // Disable SMS notifications
-        profileUpdate["MSG-whatsapp"] = true // Enable WhatsApp notifications
-        val stuff = ArrayList<String>()
-        stuff.add("bag")
-        stuff.add("shoes")
-        profileUpdate["MyStuff"] = stuff // ArrayList of Strings
-        val otherStuff = arrayOf("Jeans", "Perfume")
-        profileUpdate["MyStuff"] = otherStuff // String Array
-        cleverTapDefaultInstance?.pushProfile(profileUpdate)
-        println("Hola clevertap")
-
-        setContent {
-            DashboardApp(viewModel)
-        }
-    }
-}
 
 @SuppressLint("UnusedMaterialScaffoldPaddingParameter")
 @Composable
-fun DashboardApp(viewModel: GSDADashboardViewModel) {
+fun GSDADashboardScreen(viewModel: GSDADashboardViewModel) {
     val scope = rememberCoroutineScope()
 
     val showRandom by remember { mutableStateOf(false) }
@@ -141,18 +97,3 @@ fun DashboardApp(viewModel: GSDADashboardViewModel) {
         }
     }
 }
-
-/**
- * cargar secciones mediante composable list
- *
-sealed class Sections {
-data class Pagos(val innerServices: @Composable () -> Unit = {}) : Sections()
-data class Credito(val innerServices: @Composable () -> Unit = {}) : Sections()
-data class Tienda(val innerServices: @Composable () -> Unit = {}) : Sections()
-data class Diversion(val innerServices: @Composable () -> Unit = {}) : Sections()
-data class Explora(val innerServices: @Composable () -> Unit = {}) : Sections()
-}
-con la finalidad de implementar
-couchmark
-/walktrought ademas de un scrollToSection(Item)
- */

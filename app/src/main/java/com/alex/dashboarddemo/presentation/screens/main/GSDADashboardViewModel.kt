@@ -1,12 +1,13 @@
 package com.alex.dashboarddemo.presentation.screens.main
 
 import androidx.lifecycle.viewModelScope
-import com.alex.dashboarddemo.data.Result
+import com.alex.dashboarddemo.data.remote.Result
 import com.alex.dashboarddemo.domain.use_Case.GSDADashboardUseCase
 import com.alex.dashboarddemo.mvi.BaseViewModel
 import com.alex.dashboarddemo.mvi.HomeContract
 import com.alex.dashboarddemo.mvi.HomeHelper
 import dagger.hilt.android.lifecycle.HiltViewModel
+import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.launch
@@ -21,14 +22,13 @@ class GSDADashboardViewModel @Inject constructor(
     val dashboardItems: StateFlow<GSDADashboardState> = _dashboardModelItems
 
     init {
-        viewModelScope.launch {
+        viewModelScope.launch(Dispatchers.IO) {
             // Esto es opcional
             setState {
                 copy(
                     getInfo = HomeContract.DashBoardApiState.Idle,
                 )
-            }
-            //
+            } //
 
             HomeHelper.routeMap.collect {
                 it?.let {
@@ -40,22 +40,22 @@ class GSDADashboardViewModel @Inject constructor(
     }
 
     private fun loadData() {
-        viewModelScope.launch {
+        viewModelScope.launch(Dispatchers.IO) {
             dashUseCase().collect { dash ->
                 when (dash) {
                     is Result.Loading -> {
-                        _dashboardModelItems.value.copy(isLoading = true)
+                        _dashboardModelItems.value = GSDADashboardState(isLoading = true)
                     }
 
                     is Result.Success -> {
-                        _dashboardModelItems.value.copy(
+                        _dashboardModelItems.value = GSDADashboardState(
                             isLoading = false,
                             items = dash.data,
                         )
                     }
 
                     is Result.Failure -> {
-                        _dashboardModelItems.value.copy(
+                        _dashboardModelItems.value = GSDADashboardState(
                             isLoading = false,
                             errorMessage = dash.error.message,
                         )
@@ -66,7 +66,7 @@ class GSDADashboardViewModel @Inject constructor(
     }
 
     private fun navigation(route: String) {
-        viewModelScope.launch {
+        viewModelScope.launch(Dispatchers.IO) {
             setState {
                 copy(
                     getInfo = HomeContract.DashBoardApiState.OnNavigate(route),
@@ -76,7 +76,7 @@ class GSDADashboardViewModel @Inject constructor(
     }
 
     private fun setNavigationExtern(route: String) {
-        viewModelScope.launch {
+        viewModelScope.launch(Dispatchers.IO) {
             setState {
                 copy(
                     getInfo = HomeContract.DashBoardApiState.OnNavigate(route),

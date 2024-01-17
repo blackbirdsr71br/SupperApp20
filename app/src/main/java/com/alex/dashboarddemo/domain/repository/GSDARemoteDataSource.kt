@@ -1,6 +1,6 @@
 package com.alex.dashboarddemo.domain.repository
 
-import com.alex.dashboarddemo.data.Result
+import com.alex.dashboarddemo.data.remote.Result
 import com.alex.dashboarddemo.domain.model.GSDADashboard
 import kotlinx.coroutines.flow.Flow
 
