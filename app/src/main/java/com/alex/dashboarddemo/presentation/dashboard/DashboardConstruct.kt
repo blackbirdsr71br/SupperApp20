@@ -85,10 +85,7 @@ fun ShowVerticalElements(item: GSDADashboard.Item) {
                 gsdaInfoCardModel = DemoDataProvider.gsdaInfoCardList,
             )
 
-            SubItemViewType.SlideProductCard -> GSDASliderProductCard(
-                imageIds = DemoDataProvider.ProductList.take(6),
-                gsdaInfoCardModel = DemoDataProvider.gsdaProductInfoCardList,
-            )
+            SubItemViewType.ImageCarousell -> GSDAImageCarousell()
 
             else -> {
                 // do nothing
@@ -136,11 +133,6 @@ fun ShowGridElements(item: GSDADashboard.Item) {
             SubItemViewType.SlidePromoCard -> GSDASliderPromoCard(
                 imageIds = DemoDataProvider.GSDAItemModelLists.take(6),
                 gsdaInfoCardModel = DemoDataProvider.gsdaInfoCardList,
-            )
-
-            SubItemViewType.SlideProductCard -> GSDASliderProductCard(
-                imageIds = DemoDataProvider.ProductList.take(6),
-                gsdaInfoCardModel = DemoDataProvider.gsdaProductInfoCardList,
             )
 
             else -> {

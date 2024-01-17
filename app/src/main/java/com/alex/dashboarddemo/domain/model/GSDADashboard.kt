@@ -3,17 +3,17 @@ package com.alex.dashboarddemo.domain.model
 import com.squareup.moshi.Json
 
 data class GSDADashboard(
-    val data: List<Item>,
+    val data: List<Item>
 ) {
     data class Item(
         val viewType: ItemViewType,
         val header: Header?,
-        val data: List<SubItem>,
+        val data: List<SubItem>
     ) {
         data class Header(
             val title: String?,
             val hasMore: Boolean,
-            val subtitle: String,
+            val subtitle: String
         )
 
         data class SubItem(
@@ -22,13 +22,13 @@ data class GSDADashboard(
             val title: String?,
             val subTitle: String?,
             val action: DashboardAction,
-            val meta: Meta?,
+            val meta: Meta?
         ) {
             data class Meta(
                 val bgColor: String?,
                 val rating: String?,
                 val reviewCount: String?,
-                val hasFreeDelivery: Boolean,
+                val hasFreeDelivery: Boolean
             )
         }
     }
@@ -36,7 +36,7 @@ data class GSDADashboard(
 
 data class DashboardAction(
     val type: String,
-    val value: String,
+    val value: String
 )
 
 enum class ItemViewType {
@@ -47,7 +47,7 @@ enum class ItemViewType {
     VerticalScroll,
 
     @Json(name = "verticalGrid")
-    VerticalGrid,
+    VerticalGrid
 }
 
 enum class SubItemViewType {
@@ -63,9 +63,9 @@ enum class SubItemViewType {
     @Json(name = "sliderPromoCard")
     SlidePromoCard,
 
-    @Json(name = "sliderProductCard")
-    SlideProductCard,
+    @Json(name = "imageCarousell")
+    ImageCarousell,
 
     @Json(name = "paymentCard")
-    PaymentCard,
+    PaymentCard
 }

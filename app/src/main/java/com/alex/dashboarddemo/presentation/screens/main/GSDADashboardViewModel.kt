@@ -7,18 +7,18 @@ import com.alex.dashboarddemo.mvi.BaseViewModel
 import com.alex.dashboarddemo.mvi.HomeContract
 import com.alex.dashboarddemo.mvi.HomeHelper
 import dagger.hilt.android.lifecycle.HiltViewModel
+import javax.inject.Inject
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.launch
-import javax.inject.Inject
 
 @HiltViewModel
 class GSDADashboardViewModel @Inject constructor(
-    private val dashUseCase: GSDADashboardUseCase,
+    private val dashUseCase: GSDADashboardUseCase
 ) : BaseViewModel<HomeContract.Event, HomeContract.DashBoardState, HomeContract.Effect>() {
 
-    private val _dashboardModelItems = MutableStateFlow(GSDADashboardState())
+    private val _dashboardModelItems: MutableStateFlow<GSDADashboardState> = MutableStateFlow(GSDADashboardState())
     val dashboardItems: StateFlow<GSDADashboardState> = _dashboardModelItems
 
     init {
@@ -26,7 +26,7 @@ class GSDADashboardViewModel @Inject constructor(
             // Esto es opcional
             setState {
                 copy(
-                    getInfo = HomeContract.DashBoardApiState.Idle,
+                    getInfo = HomeContract.DashBoardApiState.Idle
                 )
             } //
 
@@ -50,14 +50,14 @@ class GSDADashboardViewModel @Inject constructor(
                     is Result.Success -> {
                         _dashboardModelItems.value = GSDADashboardState(
                             isLoading = false,
-                            items = dash.data,
+                            items = dash.data
                         )
                     }
 
                     is Result.Failure -> {
                         _dashboardModelItems.value = GSDADashboardState(
                             isLoading = false,
-                            errorMessage = dash.error.message,
+                            errorMessage = dash.error.message
                         )
                     }
                 }
@@ -69,7 +69,7 @@ class GSDADashboardViewModel @Inject constructor(
         viewModelScope.launch(Dispatchers.IO) {
             setState {
                 copy(
-                    getInfo = HomeContract.DashBoardApiState.OnNavigate(route),
+                    getInfo = HomeContract.DashBoardApiState.OnNavigate(route)
                 )
             }
         }
@@ -79,7 +79,7 @@ class GSDADashboardViewModel @Inject constructor(
         viewModelScope.launch(Dispatchers.IO) {
             setState {
                 copy(
-                    getInfo = HomeContract.DashBoardApiState.OnNavigate(route),
+                    getInfo = HomeContract.DashBoardApiState.OnNavigate(route)
                 )
             }
         }
@@ -87,7 +87,7 @@ class GSDADashboardViewModel @Inject constructor(
 
     override fun createInitialState(): HomeContract.DashBoardState {
         return HomeContract.DashBoardState(
-            HomeContract.DashBoardApiState.Idle,
+            HomeContract.DashBoardApiState.Idle
         )
     }
 

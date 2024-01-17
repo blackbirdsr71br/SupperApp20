@@ -24,7 +24,7 @@ import kotlinx.coroutines.yield
 
 @OptIn(ExperimentalFoundationApi::class)
 @Composable
-fun HorizontalPagerScreen() {
+fun GSDAImageCarousell() {
     val pagerState =
         rememberPagerState(
             pageCount = { Int.MAX_VALUE },
@@ -119,5 +119,5 @@ fun CustomIndicators(selected: Boolean) {
 @Preview
 @Composable
 private fun Test() {
-    HorizontalPagerScreen()
+    GSDAImageCarousell()
 }
