@@ -66,6 +66,12 @@ enum class SubItemViewType {
     @Json(name = "imageCarousell")
     ImageCarousell,
 
+    @Json(name = "staticBanner")
+    StaticBanner,
+
+    @Json(name = "storeBanner")
+    StoreBanner,
+
     @Json(name = "paymentCard")
     PaymentCard
 }

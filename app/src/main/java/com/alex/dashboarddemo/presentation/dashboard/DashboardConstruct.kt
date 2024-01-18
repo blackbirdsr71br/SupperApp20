@@ -1,7 +1,6 @@
 package com.alex.dashboarddemo.presentation.dashboard
 
 import androidx.compose.foundation.background
-import androidx.compose.foundation.layout.PaddingValues
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
@@ -19,15 +18,15 @@ import androidx.compose.ui.platform.rememberNestedScrollInteropConnection
 import androidx.compose.ui.semantics.contentDescription
 import androidx.compose.ui.semantics.semantics
 import androidx.compose.ui.unit.dp
-import com.alex.dashboarddemo.presentation.components.ShowVerticalDivider
 import com.alex.dashboarddemo.data.mockdata.DemoDataProvider
 import com.alex.dashboarddemo.data.mockdata.DemoDataProvider.gridlist1
 import com.alex.dashboarddemo.data.mockdata.GSDADataProvider
 import com.alex.dashboarddemo.domain.model.GSDADashboard
 import com.alex.dashboarddemo.domain.model.SubItemViewType
-import com.alex.dashboarddemo.presentation.dashboard.gsdaProductSlider.GSDASliderProductCard
+import com.alex.dashboarddemo.presentation.components.GSDAStaticBanner
+import com.alex.dashboarddemo.presentation.components.GSDAStoreBanner
+import com.alex.dashboarddemo.presentation.components.ShowVerticalDivider
 import com.alex.dashboarddemo.presentation.dashboard.gsdaPromoSlider.GSDASliderPromoCard
-import com.example.basedemomaterial3.ui.theme.SDASpace
 
 @Composable
 fun ShowHorizontalElements(item: GSDADashboard.Item) {
@@ -36,24 +35,28 @@ fun ShowHorizontalElements(item: GSDADashboard.Item) {
             ShowHeader(
                 title = it1,
                 hasMore = it.hasMore,
-                subtitle = it.subtitle,
+                subtitle = it.subtitle
             )
         }
     }
     LazyRow(
-        modifier = Modifier.fillMaxWidth(),
-        //contentPadding = PaddingValues(horizontal =  SDASpace.GSVCSmall),
+        modifier = Modifier.fillMaxWidth()
+        // contentPadding = PaddingValues(horizontal =  SDASpace.GSVCSmall),
     ) {
         itemsIndexed(item.data) { index, data ->
             when (data.viewType) {
                 SubItemViewType.CategoriesElement -> CategoriesElement(
-                    item = data,
+                    item = data
                 )
 
-                SubItemViewType.BannersElement ->  GSDAGenericCard(
+                SubItemViewType.BannersElement -> GSDAGenericCard(
                     item = data,
-                    config = GSDADataProvider.configData)
+                    config = GSDADataProvider.configData
+                )
 
+                SubItemViewType.StoreBanner -> GSDAStoreBanner(
+                    item = data
+                )
                 else -> {
                     // do nothing
                 }
@@ -70,22 +73,23 @@ fun ShowVerticalElements(item: GSDADashboard.Item) {
             ShowHeader(
                 title = it1,
                 hasMore = it.hasMore,
-                subtitle = it.subtitle,
+                subtitle = it.subtitle
             )
         }
     }
     item.data.forEachIndexed { index, data ->
         when (data.viewType) {
             SubItemViewType.RestaurantElement -> ShowRestaurantElement(
-                item = data,
+                item = data
             )
 
             SubItemViewType.SlidePromoCard -> GSDASliderPromoCard(
                 imageIds = DemoDataProvider.GSDAItemModelLists.take(6),
-                gsdaInfoCardModel = DemoDataProvider.gsdaInfoCardList,
+                gsdaInfoCardModel = DemoDataProvider.gsdaInfoCardList
             )
 
             SubItemViewType.ImageCarousell -> GSDAImageCarousell()
+            SubItemViewType.StaticBanner -> GSDAStaticBanner()
 
             else -> {
                 // do nothing
@@ -105,7 +109,7 @@ fun ShowVerticalGrid(item: GSDADashboard.Item) {
             .nestedScroll(nestedScroll)
             .semantics { contentDescription = "" },
         state = lazyGState,
-        columns = GridCells.Fixed(2),
+        columns = GridCells.Fixed(2)
     ) {
         items(item.data.size) { index ->
             GSVCContentCard(gridlist1[index])
@@ -120,19 +124,19 @@ fun ShowGridElements(item: GSDADashboard.Item) {
             ShowHeader(
                 title = it1,
                 hasMore = it.hasMore,
-                subtitle = it.subtitle,
+                subtitle = it.subtitle
             )
         }
     }
     item.data.forEachIndexed { index, data ->
         when (data.viewType) {
             SubItemViewType.RestaurantElement -> ShowRestaurantElement(
-                item = data,
+                item = data
             )
 
             SubItemViewType.SlidePromoCard -> GSDASliderPromoCard(
                 imageIds = DemoDataProvider.GSDAItemModelLists.take(6),
-                gsdaInfoCardModel = DemoDataProvider.gsdaInfoCardList,
+                gsdaInfoCardModel = DemoDataProvider.gsdaInfoCardList
             )
 
             else -> {
