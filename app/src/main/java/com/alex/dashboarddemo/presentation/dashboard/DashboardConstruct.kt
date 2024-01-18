@@ -18,7 +18,6 @@ import androidx.compose.ui.platform.rememberNestedScrollInteropConnection
 import androidx.compose.ui.semantics.contentDescription
 import androidx.compose.ui.semantics.semantics
 import androidx.compose.ui.unit.dp
-import com.alex.dashboarddemo.data.mockdata.DemoDataProvider
 import com.alex.dashboarddemo.data.mockdata.DemoDataProvider.gridlist1
 import com.alex.dashboarddemo.data.mockdata.GSDADataProvider
 import com.alex.dashboarddemo.domain.model.GSDADashboard
@@ -26,7 +25,6 @@ import com.alex.dashboarddemo.domain.model.SubItemViewType
 import com.alex.dashboarddemo.presentation.components.GSDAStaticBanner
 import com.alex.dashboarddemo.presentation.components.GSDAStoreBanner
 import com.alex.dashboarddemo.presentation.components.ShowVerticalDivider
-import com.alex.dashboarddemo.presentation.dashboard.gsdaPromoSlider.GSDASliderPromoCard
 
 @Composable
 fun ShowHorizontalElements(item: GSDADashboard.Item) {
@@ -83,11 +81,6 @@ fun ShowVerticalElements(item: GSDADashboard.Item) {
                 item = data
             )
 
-            SubItemViewType.SlidePromoCard -> GSDASliderPromoCard(
-                imageIds = DemoDataProvider.GSDAItemModelLists.take(6),
-                gsdaInfoCardModel = DemoDataProvider.gsdaInfoCardList
-            )
-
             SubItemViewType.ImageCarousell -> GSDAImageCarousell()
             SubItemViewType.StaticBanner -> GSDAStaticBanner(item = data)
 
@@ -114,35 +107,5 @@ fun ShowVerticalGrid(item: GSDADashboard.Item) {
         items(item.data.size) { index ->
             GSVCContentCard(gridlist1[index])
         }
-    }
-}
-
-@Composable
-fun ShowGridElements(item: GSDADashboard.Item) {
-    item.header?.let {
-        it.title?.let { it1 ->
-            ShowHeader(
-                title = it1,
-                hasMore = it.hasMore,
-                subtitle = it.subtitle
-            )
-        }
-    }
-    item.data.forEachIndexed { index, data ->
-        when (data.viewType) {
-            SubItemViewType.RestaurantElement -> ShowRestaurantElement(
-                item = data
-            )
-
-            SubItemViewType.SlidePromoCard -> GSDASliderPromoCard(
-                imageIds = DemoDataProvider.GSDAItemModelLists.take(6),
-                gsdaInfoCardModel = DemoDataProvider.gsdaInfoCardList
-            )
-
-            else -> {
-                // do nothing
-            }
-        }
-        if (index != item.data.size) ShowVerticalDivider()
     }
 }

@@ -16,14 +16,14 @@ import coil.compose.AsyncImage
 import coil.request.ImageRequest
 import com.alex.dashboarddemo.R
 import com.alex.dashboarddemo.data.mockdata.GSDADataProvider.configData
-import com.alex.dashboarddemo.domain.model.GSDAGenericCard
 import com.alex.dashboarddemo.domain.model.GSDADashboard
+import com.alex.dashboarddemo.domain.model.GSDAGenericCard
 import com.alex.dashboarddemo.utils.getDrawableFromString
 
 @Composable
 fun GSDAGenericCard(
     item: GSDADashboard.Item.SubItem? = null,
-    config : GSDAGenericCard,
+    config: GSDAGenericCard
 ) {
     val mContext = LocalContext.current
     Card(
@@ -34,12 +34,13 @@ fun GSDAGenericCard(
             CardDefaults.cardColors(containerColor = config.backgroundColor)
         } else {
             CardDefaults.cardColors(containerColor = Color.White)
-        },
+        }
     ) {
         if (!config.text.isNullOrEmpty() && !config.textButton.isNullOrEmpty()) {
             GSDAContentCard(
                 item = item,
-                config = config)
+                config = config
+            )
         } else {
             AsyncImage(
                 modifier = Modifier
@@ -51,7 +52,7 @@ fun GSDAGenericCard(
                     .placeholder(R.drawable.ic_placeholder)
                     .build(),
                 contentDescription = "Image",
-                contentScale = ContentScale.Crop,
+                contentScale = ContentScale.Crop
             )
         }
     }

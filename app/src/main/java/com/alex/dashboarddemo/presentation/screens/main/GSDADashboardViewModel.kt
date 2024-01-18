@@ -2,7 +2,7 @@ package com.alex.dashboarddemo.presentation.screens.main
 
 import androidx.lifecycle.viewModelScope
 import com.alex.dashboarddemo.data.remote.Result
-import com.alex.dashboarddemo.domain.use_Case.GSDADashboardUseCase
+import com.alex.dashboarddemo.domain.usecases.GSDADashboardUseCase
 import com.alex.dashboarddemo.mvi.BaseViewModel
 import com.alex.dashboarddemo.mvi.HomeContract
 import com.alex.dashboarddemo.mvi.HomeHelper

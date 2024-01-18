@@ -60,9 +60,6 @@ enum class SubItemViewType {
     @Json(name = "restaurantElement")
     RestaurantElement,
 
-    @Json(name = "sliderPromoCard")
-    SlidePromoCard,
-
     @Json(name = "imageCarousell")
     ImageCarousell,
 
@@ -70,8 +67,5 @@ enum class SubItemViewType {
     StaticBanner,
 
     @Json(name = "storeBanner")
-    StoreBanner,
-
-    @Json(name = "paymentCard")
-    PaymentCard
+    StoreBanner
 }

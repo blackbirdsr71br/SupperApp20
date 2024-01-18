@@ -21,22 +21,22 @@ import com.alex.dashboarddemo.presentation.dashboard.common.GSDAStoryPopup
 
 @Composable
 fun GSDASliderImageCard(
-    imageIds: List<GSDAItem>,
+    imageIds: List<GSDAItem>
 ) {
     Card(
         modifier = Modifier
             .height(200.dp)
             .padding(start = 16.dp, top = 8.dp, bottom = 8.dp, end = 16.dp)
-            .clip(shape = RoundedCornerShape(16.dp)),
+            .clip(shape = RoundedCornerShape(16.dp))
     ) {
-        Column() {
+        Column {
             AnimatedVisibility(
                 visible = true,
                 enter = expandVertically() + fadeIn(),
-                exit = shrinkVertically() + fadeOut(),
+                exit = shrinkVertically() + fadeOut()
             ) {
                 GSDAStoryPopup(
-                    imageIds = imageIds,
+                    imageIds = imageIds
                 )
             }
         }
@@ -45,7 +45,6 @@ fun GSDASliderImageCard(
 
 @Preview(showBackground = true)
 @Composable
-fun SliderImagePreview(){
-
+fun SliderImagePreview() {
     GSDASliderImageCard(DemoDataProvider.GSDAItemModelLists.take(6))
 }
