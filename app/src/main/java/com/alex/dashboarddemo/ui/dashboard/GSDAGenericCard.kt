@@ -23,7 +23,7 @@ import com.alex.dashboarddemo.utils.getDrawableFromString
 @Composable
 fun GSDAGenericCard(
     item: Dashboard.Item.SubItem? = null,
-    config : GSDAGenericCardModel,
+    config: GSDAGenericCardModel,
 ) {
     val mContext = LocalContext.current
     Card(
@@ -39,7 +39,8 @@ fun GSDAGenericCard(
         if (!config.text.isNullOrEmpty() && !config.textButton.isNullOrEmpty()) {
             GSDAContentCard(
                 item = item,
-                config = config)
+                config = config,
+            )
         } else {
             AsyncImage(
                 modifier = Modifier

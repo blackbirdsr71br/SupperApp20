@@ -14,7 +14,8 @@ import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
-import com.alex.dashboarddemo.R
+import com.alex.dashboarddemo.data.BannerStoreModel
+import com.alex.dashboarddemo.ui.dashboard.BannerStore
 
 @Composable
 fun BannerStoreCarousel(bannerStoreCarouselModel: BannerStoreCarouselModel) {
@@ -30,7 +31,7 @@ fun BannerStoreCarousel(bannerStoreCarouselModel: BannerStoreCarouselModel) {
                     BannerStoreModel(
                         image = item.image,
                         contentScale = ContentScale.Crop,
-                        placeholder = R.drawable.banner1,
+                        placeholder = "banner3",
                     ).apply {
                         BannerStore(bannerStoreModel = this)
                     }
@@ -55,41 +56,41 @@ fun CardSapp20CarouselPreview() {
 
         cardList.add(
             BannerStoreModel(
-                image = R.drawable.banner1,
+                image = "banner1",
                 contentScale = ContentScale.Crop,
-                placeholder = R.drawable.banner1,
+                placeholder = "banner1",
             ),
         )
 
         cardList.add(
             BannerStoreModel(
-                image = R.drawable.banner2,
+                image = "banner2",
                 contentScale = ContentScale.Crop,
-                placeholder = R.drawable.banner2,
+                placeholder = "banner2",
             ),
         )
 
         cardList.add(
             BannerStoreModel(
-                image = R.drawable.banner3,
+                image = "banner3",
                 contentScale = ContentScale.Crop,
-                placeholder = R.drawable.banner3,
+                placeholder = "banner3",
             ),
         )
 
         cardList.add(
             BannerStoreModel(
-                image = R.drawable.banner1,
+                image = "banner1",
                 contentScale = ContentScale.Crop,
-                placeholder = R.drawable.banner1,
+                placeholder = "banner1",
             ),
         )
 
         cardList.add(
             BannerStoreModel(
-                image = R.drawable.banner2,
+                image = "banner2",
                 contentScale = ContentScale.Crop,
-                placeholder = R.drawable.banner2,
+                placeholder = "banner2",
             ),
         )
 

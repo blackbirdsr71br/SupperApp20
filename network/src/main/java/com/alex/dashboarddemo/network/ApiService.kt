@@ -27,7 +27,8 @@ object NetworkClient {
             .client(okHttpClient)
 
     val service: ApiService by lazy {
-        retrofit.baseUrl("https://demo5027027.mockable.io/")
+        // retrofit.baseUrl("https://demo5027027.mockable.io/")
+        retrofit.baseUrl("https://demo1140040.mockable.io/")
             .build().create(ApiService::class.java)
     }
 }

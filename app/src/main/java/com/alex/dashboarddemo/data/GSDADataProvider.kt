@@ -1,7 +1,7 @@
 package com.alex.dashboarddemo.data
 
 import androidx.compose.ui.graphics.Color
-
+import androidx.compose.ui.layout.ContentScale
 
 object GSDADataProvider {
     val configData = GSDAGenericCardModel(
@@ -10,6 +10,20 @@ object GSDADataProvider {
         title = "Wallet Bitcoin",
         text = "Compra y vende con la red de pago Lightning",
         textButton = "Conocer más",
+    )
+
+    val confDataBannerStatic = BannerStaticModel(
+        image = "ic_bitcoin",
+        contentScale = ContentScale.Crop,
+        placeholder = "ic_bitcoin",
+
+    )
+
+    val conDataBannerStore = BannerStoreModel(
+        image = "banner2",
+        contentScale = ContentScale.Crop,
+        placeholder = "banner1",
+
     )
 
     val configData2 = GSDAGenericCardModel(

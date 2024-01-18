@@ -28,6 +28,7 @@ import com.alex.dashboarddemo.network.model.SubItemViewType
 import com.alex.dashboarddemo.ui.dashboard.gsdaProductSlider.GSDASliderProductCard
 import com.alex.dashboarddemo.ui.dashboard.gsdaPromoSlider.GSDASliderPromoCard
 import com.example.basedemomaterial3.ui.theme.SDASpace
+import com.example.gsdapaymentcarousel.bannerstatic.BannerStatic
 
 @Composable
 fun ShowHorizontalElements(item: Dashboard.Item) {
@@ -53,6 +54,16 @@ fun ShowHorizontalElements(item: Dashboard.Item) {
                 SubItemViewType.BannersElement -> GSDAGenericCard(
                     item = data,
                     config = GSDADataProvider.configData,
+                )
+
+                SubItemViewType.BannerStatic -> BannerStatic(
+                    item = data,
+                    bannerStaticModel = GSDADataProvider.confDataBannerStatic,
+                )
+
+                SubItemViewType.BannerStore -> BannerStore(
+                    item = data,
+                    bannerStoreModel = GSDADataProvider.conDataBannerStore,
                 )
 
                 else -> {
@@ -89,6 +100,11 @@ fun ShowVerticalElements(item: Dashboard.Item) {
             SubItemViewType.SlideProductCard -> GSDASliderProductCard(
                 imageIds = DemoDataProvider.ProductList.take(6),
                 gsdaInfoCardModel = DemoDataProvider.gsdaProductInfoCardList,
+            )
+
+            SubItemViewType.BannerStatic -> BannerStatic(
+                item = data,
+                bannerStaticModel = GSDADataProvider.confDataBannerStatic,
             )
 
             else -> {
