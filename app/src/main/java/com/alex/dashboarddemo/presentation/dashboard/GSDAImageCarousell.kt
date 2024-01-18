@@ -53,7 +53,7 @@ fun GSDAImageCarousell() {
                 modifier =
                 Modifier
                     .fillMaxWidth()
-                    .padding(10.dp, 10.dp, 10.dp, 10.dp),
+                    .padding(0.dp, 10.dp, 0.dp, 10.dp),
                 shape = RoundedCornerShape(10.dp)
             ) {
                 val newKids = kidsList[page % kidsList.size]

@@ -42,7 +42,7 @@ fun ShowHorizontalElements(item: GSDADashboard.Item) {
     }
     LazyRow(
         modifier = Modifier.fillMaxWidth(),
-        contentPadding = PaddingValues(horizontal =  SDASpace.GSVCSmall),
+        //contentPadding = PaddingValues(horizontal =  SDASpace.GSVCSmall),
     ) {
         itemsIndexed(item.data) { index, data ->
             when (data.viewType) {
