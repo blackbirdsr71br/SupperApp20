@@ -89,7 +89,7 @@ fun ShowVerticalElements(item: GSDADashboard.Item) {
             )
 
             SubItemViewType.ImageCarousell -> GSDAImageCarousell()
-            SubItemViewType.StaticBanner -> GSDAStaticBanner()
+            SubItemViewType.StaticBanner -> GSDAStaticBanner(item = data)
 
             else -> {
                 // do nothing

@@ -37,9 +37,9 @@ fun GSDAStaticBanner(
                 .fillMaxSize(),
             model = ImageRequest
                 .Builder(mContext)
-                .data(getDrawableFromString(mContext, item?.imageUrl ?: "ic_placeholder"))
+                .data(getDrawableFromString(mContext, item?.imageUrl ?: "staticbanner1"))
                 .error(R.drawable.ic_placeholder)
-                .placeholder(R.drawable.ic_placeholder)
+                .placeholder(R.drawable.staticbanner1)
                 .build(),
             contentDescription = "Image",
             contentScale = ContentScale.Crop
