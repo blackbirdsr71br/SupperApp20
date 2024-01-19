@@ -1,8 +1,10 @@
 package com.alex.dashboarddemo.di
 
 import com.alex.dashboarddemo.data.remote.GSDAApiService
+import com.alex.dashboarddemo.data.repository.GSDAFirebaseRepository
 import com.alex.dashboarddemo.data.repository.GSDARemoteDataSourceImpl
 import com.alex.dashboarddemo.domain.repository.GSDARemoteDataSource
+import com.alex.dashboarddemo.utils.GSDAFirebaseController
 import com.alex.dashboarddemo.utils.GSDAConstants.BASE_URL
 import dagger.Module
 import dagger.Provides
@@ -53,5 +55,19 @@ object GSDANetworkModula {
         return GSDARemoteDataSourceImpl(
             dashboardApi = dashboardApi,
         )
+    }
+
+    @Provides
+    @Singleton
+    fun provideFirebaseController(): GSDAFirebaseController {
+        return GSDAFirebaseController()
+    }
+
+    @Provides
+    @Singleton
+    fun provideFirebaseRepository(
+        firebaseController: GSDAFirebaseController,
+    ): GSDAFirebaseRepository {
+        return GSDAFirebaseRepository(firebaseController)
     }
 }

@@ -2,6 +2,7 @@ package com.alex.dashboarddemo.presentation.screens.main
 
 import androidx.lifecycle.viewModelScope
 import com.alex.dashboarddemo.data.remote.Result
+import com.alex.dashboarddemo.domain.use_Case.GSDAConfigUseCase
 import com.alex.dashboarddemo.domain.use_Case.GSDADashboardUseCase
 import com.alex.dashboarddemo.mvi.BaseViewModel
 import com.alex.dashboarddemo.mvi.HomeContract
@@ -15,7 +16,8 @@ import kotlinx.coroutines.launch
 
 @HiltViewModel
 class GSDADashboardViewModel @Inject constructor(
-    private val dashUseCase: GSDADashboardUseCase
+    private val dashUseCase: GSDADashboardUseCase,
+    private val configUseCase: GSDAConfigUseCase
 ) : BaseViewModel<HomeContract.Event, HomeContract.DashBoardState, HomeContract.Effect>() {
 
     private val _dashboardModelItems: MutableStateFlow<GSDADashboardState> = MutableStateFlow(GSDADashboardState())
@@ -65,6 +67,18 @@ class GSDADashboardViewModel @Inject constructor(
         }
     }
 
+    private fun getConfig() {
+        viewModelScope.launch(Dispatchers.IO) {
+            configUseCase.invoke("BottomBar").collect {
+                when (it) {
+                    is Result.Failure -> {}
+                    Result.Loading -> {}
+                    is Result.Success -> {}
+                }
+            }
+        }
+    }
+
     private fun navigation(route: String) {
         viewModelScope.launch(Dispatchers.IO) {
             setState {
@@ -95,6 +109,7 @@ class GSDADashboardViewModel @Inject constructor(
         when (event) {
             is HomeContract.Event.OnInit -> {
                 loadData()
+                getConfig()
             }
 
             is HomeContract.Event.OnUpdate -> {}

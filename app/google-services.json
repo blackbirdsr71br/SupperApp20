@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "856499857338",
+    "project_id": "dashboarddemo-47c8c",
+    "storage_bucket": "dashboarddemo-47c8c.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:856499857338:android:ff2e08659678ed41e15f83",
+        "android_client_info": {
+          "package_name": "com.alex.dashboarddemo"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD4DkBElCC60b2XxiWVoSJbXw28ldSRi_c"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
