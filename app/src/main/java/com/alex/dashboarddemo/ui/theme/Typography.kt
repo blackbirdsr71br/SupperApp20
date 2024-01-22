@@ -10,9 +10,8 @@ import com.alex.dashboarddemo.R
 
 private val regular = Font(R.font.nunito_regular)
 private val medium = Font(R.font.nunito_semibold, FontWeight.W600)
-private val semibold = Font(R.font.nunito_bold, FontWeight.W700)
-
-private val fontFamily = FontFamily(fonts = listOf(regular, medium, semibold))
+private val semiBold = Font(R.font.nunito_bold, FontWeight.W700)
+private val fontFamily = FontFamily(fonts = listOf(regular, medium, semiBold))
 
 val themeTypography = Typography(
     h4 = TextStyle(

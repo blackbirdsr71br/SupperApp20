@@ -1,71 +1,33 @@
 package com.alex.dashboarddemo.domain.model
 
-import com.squareup.moshi.Json
-
 data class GSDADashboard(
-    val data: List<Item>
+    val data: List<GSDAItem>,
 ) {
-    data class Item(
-        val viewType: ItemViewType,
-        val header: Header?,
-        val data: List<SubItem>
+    data class GSDAItem(
+        val viewType: GSDAItemViewType,
+        val header: GSDAHeader?,
+        val data: List<GSDASubItem>,
     ) {
-        data class Header(
+        data class GSDAHeader(
             val title: String?,
             val hasMore: Boolean,
-            val subtitle: String
+            val subtitle: String,
         )
 
-        data class SubItem(
-            val viewType: SubItemViewType,
+        data class GSDASubItem(
+            val viewType: GSDASubItemViewType,
             val imageUrl: String,
             val title: String?,
             val subTitle: String?,
-            val action: DashboardAction,
-            val meta: Meta?
+            val action: GSDADashboardAction,
+            val meta: GSDAMeta?,
         ) {
-            data class Meta(
+            data class GSDAMeta(
                 val bgColor: String?,
                 val rating: String?,
                 val reviewCount: String?,
-                val hasFreeDelivery: Boolean
+                val hasFreeDelivery: Boolean,
             )
         }
     }
-}
-
-data class DashboardAction(
-    val type: String,
-    val value: String
-)
-
-enum class ItemViewType {
-    @Json(name = "horizontalScroll")
-    HorizontalScroll,
-
-    @Json(name = "verticalScroll")
-    VerticalScroll,
-
-    @Json(name = "verticalGrid")
-    VerticalGrid
-}
-
-enum class SubItemViewType {
-    @Json(name = "categoriesElement")
-    CategoriesElement,
-
-    @Json(name = "bannersElement")
-    BannersElement,
-
-    @Json(name = "restaurantElement")
-    RestaurantElement,
-
-    @Json(name = "imageCarousell")
-    ImageCarousell,
-
-    @Json(name = "staticBanner")
-    StaticBanner,
-
-    @Json(name = "storeBanner")
-    StoreBanner
 }

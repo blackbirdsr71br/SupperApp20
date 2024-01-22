@@ -10,16 +10,16 @@ private val lightThemeColors = lightColors(
     primaryVariant = Color(0xFFF87D27),
     secondary = Color(0xFFFF2D55),
     secondaryVariant = Color(0xFFFF0038),
-    error = Color(0xFFD00036)
+    error = Color(0xFFD00036),
 )
 
 @Composable
 fun JetDeliveryTheme(
-    content: @Composable () -> Unit
+    content: @Composable () -> Unit,
 ) {
     MaterialTheme(
         colors = lightThemeColors,
         typography = themeTypography,
-        content = content
+        content = content,
     )
 }

@@ -1,1 +1,0 @@
-package com.alex.dashboarddemo.presentation.dashboardimport androidx.compose.ui.Modifierdata class GSSMAAccountsModel(    val modifier: Modifier = Modifier,    val txt_titleText: String = "Tienes Disponible",    val txt_balanceAmount: String = "1,000.00",    val doubleDin: Boolean = false,)
