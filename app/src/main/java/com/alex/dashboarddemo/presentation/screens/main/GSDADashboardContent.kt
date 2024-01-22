@@ -12,9 +12,9 @@ import androidx.compose.ui.input.nestedscroll.nestedScroll
 import androidx.compose.ui.platform.rememberNestedScrollInteropConnection
 import androidx.compose.ui.unit.dp
 import com.alex.dashboarddemo.domain.model.GSDADashboard
-import com.alex.dashboarddemo.domain.model.ItemViewType
-import com.alex.dashboarddemo.presentation.dashboard.ShowHorizontalElements
-import com.alex.dashboarddemo.presentation.dashboard.ShowVerticalElements
+import com.alex.dashboarddemo.domain.model.GSDAItemViewType
+import com.alex.dashboarddemo.presentation.common.components.builder.GSDAShowHorizontalElements
+import com.alex.dashboarddemo.presentation.common.components.builder.GSDAShowVerticalElements
 
 @Composable
 fun GSDADashboardScreen(
@@ -34,11 +34,11 @@ fun GSDADashboardScreen(
     ) {
         itemsIndexed(items = dashboard.data) { index, item ->
             when (item.viewType) {
-                ItemViewType.HorizontalScroll -> ShowHorizontalElements(
+                GSDAItemViewType.HorizontalScroll -> GSDAShowHorizontalElements(
                     item = item,
                 )
 
-                ItemViewType.VerticalScroll -> ShowVerticalElements(
+                GSDAItemViewType.VerticalScroll -> GSDAShowVerticalElements(
                     item = item,
                 )
 

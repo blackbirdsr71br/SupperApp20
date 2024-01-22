@@ -11,14 +11,13 @@ import androidx.compose.ui.unit.dp
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
-import com.alex.dashboarddemo.presentation.components.ModalBottomSheetD
-import com.alex.dashboarddemo.presentation.components.ShowError
-import com.alex.dashboarddemo.presentation.components.ShowLoading
-import com.alex.dashboarddemo.presentation.dashboard.GSSMAProductGenericScreen
-import com.alex.dashboarddemo.presentation.dashboard.categories
-import com.alex.dashboarddemo.presentation.dashboard.collapsingtoolbarincompose.ui.composables.standAloneStore.GSSMAStandAloneStoreScreen
-import com.alex.dashboarddemo.presentation.dashboard.products
-import com.alex.dashboarddemo.presentation.dashboard.standAloneStore
+import com.alex.dashboarddemo.presentation.common.components.GSDAShowError
+import com.alex.dashboarddemo.presentation.common.components.GSDAShowLoading
+import com.alex.dashboarddemo.presentation.screens.GSDAProductGenericScreen
+import com.alex.dashboarddemo.data.mockdata.categories
+import com.alex.dashboarddemo.presentation.screens.GSDAStandAloneStoreScreen
+import com.alex.dashboarddemo.data.mockdata.products
+import com.alex.dashboarddemo.data.mockdata.standAloneStore
 import com.alex.dashboarddemo.presentation.screens.main.GSDADashboardScreen
 import com.alex.dashboarddemo.presentation.screens.main.GSDADashboardViewModel
 
@@ -31,37 +30,15 @@ fun NavigateScreens(
 
     NavHost(
         navController = navController,
-        startDestination = Screen.Start.route,
+        startDestination = Screen.Explore.route,
         modifier = Modifier.padding(0.dp),
     ) {
         composable(Screen.LoginScreen.route) {}
 
-        composable(Screen.Start.route) {
-            when {
-                data.isLoading -> {
-                    ShowLoading()
-                }
-
-                data.items != null -> {
-                    GSDADashboardScreen(dashboard = data.items)
-                }
-
-                !data.errorMessage.isNullOrEmpty() -> {
-                    ShowError(
-                        message = data.errorMessage,
-                        onRetry = {
-                            // viewModel.loadData(showRandom)
-                        },
-                    )
-                }
-            }
-        }
         composable(Screen.Explore.route) {
-            val dataUI = viewModel.uiState
-
             when {
                 data.isLoading -> {
-                    ShowLoading()
+                    GSDAShowLoading()
                 }
 
                 data.items != null -> {
@@ -69,7 +46,7 @@ fun NavigateScreens(
                 }
 
                 !data.errorMessage.isNullOrEmpty() -> {
-                    ShowError(
+                    GSDAShowError(
                         message = data.errorMessage,
                         onRetry = {
                             // viewModel.loadData(showRandom)
@@ -79,7 +56,7 @@ fun NavigateScreens(
             }
         }
         composable(Screen.Directory.route) {
-            GSSMAProductGenericScreen(
+            GSDAProductGenericScreen(
                 productList = products,
                 txtTitle = "Ofertas",
                 txtSubTitle = "",
@@ -91,7 +68,7 @@ fun NavigateScreens(
         }
         composable(Screen.Credit.route) {
             val context = LocalContext.current
-            GSSMAStandAloneStoreScreen(
+            GSDAStandAloneStoreScreen(
                 standAloneGrid = standAloneStore,
                 standAloneCategories = categories,
                 onBackButtonClicked = {
@@ -106,10 +83,7 @@ fun NavigateScreens(
                 modifier = Modifier.fillMaxSize(),
             )
         }
-        composable(Screen.Benefits.route) {
-            ModalBottomSheetD()
-        }
-        composable(Screen.Profile.route) {
-        }
+        composable(Screen.Benefits.route) {}
+        composable(Screen.Profile.route) {}
     }
 }

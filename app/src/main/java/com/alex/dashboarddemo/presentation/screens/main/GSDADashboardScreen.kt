@@ -16,12 +16,12 @@ import androidx.compose.ui.graphics.Color
 import androidx.navigation.compose.currentBackStackEntryAsState
 import androidx.navigation.compose.rememberNavController
 import com.alex.dashboarddemo.R
-import com.alex.dashboarddemo.mvi.HomeContract
+import com.alex.dashboarddemo.mvi.GSDAHomeContract
 import com.alex.dashboarddemo.navigation.NavigateScreens
 import com.alex.dashboarddemo.navigation.Screen
-import com.alex.dashboarddemo.presentation.components.AppBottomNavigation
-import com.alex.dashboarddemo.presentation.dashboard.header.GSDAHeaderModel
-import com.alex.dashboarddemo.presentation.dashboard.header.GSSAHeader
+import com.alex.dashboarddemo.presentation.common.widgets.GSDAAppBottomNavigation
+import com.alex.dashboarddemo.presentation.common.model.GSDAHeaderModel
+import com.alex.dashboarddemo.presentation.common.widgets.GSSAHeader
 import com.alex.dashboarddemo.ui.theme.JetDeliveryTheme
 import kotlinx.coroutines.flow.collectLatest
 
@@ -36,11 +36,11 @@ fun GSDADashboardScreen(viewModel: GSDADashboardViewModel) {
     LaunchedEffect(scope) {
         state.collectLatest {
             when (it.getInfo) {
-                HomeContract.DashBoardApiState.Idle -> {
+                GSDAHomeContract.DashBoardApiState.Idle -> {
                     println("Cargando")
                 }
 
-                is HomeContract.DashBoardApiState.OnNavigate -> {
+                is GSDAHomeContract.DashBoardApiState.OnNavigate -> {
                     println("Navegando a la ruta de  ${it.getInfo.route}")
                 }
             }
@@ -48,7 +48,7 @@ fun GSDADashboardScreen(viewModel: GSDADashboardViewModel) {
     }
 
     LaunchedEffect(scope) {
-        viewModel.setEvent(HomeContract.Event.OnInit(showRandom))
+        viewModel.setEvent(GSDAHomeContract.Event.OnInit(showRandom))
     }
 
     val showBottomBar = rememberSaveable { mutableStateOf(true) }
@@ -82,7 +82,7 @@ fun GSDADashboardScreen(viewModel: GSDADashboardViewModel) {
                     enter = slideInVertically(initialOffsetY = { it }),
                     exit = slideOutVertically(targetOffsetY = { it }),
                 ) {
-                    AppBottomNavigation(
+                    GSDAAppBottomNavigation(
                         navController = navController,
                         currentDestination = currentDestination,
                     )
