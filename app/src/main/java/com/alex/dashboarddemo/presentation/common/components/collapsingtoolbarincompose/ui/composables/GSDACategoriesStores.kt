@@ -38,7 +38,7 @@ fun GSDACategoriesList(item: List<GSDACategoriesStoreModel>) {
         modifier = Modifier.fillMaxWidth(),
         contentPadding = PaddingValues(horizontal = 8.dp),
     ) {
-        itemsIndexed(item) { index, data ->
+        itemsIndexed(item) { _, data ->
             Box(
                 modifier = Modifier.clip(RoundedCornerShape(5.dp)),
             ) {

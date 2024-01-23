@@ -6,4 +6,5 @@ import kotlinx.coroutines.flow.Flow
 
 interface GSDARemoteDataSource {
     fun getDashboardData(): Flow<GSDAResult<GSDADashboard>>
+    fun getRemoteConfig(key: String): Flow<GSDAResult<GSDADashboard>>
 }

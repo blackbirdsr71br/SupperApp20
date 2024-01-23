@@ -1,6 +1,6 @@
 @file:Suppress("ktlint:standard:no-wildcard-imports")
 
-package com.alex.dashboarddemo.presentation.screens.main
+package com.alex.dashboarddemo.presentation.screens.main.widget
 
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.lazy.LazyColumn

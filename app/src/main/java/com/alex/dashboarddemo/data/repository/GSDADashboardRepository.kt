@@ -13,4 +13,8 @@ class GSDADashboardRepository @Inject constructor(
     fun getDashboardData(): Flow<GSDAResult<GSDADashboard>> {
         return remote.getDashboardData()
     }
+
+    fun getConfig(key: String): Flow<GSDAResult<GSDADashboard>> {
+        return remote.getRemoteConfig(key)
+    }
 }

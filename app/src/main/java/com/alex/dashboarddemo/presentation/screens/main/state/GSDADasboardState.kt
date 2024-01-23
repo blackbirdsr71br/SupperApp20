@@ -1,4 +1,4 @@
-package com.alex.dashboarddemo.presentation.screens.main
+package com.alex.dashboarddemo.presentation.screens.main.state
 
 import com.alex.dashboarddemo.domain.model.GSDADashboard
 

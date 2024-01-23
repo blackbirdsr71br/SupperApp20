@@ -1,4 +1,4 @@
-package com.alex.dashboarddemo.domain.use_Case
+package com.alex.dashboarddemo.domain.use_cases.remote_config
 
 import com.alex.dashboarddemo.data.remote.GSDAResult
 import com.alex.dashboarddemo.data.repository.GSDADashboardRepository

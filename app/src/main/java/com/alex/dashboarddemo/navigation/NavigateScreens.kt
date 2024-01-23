@@ -18,7 +18,7 @@ import com.alex.dashboarddemo.data.mockdata.categories
 import com.alex.dashboarddemo.presentation.screens.GSDAStandAloneStoreScreen
 import com.alex.dashboarddemo.data.mockdata.products
 import com.alex.dashboarddemo.data.mockdata.standAloneStore
-import com.alex.dashboarddemo.presentation.screens.main.GSDADashboardScreen
+import com.alex.dashboarddemo.presentation.screens.main.widget.GSDADashboardScreen
 import com.alex.dashboarddemo.presentation.screens.main.GSDADashboardViewModel
 
 @Composable
