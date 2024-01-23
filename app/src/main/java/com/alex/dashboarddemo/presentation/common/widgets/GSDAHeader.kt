@@ -82,7 +82,9 @@ fun GSSAHeader(
         Box(
             modifier = Modifier
                 .fillMaxWidth()
-                .background(Color.White),
+                .background(Color.White)
+                .height(35.dp),
+            contentAlignment = Alignment.CenterStart
         ) {
             Text(
                 text = "Juan, ¿qué estás buscando?",

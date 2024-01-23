@@ -113,7 +113,7 @@ fun GSDAContentGridCard(
 
 @Composable
 @Preview
-fun GSDAContentGridCard() {
+fun GSDAContentGridCard1() {
     Card(
         modifier = Modifier
             .width(250.dp)

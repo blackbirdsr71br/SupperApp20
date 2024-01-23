@@ -25,7 +25,7 @@ fun GSDAStoreBanner(
     Card(
         modifier = Modifier
             .size(320.dp, 176.dp),
-        shape = RoundedCornerShape(16.dp),
+        shape = RoundedCornerShape(10.dp),
         backgroundColor = Color.Blue,
     ) {
         AsyncImage(

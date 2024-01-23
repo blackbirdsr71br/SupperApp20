@@ -26,7 +26,7 @@ fun GSDAStaticBanner(
     val mContext = LocalContext.current
     Card(
         modifier = Modifier
-            .padding(start = 8.dp)
+            .padding(start = 0.dp)
             .height(100.dp)
             .fillMaxWidth(),
         shape = RoundedCornerShape(10.dp),
