@@ -9,7 +9,7 @@ import androidx.compose.ui.unit.Dp
 import com.alex.dashboarddemo.ui.theme.SDAColor
 import com.alex.dashboarddemo.ui.theme.SDATypography
 
-data class GSVCCouponCardModel(
+data class GSDACouponCardModel(
     val badgesStatusText: String = "",
     val badgesTextStyle: TextStyle = SDATypography.GSVCSubtitleBold.merge(TextStyle(color = SDAColor.GSVCPrimary)),
     val badgesBackgroundColor: Color = SDAColor.GSVCInformation200,

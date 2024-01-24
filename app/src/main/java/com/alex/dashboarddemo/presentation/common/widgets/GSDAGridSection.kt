@@ -29,7 +29,7 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.Density
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-import com.alex.dashboarddemo.data.mockdata.gridDirectory
+import com.alex.dashboarddemo.data.cache.preview.GSDAPreviewDataProvider.gridDirectory
 import com.alex.dashboarddemo.presentation.common.components.GSDACCAccounts
 import com.alex.dashboarddemo.presentation.common.components.GSDADirectoryCard
 import com.alex.dashboarddemo.presentation.common.model.GSDACAccountModel

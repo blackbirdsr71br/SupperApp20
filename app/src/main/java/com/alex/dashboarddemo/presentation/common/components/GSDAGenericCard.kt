@@ -15,7 +15,7 @@ import androidx.compose.ui.unit.dp
 import coil.compose.AsyncImage
 import coil.request.ImageRequest
 import com.alex.dashboarddemo.R
-import com.alex.dashboarddemo.data.mockdata.GSDADataProvider.configData
+import com.alex.dashboarddemo.data.cache.preview.GSDAPreviewDataProvider.configData
 import com.alex.dashboarddemo.domain.model.GSDADashboard
 import com.alex.dashboarddemo.domain.model.GSDAGenericCard
 import com.alex.dashboarddemo.utils.getDrawableFromString

@@ -114,7 +114,7 @@ fun GSDAHeaderPreview() {
         points = "200",
         rewardsIndicator = true,
         notificationsIndicator = true,
-        urlProfile = R.drawable.personperfil,
+        urlProfile = R.drawable.baz_logo,
         urlNotification = R.drawable.baseline_notifications_24,
         urlRewards = R.drawable.ic_gema,
     )

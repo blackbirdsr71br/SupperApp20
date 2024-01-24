@@ -11,15 +11,15 @@ import androidx.compose.ui.unit.dp
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
+import com.alex.dashboarddemo.data.cache.preview.GSDAPreviewDataProvider.categories
+import com.alex.dashboarddemo.data.cache.preview.GSDAPreviewDataProvider.products
+import com.alex.dashboarddemo.data.cache.preview.GSDAPreviewDataProvider.standAloneStore
 import com.alex.dashboarddemo.presentation.common.components.GSDAShowError
 import com.alex.dashboarddemo.presentation.common.components.GSDAShowLoading
 import com.alex.dashboarddemo.presentation.screens.GSDAProductGenericScreen
-import com.alex.dashboarddemo.data.mockdata.categories
 import com.alex.dashboarddemo.presentation.screens.GSDAStandAloneStoreScreen
-import com.alex.dashboarddemo.data.mockdata.products
-import com.alex.dashboarddemo.data.mockdata.standAloneStore
-import com.alex.dashboarddemo.presentation.screens.main.widget.GSDADashboardScreen
 import com.alex.dashboarddemo.presentation.screens.main.GSDADashboardViewModel
+import com.alex.dashboarddemo.presentation.screens.main.widget.GSDADashboardScreen
 
 @Composable
 fun NavigateScreens(

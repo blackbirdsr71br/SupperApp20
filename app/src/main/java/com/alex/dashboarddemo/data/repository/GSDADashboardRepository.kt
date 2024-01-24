@@ -10,10 +10,6 @@ class GSDADashboardRepository @Inject constructor(
     private val remote: GSDARemoteDataSource,
 ) {
 
-    fun getDashboardData(): Flow<GSDAResult<GSDADashboard>> {
-        return remote.getDashboardData()
-    }
-
     fun getConfig(key: String): Flow<GSDAResult<GSDADashboard>> {
         return remote.getRemoteConfig(key)
     }

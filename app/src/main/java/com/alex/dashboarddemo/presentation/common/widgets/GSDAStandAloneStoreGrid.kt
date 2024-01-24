@@ -27,10 +27,10 @@ import androidx.compose.ui.platform.rememberNestedScrollInteropConnection
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import com.alex.dashboarddemo.data.cache.preview.GSDAPreviewDataProvider.standAloneStore
 import com.alex.dashboarddemo.presentation.common.model.GSDABadgesPosition
-import com.alex.dashboarddemo.presentation.common.model.GSVCCouponCardModel
+import com.alex.dashboarddemo.presentation.common.model.GSDACouponCardModel
 import com.alex.dashboarddemo.presentation.common.components.GSDAProductCard
-import com.alex.dashboarddemo.data.mockdata.standAloneStore
 import com.alex.dashboarddemo.presentation.common.model.GSDAProductCardType
 import com.alex.dashboarddemo.presentation.common.model.GSDAStandAloneGridModel
 import com.alex.dashboarddemo.ui.theme.SDAColor
@@ -67,7 +67,7 @@ fun GSDAStandAloneGridView(gssmaStandAloneStoreGridModel: List<GSDAStandAloneGri
                     ) {
                         aList.productCards.forEachIndexed { _, data ->
                             item {
-                                val gsvcCouponCardModel = GSVCCouponCardModel(
+                                val gsvcCouponCardModel = GSDACouponCardModel(
                                     badgesStatusText = "Oferta",
                                     badgesBackgroundColor = Color(0xFF770202),
                                     backgroundContent = Color.LightGray,

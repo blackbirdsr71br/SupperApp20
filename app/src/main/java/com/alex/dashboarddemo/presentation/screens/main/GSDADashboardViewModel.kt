@@ -7,6 +7,7 @@ import com.alex.dashboarddemo.mvi.GSDABaseViewModel
 import com.alex.dashboarddemo.mvi.GSDAHomeContract
 import com.alex.dashboarddemo.mvi.GSDAHomeHelper
 import com.alex.dashboarddemo.presentation.screens.main.state.GSDADashboardState
+import com.alex.dashboarddemo.utils.GSDAConstants.KEY_EXPLORE
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.flow.MutableStateFlow
@@ -22,9 +23,6 @@ class GSDADashboardViewModel @Inject constructor(
     private val _dashboardItems: MutableStateFlow<GSDADashboardState> =
         MutableStateFlow(GSDADashboardState())
     val dashboardItems: StateFlow<GSDADashboardState> = _dashboardItems
-
-    private val _remoteItems: MutableStateFlow<GSDADashboardState> =
-        MutableStateFlow(GSDADashboardState())
 
     init {
         viewModelScope.launch(Dispatchers.IO) {
@@ -44,10 +42,10 @@ class GSDADashboardViewModel @Inject constructor(
         }
     }
 
-    private fun loadData() {
+    private fun getConfig() {
         viewModelScope.launch(Dispatchers.IO) {
-            useCase.getDashConfigUseCase().collect { dash ->
-                when (dash) {
+            useCase.getRemoteConfigUseCase.invoke(KEY_EXPLORE).collect {
+                when (it) {
                     is GSDAResult.Loading -> {
                         _dashboardItems.value = GSDADashboardState(isLoading = true)
                     }
@@ -55,36 +53,12 @@ class GSDADashboardViewModel @Inject constructor(
                     is GSDAResult.Success -> {
                         _dashboardItems.value = GSDADashboardState(
                             isLoading = false,
-                            items = dash.data,
-                        )
-                    }
-
-                    is GSDAResult.Failure -> {
-                        _dashboardItems.value = GSDADashboardState(
-                            isLoading = false,
-                            errorMessage = dash.error.message,
-                        )
-                    }
-                }
-            }
-        }
-    }
-
-    private fun getConfig() {
-        viewModelScope.launch(Dispatchers.IO) {
-            useCase.getRemoteConfigUseCase.invoke("SA_Explore").collect {
-                when (it) {
-                    is GSDAResult.Loading -> {}
-
-                    is GSDAResult.Success -> {
-                        _remoteItems.value = GSDADashboardState(
-                            isLoading = false,
                             items = it.data,
                         )
                     }
 
                     is GSDAResult.Failure -> {
-                        _remoteItems.value = GSDADashboardState(
+                        _dashboardItems.value = GSDADashboardState(
                             isLoading = false,
                             errorMessage = it.error.message,
                         )
@@ -123,7 +97,6 @@ class GSDADashboardViewModel @Inject constructor(
     override fun handleEvent(event: GSDAHomeContract.Event) {
         when (event) {
             is GSDAHomeContract.Event.OnInit -> {
-                loadData()
                 getConfig()
             }
 

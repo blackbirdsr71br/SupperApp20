@@ -30,12 +30,12 @@ import androidx.compose.ui.platform.rememberNestedScrollInteropConnection
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import com.alex.dashboarddemo.data.cache.preview.GSDAPreviewDataProvider.products
 import com.alex.dashboarddemo.presentation.common.components.GSDAProductCard
 import com.alex.dashboarddemo.presentation.common.model.GSDABadgesPosition
-import com.alex.dashboarddemo.presentation.common.model.GSVCCouponCardModel
+import com.alex.dashboarddemo.presentation.common.model.GSDACouponCardModel
 import com.alex.dashboarddemo.presentation.common.model.GSDAGenericProductCardBuilder
 import com.alex.dashboarddemo.presentation.common.widgets.GSDACouponCard
-import com.alex.dashboarddemo.data.mockdata.products
 import com.alex.dashboarddemo.presentation.common.model.GSDAProductCardType
 import com.alex.dashboarddemo.ui.theme.GSVCPrimary100
 import com.alex.dashboarddemo.ui.theme.JetDeliveryTheme
@@ -150,7 +150,7 @@ fun GSDAProductListGeneric(
         ) {
             products.forEachIndexed { _, data ->
                 item {
-                    val gsvcCouponCardModel = GSVCCouponCardModel(
+                    val gsvcCouponCardModel = GSDACouponCardModel(
                         badgesStatusText = "Oferta",
                         badgesBackgroundColor = Color(0xFF770202),
                         backgroundContent = Color.LightGray,

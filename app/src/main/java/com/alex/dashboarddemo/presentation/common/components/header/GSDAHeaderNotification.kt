@@ -66,7 +66,7 @@ fun GSDAIconsPreview() {
         points = "200",
         rewardsIndicator = true,
         notificationsIndicator = true,
-        urlProfile = R.drawable.personperfil,
+        urlProfile = R.drawable.baz_logo,
         urlNotification = R.drawable.baseline_notifications_24,
         urlRewards = R.drawable.ic_gema,
     )
@@ -81,7 +81,7 @@ fun GSDAIconsFalsePreview() {
         points = "200",
         rewardsIndicator = true,
         notificationsIndicator = false,
-        urlProfile = R.drawable.personperfil,
+        urlProfile = R.drawable.baz_logo,
         urlNotification = R.drawable.baseline_notifications_24,
         urlRewards = R.drawable.ic_gema,
     )

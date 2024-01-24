@@ -65,7 +65,7 @@ fun GSDAProfileRewardsPreview() {
         points = "200",
         rewardsIndicator = true,
         notificationsIndicator = true,
-        urlProfile = R.drawable.personperfil,
+        urlProfile = R.drawable.baz_logo,
         urlRewards = R.drawable.ic_gema,
     )
     GSDAHeaderProfile(headerModelPreview)
@@ -79,7 +79,7 @@ fun GSDAProfileRewardsFalsePreview() {
         points = "200",
         rewardsIndicator = false,
         notificationsIndicator = true,
-        urlProfile = R.drawable.personperfil,
+        urlProfile = R.drawable.baz_logo,
         urlRewards = R.drawable.ic_gema,
     )
     GSDAHeaderProfile(headerModelPreview)

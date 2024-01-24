@@ -97,7 +97,7 @@ dependencies {
     // CleverTap
     implementation 'com.clevertap.android:clevertap-android-sdk:5.2.2'
     // checkout the latest sdk version at https://github.com/CleverTap/clevertap-android-sdk/blob/master/README.md#-installation
-    implementation 'com.google.firebase:firebase-messaging:23.4.0'
+    implementation "com.google.firebase:firebase-messaging:${versions.firebase}"
 
     //okHttp
     implementation "com.squareup.okhttp3:okhttp:${versions.okhttp}"
@@ -107,27 +107,33 @@ dependencies {
     implementation "com.squareup.retrofit2:retrofit:${versions.retrofit}"
     implementation "com.squareup.retrofit2:converter-moshi:${versions.retrofit}"
 
-    implementation "io.ktor:ktor-client-core:${versions.ktor}"
+    implementation "io.ktor:ktor-client-core:${versions.ktor.core}"
 
     // HTTP engine: The HTTP client used to perform network requests.
-    implementation "io.ktor:ktor-client-android:${versions.ktor}"
+    implementation "io.ktor:ktor-client-android:${versions.ktor.core}"
     implementation "io.ktor:ktor-client-content-negotiation:2.3.6"
 
     // The serialization engine used to convert objects to and from JSON.
-    implementation "io.ktor:ktor-client-serialization:${versions.ktor}"
+    implementation "io.ktor:ktor-client-serialization:${versions.ktor.core}"
 
     // Logging
-    implementation "io.ktor:ktor-client-logging:${versions.ktor}"
-    implementation "io.ktor:ktor-client-json:${versions.ktor}"
-    implementation "io.ktor:ktor-client-okhttp:2.3.5"
+    implementation "io.ktor:ktor-client-logging:${versions.ktor.core}"
+    implementation "io.ktor:ktor-client-json:${versions.ktor.core}"
+    implementation "io.ktor:ktor-client-okhttp:${versions.ktor.okhttp}"
 
     // Dagger - Hilt
-    implementation("com.google.dagger:hilt-android:2.47")
-    kapt "com.google.dagger:hilt-android-compiler:2.47"
-    kapt "androidx.hilt:hilt-compiler:1.2.0-alpha01"
-    implementation("androidx.hilt:hilt-navigation-compose:1.2.0-alpha01")
+    implementation("com.google.dagger:hilt-android:${versions.hilt.core}")
+    kapt "com.google.dagger:hilt-android-compiler:${versions.hilt.core}"
+    kapt "androidx.hilt:hilt-compiler:${versions.hilt.compiler}"
+    implementation("androidx.hilt:hilt-navigation-compose:${versions.hilt.compose}")
 
-    implementation("com.google.code.gson:gson:2.10.1")
+    implementation("com.google.code.gson:gson:${versions.gson}")
+
+    // Room
+    implementation "androidx.room:room-runtime:${versions.room}"
+    annotationProcessor "androidx.room:room-compiler:${versions.room}"
+    implementation "androidx.room:room-ktx:${versions.room}"
+
 }
 
 // Allow references to generated code

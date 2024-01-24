@@ -15,12 +15,12 @@ import com.alex.dashboarddemo.presentation.common.components.GSDAInformativeBadg
 import com.alex.dashboarddemo.presentation.common.components.GSDAProductCardPreviewDS
 import com.alex.dashboarddemo.presentation.common.model.GSDABadgesPosition
 import com.alex.dashboarddemo.presentation.common.model.GSDAInformativeBadgeModel
-import com.alex.dashboarddemo.presentation.common.model.GSVCCouponCardModel
+import com.alex.dashboarddemo.presentation.common.model.GSDACouponCardModel
 import com.alex.dashboarddemo.ui.theme.GSDASpace
 import com.alex.dashboarddemo.utils.charactersFormat
 
 @Composable
-fun GSDACouponCard(gsvcCouponCardModel: GSVCCouponCardModel) {
+fun GSDACouponCard(gsvcCouponCardModel: GSDACouponCardModel) {
     var roundedCornerShapeBadget by remember {
         mutableStateOf(RoundedCornerShape(0.dp, GSDASpace.GSVCSmall, 0.dp, GSDASpace.GSVCSmall))
     }
@@ -120,7 +120,7 @@ fun GSDACouponCard(gsvcCouponCardModel: GSVCCouponCardModel) {
 @Preview(showSystemUi = true, backgroundColor = 0xF9F9F9)
 @Composable
 fun GSDACouponCardPreview() {
-    val gsvcCouponCardModel = GSVCCouponCardModel(
+    val gsvcCouponCardModel = GSDACouponCardModel(
         badgesStatusText = "Nuevo Elemento",
         badgesBackgroundColor = Color.Red,
         backgroundContent = Color.LightGray,

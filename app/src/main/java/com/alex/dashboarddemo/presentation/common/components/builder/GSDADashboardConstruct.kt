@@ -18,9 +18,8 @@ import androidx.compose.ui.platform.rememberNestedScrollInteropConnection
 import androidx.compose.ui.semantics.contentDescription
 import androidx.compose.ui.semantics.semantics
 import androidx.compose.ui.unit.dp
-import com.alex.dashboarddemo.data.mockdata.GSDADataProvider
-import com.alex.dashboarddemo.data.mockdata.GSDADemoDataProvider
-import com.alex.dashboarddemo.data.mockdata.GSDADemoDataProvider.gridList1
+import com.alex.dashboarddemo.data.cache.preview.GSDAPreviewDataProvider.configData
+import com.alex.dashboarddemo.data.cache.preview.GSDAPreviewDataProvider.gridList1
 import com.alex.dashboarddemo.domain.model.GSDADashboard
 import com.alex.dashboarddemo.domain.model.GSDASubItemViewType
 import com.alex.dashboarddemo.presentation.common.components.GSDACategoriesElement
@@ -30,7 +29,6 @@ import com.alex.dashboarddemo.presentation.common.components.GSDAStaticBanner
 import com.alex.dashboarddemo.presentation.common.components.GSDAStoreBanner
 import com.alex.dashboarddemo.presentation.common.components.GSDAContentGridCard
 import com.alex.dashboarddemo.presentation.common.components.GSDAShowVerticalDivider
-import com.alex.dashboarddemo.presentation.common.components.gsdaPromoSlider.GSDASliderPromoCard
 import com.alex.dashboarddemo.presentation.common.widgets.GSDAShowHeader
 import com.alex.dashboarddemo.presentation.common.widgets.GSDAShowRestaurantElement
 
@@ -56,7 +54,7 @@ fun GSDAShowHorizontalElements(item: GSDADashboard.GSDAItem) {
 
                 GSDASubItemViewType.BannersElement -> GSDAGenericCard(
                     item = data,
-                    config = GSDADataProvider.configData,
+                    config = configData,
                 )
 
                 GSDASubItemViewType.StoreBanner -> GSDAStoreBanner(
@@ -87,11 +85,6 @@ fun GSDAShowVerticalElements(item: GSDADashboard.GSDAItem) {
         when (data.viewType) {
             GSDASubItemViewType.RestaurantElement -> GSDAShowRestaurantElement(
                 item = data,
-            )
-
-            GSDASubItemViewType.SlidePromoCard -> GSDASliderPromoCard(
-                imageIds = GSDADemoDataProvider.GSDAItemModelLists.take(6),
-                gsdaInfoCardModel = GSDADemoDataProvider.gsdaInfoCardList,
             )
 
             GSDASubItemViewType.ImageCarousell -> GSDAImageCarousel()
@@ -138,11 +131,6 @@ fun GSDAShowGridElements(item: GSDADashboard.GSDAItem) {
         when (data.viewType) {
             GSDASubItemViewType.RestaurantElement -> GSDAShowRestaurantElement(
                 item = data,
-            )
-
-            GSDASubItemViewType.SlidePromoCard -> GSDASliderPromoCard(
-                imageIds = GSDADemoDataProvider.GSDAItemModelLists.take(6),
-                gsdaInfoCardModel = GSDADemoDataProvider.gsdaInfoCardList,
             )
 
             else -> {

@@ -25,11 +25,11 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.Velocity
 import androidx.compose.ui.unit.dp
 import com.alex.dashboarddemo.R
-import com.alex.dashboarddemo.data.mockdata.categories
-import com.alex.dashboarddemo.data.mockdata.standAloneStore
-import com.alex.dashboarddemo.presentation.common.components.collapsingtoolbarincompose.ui.composables.GSDACategoriesList
-import com.alex.dashboarddemo.presentation.common.components.collapsingtoolbarincompose.ui.management.states.toolbarHeader.GSDACollapsingToolbar
-import com.alex.dashboarddemo.presentation.common.components.collapsingtoolbarincompose.ui.management.states.toolbarHeader.scrollflags.GSDAExitUntilCollapsedState
+import com.alex.dashboarddemo.data.cache.preview.GSDAPreviewDataProvider.categories
+import com.alex.dashboarddemo.data.cache.preview.GSDAPreviewDataProvider.standAloneStore
+import com.alex.dashboarddemo.presentation.common.components.GSDACategoriesList
+import com.alex.dashboarddemo.presentation.common.widgets.toolbarHeader.GSDACollapsingToolbar
+import com.alex.dashboarddemo.presentation.common.widgets.toolbarHeader.scrollflags.GSDAExitUntilCollapsedState
 import com.alex.dashboarddemo.presentation.common.model.GSDACategoriesStoreModel
 import com.alex.dashboarddemo.presentation.common.model.GSDACollapsingToolbarModel
 import com.alex.dashboarddemo.presentation.common.model.GSDAStandAloneGridModel

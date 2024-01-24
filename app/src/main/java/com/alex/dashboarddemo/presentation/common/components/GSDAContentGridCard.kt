@@ -32,7 +32,7 @@ import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-import com.alex.dashboarddemo.data.mockdata.GSDADemoDataProvider.gridList1
+import com.alex.dashboarddemo.data.cache.preview.GSDAPreviewDataProvider.gridList1
 import com.alex.dashboarddemo.mvi.GSDAHomeHelper
 import com.alex.dashboarddemo.presentation.common.model.GSDAFlatCard
 import com.alex.dashboarddemo.ui.theme.GSVCPurple
