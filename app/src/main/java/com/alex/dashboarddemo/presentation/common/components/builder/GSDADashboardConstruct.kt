@@ -23,12 +23,12 @@ import com.alex.dashboarddemo.data.cache.preview.GSDAPreviewDataProvider.gridLis
 import com.alex.dashboarddemo.domain.model.GSDADashboard
 import com.alex.dashboarddemo.domain.model.GSDASubItemViewType
 import com.alex.dashboarddemo.presentation.common.components.GSDACategoriesElement
+import com.alex.dashboarddemo.presentation.common.components.GSDAContentGridCard
 import com.alex.dashboarddemo.presentation.common.components.GSDAGenericCard
 import com.alex.dashboarddemo.presentation.common.components.GSDAImageCarousel
+import com.alex.dashboarddemo.presentation.common.components.GSDAShowVerticalDivider
 import com.alex.dashboarddemo.presentation.common.components.GSDAStaticBanner
 import com.alex.dashboarddemo.presentation.common.components.GSDAStoreBanner
-import com.alex.dashboarddemo.presentation.common.components.GSDAContentGridCard
-import com.alex.dashboarddemo.presentation.common.components.GSDAShowVerticalDivider
 import com.alex.dashboarddemo.presentation.common.widgets.GSDAShowHeader
 import com.alex.dashboarddemo.presentation.common.widgets.GSDAShowRestaurantElement
 
@@ -39,26 +39,26 @@ fun GSDAShowHorizontalElements(item: GSDADashboard.GSDAItem) {
             GSDAShowHeader(
                 title = it1,
                 hasMore = it.hasMore,
-                subtitle = it.subtitle,
+                subtitle = it.subtitle
             )
         }
     }
     LazyRow(
-        modifier = Modifier.fillMaxWidth(),
+        modifier = Modifier.fillMaxWidth()
     ) {
         itemsIndexed(item.data) { index, data ->
             when (data.viewType) {
                 GSDASubItemViewType.CategoriesElement -> GSDACategoriesElement(
-                    item = data,
+                    item = data
                 )
 
                 GSDASubItemViewType.BannersElement -> GSDAGenericCard(
                     item = data,
-                    config = configData,
+                    config = configData
                 )
 
                 GSDASubItemViewType.StoreBanner -> GSDAStoreBanner(
-                    item = data,
+                    item = data
                 )
 
                 else -> {
@@ -77,14 +77,14 @@ fun GSDAShowVerticalElements(item: GSDADashboard.GSDAItem) {
             GSDAShowHeader(
                 title = it1,
                 hasMore = it.hasMore,
-                subtitle = it.subtitle,
+                subtitle = it.subtitle
             )
         }
     }
     item.data.forEachIndexed { index, data ->
         when (data.viewType) {
             GSDASubItemViewType.RestaurantElement -> GSDAShowRestaurantElement(
-                item = data,
+                item = data
             )
 
             GSDASubItemViewType.ImageCarousell -> GSDAImageCarousel()
@@ -108,7 +108,7 @@ fun GSDAShowVerticalGrid(item: GSDADashboard.GSDAItem) {
             .nestedScroll(nestedScroll)
             .semantics { contentDescription = "" },
         state = lazyGState,
-        columns = GridCells.Fixed(2),
+        columns = GridCells.Fixed(2)
     ) {
         items(item.data.size) { index ->
             GSDAContentGridCard(gridList1[index])
@@ -123,14 +123,14 @@ fun GSDAShowGridElements(item: GSDADashboard.GSDAItem) {
             GSDAShowHeader(
                 title = it1,
                 hasMore = it.hasMore,
-                subtitle = it.subtitle,
+                subtitle = it.subtitle
             )
         }
     }
     item.data.forEachIndexed { index, data ->
         when (data.viewType) {
             GSDASubItemViewType.RestaurantElement -> GSDAShowRestaurantElement(
-                item = data,
+                item = data
             )
 
             else -> {
