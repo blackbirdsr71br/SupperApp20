@@ -18,7 +18,7 @@ import com.alex.dashboarddemo.presentation.common.components.builder.GSDAShowVer
 
 @Composable
 fun GSDADashboardScreen(
-    dashboard: GSDADashboard,
+    dashboard: GSDADashboard
 ) {
     val lazyState = rememberLazyListState()
     val nestedScroll = rememberNestedScrollInteropConnection()
@@ -26,20 +26,19 @@ fun GSDADashboardScreen(
     LazyColumn(
         modifier =
         Modifier
-            .padding(8.dp)
             .fillMaxSize()
             .nestedScroll(nestedScroll),
         state = lazyState,
-        contentPadding = PaddingValues(vertical = 8.dp, horizontal = 8.dp),
+        contentPadding = PaddingValues(vertical = 8.dp, horizontal = 8.dp)
     ) {
         itemsIndexed(items = dashboard.data) { index, item ->
             when (item.viewType) {
                 GSDAItemViewType.HorizontalScroll -> GSDAShowHorizontalElements(
-                    item = item,
+                    item = item
                 )
 
                 GSDAItemViewType.VerticalScroll -> GSDAShowVerticalElements(
-                    item = item,
+                    item = item
                 )
 
                 else -> {}
@@ -47,6 +46,8 @@ fun GSDADashboardScreen(
             if (index != item.data.size) Spacer(modifier = Modifier.height(10.dp))
             Spacer(modifier = Modifier.height(12.dp))
         }
+        item {
+            Spacer(modifier = Modifier.height(50.dp))
+        }
     }
-    Spacer(modifier = Modifier.height(24.dp))
 }

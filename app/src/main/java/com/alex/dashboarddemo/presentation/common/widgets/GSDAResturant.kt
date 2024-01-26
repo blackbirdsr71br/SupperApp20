@@ -26,12 +26,12 @@ import com.alex.dashboarddemo.ui.theme.themeTypography
 
 @Composable
 fun GSDAShowRestaurantElement(item: GSDADashboard.GSDAItem.GSDASubItem) {
-    Row(modifier = Modifier.padding(dimensionResource(id = R.dimen.padding))) {
+    Row(modifier = Modifier.padding(horizontal = 8.dp)) {
         GSDARestaurantImage(url = item.imageUrl)
         Column(
             modifier = Modifier
                 .weight(1f)
-                .padding(horizontal = dimensionResource(id = R.dimen.padding))
+                .padding(horizontal = 0.dp)
                 .align(Alignment.CenterVertically),
         ) {
             GSDARestaurantInfo(item = item)

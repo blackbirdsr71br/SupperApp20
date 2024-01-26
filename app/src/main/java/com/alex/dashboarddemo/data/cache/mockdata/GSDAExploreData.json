@@ -26,6 +26,38 @@
       "data": [
         {
           "viewType": "categoriesElement",
+          "imageUrl": "",
+          "title": "Ofertas",
+          "subTitle": "142 Places",
+          "meta": {
+            "bgColor": "#EC407A",
+            "rating": "4.0",
+            "reviewCount": "200+",
+            "hasFreeDelivery": true
+          },
+          "action": {
+            "type": "1",
+            "value": "d43e24ca-3522-4106-92f6-09f0b80d1061"
+          }
+        },
+        {
+          "viewType": "categoriesElement",
+          "imageUrl": "",
+          "title": "TV en vivo",
+          "subTitle": "142 Places",
+          "meta": {
+            "bgColor": "#EC407A",
+            "rating": "4.0",
+            "reviewCount": "200+",
+            "hasFreeDelivery": true
+          },
+          "action": {
+            "type": "1",
+            "value": "d43e24ca-3522-4106-92f6-09f0b80d1061"
+          }
+        },
+        {
+          "viewType": "categoriesElement",
           "imageUrl": "https://www.pngall.com/wp-content/uploads/14/Hoodie-Background-PNG.png",
           "title": "Ropa",
           "subTitle": "142 Places",
@@ -42,8 +74,8 @@
         },
         {
           "viewType": "categoriesElement",
-          "imageUrl": "https://www.pngall.com/wp-content/uploads/12/Clothes-Dryer-PNG-Images.png",
-          "title": "Linea Blanca",
+          "imageUrl": "https://www.pngall.com/wp-content/uploads/13/Nike-Shoes-PNG-Photos.png",
+          "title": "Calzado",
           "subTitle": "142 Places",
           "meta": {
             "bgColor": "#EC407A",
@@ -225,9 +257,8 @@
     {
       "viewType": "verticalScroll",
       "header": {
-        "title": "Popular this week",
-        "hasMore": true,
-        "subtitle": ""
+        "title": "Popular esta semana",
+        "hasMore": false
       },
       "data": [
         {

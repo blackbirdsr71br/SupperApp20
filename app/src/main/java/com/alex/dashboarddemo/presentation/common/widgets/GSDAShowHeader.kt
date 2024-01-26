@@ -19,7 +19,7 @@ import com.alex.dashboarddemo.presentation.common.components.GSDASecondaryText
 @Composable
 fun GSDAShowHeader(
     title: String,
-    subtitle: String,
+    subtitle: String?,
     hasMore: Boolean,
 ) {
     Column(
@@ -55,10 +55,12 @@ fun GSDAShowHeader(
             }
         }
         GSDASecondaryText {
-            Text(
-                text = subtitle,
-                style = MaterialTheme.typography.subtitle1,
-            )
+            if (subtitle != null) {
+                Text(
+                    text = subtitle,
+                    style = MaterialTheme.typography.subtitle1,
+                )
+            }
         }
     }
 }
