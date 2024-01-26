@@ -1,0 +1,316 @@
+{
+  "data": [
+    {
+      "viewType": "VerticalScroll",
+      "data": [
+        {
+          "viewType": "imageCarousell",
+          "imageUrl": "https://images.unsplash.com/photo-1496379896897-7b57622f431b?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2689&q=80",
+          "title": "Starbucks",
+          "subTitle": "Beverages, Cafe",
+          "meta": {
+            "bgColor": "#EC407A",
+            "rating": "4.0",
+            "reviewCount": "200+",
+            "hasFreeDelivery": true
+          },
+          "action": {
+            "type": "1",
+            "value": "d43e24ca-3522-4106-91f6-09f0b80d1061"
+          }
+        }
+      ]
+    },
+    {
+      "viewType": "horizontalScroll",
+      "data": [
+        {
+          "viewType": "categoriesElement",
+          "imageUrl": "https://www.pngall.com/wp-content/uploads/14/Hoodie-Background-PNG.png",
+          "title": "Ropa",
+          "subTitle": "142 Places",
+          "meta": {
+            "bgColor": "#EC407A",
+            "rating": "4.0",
+            "reviewCount": "200+",
+            "hasFreeDelivery": true
+          },
+          "action": {
+            "type": "1",
+            "value": "d43e24ca-3522-4106-92f6-09f0b80d1061"
+          }
+        },
+        {
+          "viewType": "categoriesElement",
+          "imageUrl": "https://www.pngall.com/wp-content/uploads/12/Clothes-Dryer-PNG-Images.png",
+          "title": "Linea Blanca",
+          "subTitle": "142 Places",
+          "meta": {
+            "bgColor": "#EC407A",
+            "rating": "4.0",
+            "reviewCount": "200+",
+            "hasFreeDelivery": true
+          },
+          "action": {
+            "type": "1",
+            "value": "d43e24ca-3522-4106-91f6-09f0b80d1061"
+          }
+        },
+        {
+          "viewType": "categoriesElement",
+          "imageUrl": "https://www.pngall.com/wp-content/uploads/13/Nike-Shoes-PNG-Photos.png",
+          "title": "Calzado",
+          "subTitle": "142 Places",
+          "meta": {
+            "bgColor": "#EC407A",
+            "rating": "4.0",
+            "reviewCount": "200+",
+            "hasFreeDelivery": true
+          },
+          "action": {
+            "type": "1",
+            "value": "d43e24ca-3522-4106-91f6-09f0b80d1061"
+          }
+        },
+        {
+          "viewType": "categoriesElement",
+          "imageUrl": "https://www.pngall.com/wp-content/uploads/5/Ultra-HD-LED-TV-PNG-File.png",
+          "title": "Electrónica",
+          "subTitle": "142 Places",
+          "meta": {
+            "bgColor": "#EC407A",
+            "rating": "4.0",
+            "reviewCount": "200+",
+            "hasFreeDelivery": true
+          },
+          "action": {
+            "type": "1",
+            "value": "d43e24ca-3522-4106-91f6-09f0b80d1061"
+          }
+        },
+        {
+          "viewType": "categoriesElement",
+          "imageUrl": "https://images.unsplash.com/photo-1506395308321-904a71783d60?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=80",
+          "title": "Heavenly Pizzas",
+          "subTitle": "142 Places",
+          "meta": {
+            "bgColor": "#EC407A",
+            "rating": "4.0",
+            "reviewCount": "200+",
+            "hasFreeDelivery": true
+          },
+          "action": {
+            "type": "1",
+            "value": "d43e24ca-3522-4106-91f6-09f0b80d1061"
+          }
+        }
+      ]
+    },
+    {
+      "viewType": "horizontalScroll",
+      "data": [
+        {
+          "viewType": "storeBanner",
+          "imageUrl": "storebanner1",
+          "title": "Starbucks",
+          "subTitle": "Beverages, Cafe",
+          "meta": {
+            "bgColor": "#EC407A",
+            "rating": "4.0",
+            "reviewCount": "200+",
+            "hasFreeDelivery": true
+          },
+          "action": {
+            "type": "1",
+            "value": "d43e24ca-3522-4106-91f6-09f0b80d1061"
+          }
+        },
+        {
+          "viewType": "storeBanner",
+          "imageUrl": "storebanner2",
+          "title": "Starbucks",
+          "subTitle": "Beverages, Cafe",
+          "meta": {
+            "bgColor": "#EC407A",
+            "rating": "4.0",
+            "reviewCount": "200+",
+            "hasFreeDelivery": true
+          },
+          "action": {
+            "type": "1",
+            "value": "d43e24ca-3522-4106-91f6-09f0b80d1061"
+          }
+        },
+        {
+          "viewType": "storeBanner",
+          "imageUrl": "storebanner3",
+          "title": "Starbucks",
+          "subTitle": "Beverages, Cafe",
+          "meta": {
+            "bgColor": "#EC407A",
+            "rating": "4.0",
+            "reviewCount": "200+",
+            "hasFreeDelivery": true
+          },
+          "action": {
+            "type": "1",
+            "value": "d43e24ca-3522-4106-91f6-09f0b80d1061"
+          }
+        }
+      ]
+    },
+    {
+      "viewType": "verticalScroll",
+      "data": [
+        {
+          "viewType": "staticBanner",
+          "imageUrl": "staticbanner1",
+          "title": "Starbucks",
+          "subTitle": "Beverages, Cafe",
+          "meta": {
+            "bgColor": "#EC407A",
+            "rating": "4.0",
+            "reviewCount": "200+",
+            "hasFreeDelivery": true
+          },
+          "action": {
+            "type": "1",
+            "value": "d43e24ca-3522-4106-91f6-09f0b80d1061"
+          }
+        }
+      ]
+    },
+    {
+      "viewType": "horizontalScroll",
+      "header": {
+        "title": "Esto también te puede interesar",
+        "hasMore": false,
+        "subtitle": ""
+      },
+      "data": [
+        {
+          "viewType": "bannersElement",
+          "imageUrl": "ic_bitcoin",
+          "title": "Burgers",
+          "subTitle": "260 Places",
+          "meta": {
+            "bgColor": "#EF5350",
+            "rating": "4.0",
+            "reviewCount": "200+",
+            "hasFreeDelivery": true
+          },
+          "action": {
+            "type": "1",
+            "value": "d43e24ca-3522-4106-91f6-09f0b80d1061"
+          }
+        },
+        {
+          "viewType": "bannersElement",
+          "imageUrl": "ic_bet365",
+          "title": "Burgers",
+          "subTitle": "260 Places",
+          "meta": {
+            "bgColor": "#EF5350",
+            "rating": "4.0",
+            "reviewCount": "200+",
+            "hasFreeDelivery": true
+          },
+          "action": {
+            "type": "1",
+            "value": "d43e24ca-3522-4106-91f6-09f0b80d1061"
+          }
+        }
+      ]
+    },
+    {
+      "viewType": "verticalScroll",
+      "header": {
+        "title": "Popular this week",
+        "hasMore": true,
+        "subtitle": ""
+      },
+      "data": [
+        {
+          "viewType": "restaurantElement",
+          "imageUrl": "https://images.unsplash.com/photo-1496379896897-7b57622f431b?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2689&q=80",
+          "title": "Starbucks",
+          "subTitle": "Beverages, Cafe",
+          "meta": {
+            "bgColor": "#EC407A",
+            "rating": "4.0",
+            "reviewCount": "200+",
+            "hasFreeDelivery": true
+          },
+          "action": {
+            "type": "1",
+            "value": "d43e24ca-3522-4106-91f6-09f0b80d1061"
+          }
+        },
+        {
+          "viewType": "restaurantElement",
+          "imageUrl": "https://images.unsplash.com/photo-1571091718767-18b5b1457add?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=300&q=80",
+          "title": "Burger King",
+          "subTitle": "American, Fast Food",
+          "meta": {
+            "bgColor": "#EC407A",
+            "rating": "3.9",
+            "reviewCount": "5000+",
+            "hasFreeDelivery": true
+          },
+          "action": {
+            "type": "1",
+            "value": "d43e24ca-3522-4106-91f6-09f0b80d1061"
+          }
+        },
+        {
+          "viewType": "restaurantElement",
+          "imageUrl": "https://images.unsplash.com/photo-1555126634-323283e090fa?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=300&q=80",
+          "title": "Mainland China",
+          "subTitle": "chinese, Oriental, Thai, Pan-Asian",
+          "meta": {
+            "bgColor": "#EC407A",
+            "rating": "4.1",
+            "reviewCount": "500+",
+            "hasFreeDelivery": true
+          },
+          "action": {
+            "type": "1",
+            "value": "d43e24ca-3522-4106-91f6-09f0b80d1061"
+          }
+        },
+        {
+          "viewType": "restaurantElement",
+          "imageUrl": "https://images.unsplash.com/photo-1565299585323-38d6b0865b47?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=300&q=80",
+          "title": "Taco Bell",
+          "subTitle": "Mexican",
+          "meta": {
+            "bgColor": "#EC407A",
+            "rating": "4.1",
+            "reviewCount": "100+",
+            "hasFreeDelivery": true
+          },
+          "action": {
+            "type": "1",
+            "value": "d43e24ca-3522-4106-91f6-09f0b80d1061"
+          }
+        },
+        {
+          "viewType": "restaurantElement",
+          "imageUrl": "https://images.unsplash.com/photo-1513639776629-7b61b0ac49cb?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=300&q=80",
+          "title": "KFC",
+          "subTitle": "Fast Food",
+          "meta": {
+            "bgColor": "#EC407A",
+            "rating": "4.2",
+            "reviewCount": "1000+",
+            "hasFreeDelivery": true
+          },
+          "action": {
+            "type": "1",
+            "value": "d43e24ca-3522-4106-91f6-09f0b80d1061"
+          }
+        }
+      ]
+    }
+  ]
+}

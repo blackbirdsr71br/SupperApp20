@@ -2,9 +2,11 @@ package com.alex.dashboarddemo.di
 
 import com.alex.dashboarddemo.data.remote.GSDAApiService
 import com.alex.dashboarddemo.data.repository.GSDARemoteDataSourceImpl
+import com.alex.dashboarddemo.domain.repository.GSDALocalDataSource
 import com.alex.dashboarddemo.domain.repository.GSDARemoteDataSource
 import com.alex.dashboarddemo.utils.GSDAConstants.BASE_URL
 import com.alex.dashboarddemo.utils.GSDAFirebaseController
+import com.squareup.moshi.Moshi
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -19,7 +21,6 @@ import javax.inject.Singleton
 @Module
 @InstallIn(SingletonComponent::class)
 object GSDANetworkModula {
-
     @Provides
     @Singleton
     fun gsdaProvidesHttpClient(): OkHttpClient {
@@ -48,19 +49,27 @@ object GSDANetworkModula {
 
     @Provides
     @Singleton
-    fun gsdaProvidesRemoteDataSource(
-        dashboardApi: GSDAApiService,
-        firebase: GSDAFirebaseController,
-    ): GSDARemoteDataSource {
-        return GSDARemoteDataSourceImpl(
-            dashboardApi = dashboardApi,
-            firebase = firebase,
-        )
+    fun gsdaProvideFirebaseController(): GSDAFirebaseController {
+        return GSDAFirebaseController()
     }
 
     @Provides
     @Singleton
-    fun provideFirebaseController(): GSDAFirebaseController {
-        return GSDAFirebaseController()
+    fun gsdaProvideMoshi(): Moshi {
+        return Moshi.Builder().build()
+    }
+
+    @Provides
+    @Singleton
+    fun gsdaProvidesRemoteDataSource(
+        firebase: GSDAFirebaseController,
+        moshi: Moshi,
+        localData: GSDALocalDataSource,
+    ): GSDARemoteDataSource {
+        return GSDARemoteDataSourceImpl(
+            firebase = firebase,
+            moshiInit = moshi,
+            localData = localData,
+        )
     }
 }
