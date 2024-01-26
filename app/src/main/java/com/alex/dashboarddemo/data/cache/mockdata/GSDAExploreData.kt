@@ -1,7 +1,11 @@
+package com.alex.dashboarddemo.data.cache.mockdata
+
+object GSDAExploreData {
+    const val json = """
 {
   "data": [
     {
-      "viewType": "VerticalScroll",
+      "viewType": "verticalScroll",
       "data": [
         {
           "viewType": "imageCarousell",
@@ -58,7 +62,7 @@
         },
         {
           "viewType": "categoriesElement",
-          "imageUrl": "https://www.pngall.com/wp-content/uploads/14/Hoodie-Background-PNG.png",
+          "imageUrl": "https://landing-piramide.superappbaz.com/Centro-Comercial/logos-Categorias/ropa.png",
           "title": "Ropa",
           "subTitle": "142 Places",
           "meta": {
@@ -74,7 +78,7 @@
         },
         {
           "viewType": "categoriesElement",
-          "imageUrl": "https://www.pngall.com/wp-content/uploads/13/Nike-Shoes-PNG-Photos.png",
+          "imageUrl": "https://landing-piramide.superappbaz.com/Centro-Comercial/logos-Categorias/calzado.png",
           "title": "Calzado",
           "subTitle": "142 Places",
           "meta": {
@@ -90,23 +94,7 @@
         },
         {
           "viewType": "categoriesElement",
-          "imageUrl": "https://www.pngall.com/wp-content/uploads/13/Nike-Shoes-PNG-Photos.png",
-          "title": "Calzado",
-          "subTitle": "142 Places",
-          "meta": {
-            "bgColor": "#EC407A",
-            "rating": "4.0",
-            "reviewCount": "200+",
-            "hasFreeDelivery": true
-          },
-          "action": {
-            "type": "1",
-            "value": "d43e24ca-3522-4106-91f6-09f0b80d1061"
-          }
-        },
-        {
-          "viewType": "categoriesElement",
-          "imageUrl": "https://www.pngall.com/wp-content/uploads/5/Ultra-HD-LED-TV-PNG-File.png",
+          "imageUrl": "https://landing-piramide.superappbaz.com/Centro-Comercial/logos-Categorias/electronica.png",
           "title": "Electrónica",
           "subTitle": "142 Places",
           "meta": {
@@ -122,8 +110,88 @@
         },
         {
           "viewType": "categoriesElement",
-          "imageUrl": "https://images.unsplash.com/photo-1506395308321-904a71783d60?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=80",
-          "title": "Heavenly Pizzas",
+          "imageUrl": "https://landing-piramide.superappbaz.com/Centro-Comercial/logos-Categorias/videoJuegos.png",
+          "title": "Video juegos",
+          "subTitle": "142 Places",
+          "meta": {
+            "bgColor": "#EC407A",
+            "rating": "4.0",
+            "reviewCount": "200+",
+            "hasFreeDelivery": true
+          },
+          "action": {
+            "type": "1",
+            "value": "d43e24ca-3522-4106-91f6-09f0b80d1061"
+          }
+        },
+        {
+          "viewType": "categoriesElement",
+          "imageUrl": "https://landing-piramide.superappbaz.com/Centro-Comercial/logos-Categorias/computo.png",
+          "title": "Cómputo",
+          "subTitle": "142 Places",
+          "meta": {
+            "bgColor": "#EC407A",
+            "rating": "4.0",
+            "reviewCount": "200+",
+            "hasFreeDelivery": true
+          },
+          "action": {
+            "type": "1",
+            "value": "d43e24ca-3522-4106-91f6-09f0b80d1061"
+          }
+        },
+        {
+          "viewType": "categoriesElement",
+          "imageUrl": "https://landing-piramide.superappbaz.com/Centro-Comercial/logos-Categorias/muebles.png",
+          "title": "Muebles",
+          "subTitle": "142 Places",
+          "meta": {
+            "bgColor": "#EC407A",
+            "rating": "4.0",
+            "reviewCount": "200+",
+            "hasFreeDelivery": true
+          },
+          "action": {
+            "type": "1",
+            "value": "d43e24ca-3522-4106-91f6-09f0b80d1061"
+          }
+        },
+        {
+          "viewType": "categoriesElement",
+          "imageUrl": "https://landing-piramide.superappbaz.com/Centro-Comercial/logos-Categorias/belleza.png",
+          "title": "Belleza",
+          "subTitle": "142 Places",
+          "meta": {
+            "bgColor": "#EC407A",
+            "rating": "4.0",
+            "reviewCount": "200+",
+            "hasFreeDelivery": true
+          },
+          "action": {
+            "type": "1",
+            "value": "d43e24ca-3522-4106-91f6-09f0b80d1061"
+          }
+        },
+        {
+          "viewType": "categoriesElement",
+          "imageUrl": "https://landing-piramide.superappbaz.com/Centro-Comercial/logos-Categorias/hogar.png",
+          "title": "Hogar",
+          "subTitle": "142 Places",
+          "meta": {
+            "bgColor": "#EC407A",
+            "rating": "4.0",
+            "reviewCount": "200+",
+            "hasFreeDelivery": true
+          },
+          "action": {
+            "type": "1",
+            "value": "d43e24ca-3522-4106-91f6-09f0b80d1061"
+          }
+        },
+        {
+          "viewType": "categoriesElement",
+          "imageUrl": "https://landing-piramide.superappbaz.com/Centro-Comercial/logos-Categorias/todas.png",
+          "title": "Todas",
           "subTitle": "142 Places",
           "meta": {
             "bgColor": "#EC407A",
@@ -216,8 +284,7 @@
       "viewType": "horizontalScroll",
       "header": {
         "title": "Esto también te puede interesar",
-        "hasMore": false,
-        "subtitle": ""
+        "hasMore": false
       },
       "data": [
         {
@@ -253,95 +320,7 @@
           }
         }
       ]
-    },
-    {
-      "viewType": "verticalScroll",
-      "header": {
-        "title": "Popular esta semana",
-        "hasMore": false
-      },
-      "data": [
-        {
-          "viewType": "restaurantElement",
-          "imageUrl": "https://images.unsplash.com/photo-1496379896897-7b57622f431b?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2689&q=80",
-          "title": "Starbucks",
-          "subTitle": "Beverages, Cafe",
-          "meta": {
-            "bgColor": "#EC407A",
-            "rating": "4.0",
-            "reviewCount": "200+",
-            "hasFreeDelivery": true
-          },
-          "action": {
-            "type": "1",
-            "value": "d43e24ca-3522-4106-91f6-09f0b80d1061"
-          }
-        },
-        {
-          "viewType": "restaurantElement",
-          "imageUrl": "https://images.unsplash.com/photo-1571091718767-18b5b1457add?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=300&q=80",
-          "title": "Burger King",
-          "subTitle": "American, Fast Food",
-          "meta": {
-            "bgColor": "#EC407A",
-            "rating": "3.9",
-            "reviewCount": "5000+",
-            "hasFreeDelivery": true
-          },
-          "action": {
-            "type": "1",
-            "value": "d43e24ca-3522-4106-91f6-09f0b80d1061"
-          }
-        },
-        {
-          "viewType": "restaurantElement",
-          "imageUrl": "https://images.unsplash.com/photo-1555126634-323283e090fa?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=300&q=80",
-          "title": "Mainland China",
-          "subTitle": "chinese, Oriental, Thai, Pan-Asian",
-          "meta": {
-            "bgColor": "#EC407A",
-            "rating": "4.1",
-            "reviewCount": "500+",
-            "hasFreeDelivery": true
-          },
-          "action": {
-            "type": "1",
-            "value": "d43e24ca-3522-4106-91f6-09f0b80d1061"
-          }
-        },
-        {
-          "viewType": "restaurantElement",
-          "imageUrl": "https://images.unsplash.com/photo-1565299585323-38d6b0865b47?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=300&q=80",
-          "title": "Taco Bell",
-          "subTitle": "Mexican",
-          "meta": {
-            "bgColor": "#EC407A",
-            "rating": "4.1",
-            "reviewCount": "100+",
-            "hasFreeDelivery": true
-          },
-          "action": {
-            "type": "1",
-            "value": "d43e24ca-3522-4106-91f6-09f0b80d1061"
-          }
-        },
-        {
-          "viewType": "restaurantElement",
-          "imageUrl": "https://images.unsplash.com/photo-1513639776629-7b61b0ac49cb?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=300&q=80",
-          "title": "KFC",
-          "subTitle": "Fast Food",
-          "meta": {
-            "bgColor": "#EC407A",
-            "rating": "4.2",
-            "reviewCount": "1000+",
-            "hasFreeDelivery": true
-          },
-          "action": {
-            "type": "1",
-            "value": "d43e24ca-3522-4106-91f6-09f0b80d1061"
-          }
-        }
-      ]
     }
   ]
+}"""
 }

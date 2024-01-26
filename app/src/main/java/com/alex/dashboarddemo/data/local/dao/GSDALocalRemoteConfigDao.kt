@@ -9,6 +9,6 @@ interface GSDALocalRemoteConfigDao : GSDABaseDao<GSDARemoteConfig> {
     @Query("SELECT * FROM gsda_remote_config_table WHERE id = :key")
     suspend fun getRemoteConfig(key: String): GSDARemoteConfig
 
-    /*@Query("DELETE FROM GSDARemoteConfig")
-    suspend fun deleteRemoteConfig()*/
+    @Query("DELETE FROM gsda_remote_config_table")
+    suspend fun deleteRemoteConfig()
 }

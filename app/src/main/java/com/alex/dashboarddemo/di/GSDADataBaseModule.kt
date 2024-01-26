@@ -7,7 +7,6 @@ import com.alex.dashboarddemo.data.local.dao.GSDALocalRemoteConfigDao
 import com.alex.dashboarddemo.data.repository.GSDALocalDataSourceImpl
 import com.alex.dashboarddemo.domain.repository.GSDALocalDataSource
 import com.alex.dashboarddemo.utils.GSDAConstants.DASHBOARD_DATABASE
-import com.squareup.moshi.Moshi
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -42,11 +41,9 @@ object GSDADataBaseModule {
     @Singleton
     fun gsdaProvidesLocalRemoteConfig(
         remoteConfigDao: GSDALocalRemoteConfigDao,
-        moshiInit: Moshi,
     ): GSDALocalDataSource {
         return GSDALocalDataSourceImpl(
             remoteConfigDao = remoteConfigDao,
-            moshiInit = moshiInit,
         )
     }
 }

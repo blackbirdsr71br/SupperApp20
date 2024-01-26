@@ -7,7 +7,7 @@ import com.alex.dashboarddemo.utils.GSDAConstants.DASHBOARD_DATABASE_REMOTE_CONF
 @Entity(tableName = DASHBOARD_DATABASE_REMOTE_CONFIG_TABLE)
 data class GSDARemoteConfig(
     @PrimaryKey
-    val id: String = "",
-    val data: String = "",
-    val timeStamp: Long = 0L,
+    val id: String,
+    val data: String,
+    val timeStamp: Long,
 )

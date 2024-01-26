@@ -1,10 +1,13 @@
 package com.alex.dashboarddemo.data.repository
 
 import com.alex.dashboarddemo.data.remote.GSDAResult
+import com.alex.dashboarddemo.domain.entity.GSDARemoteConfig
 import com.alex.dashboarddemo.domain.model.GSDADashboard
 import com.alex.dashboarddemo.domain.repository.GSDALocalDataSource
 import com.alex.dashboarddemo.domain.repository.GSDARemoteDataSource
 import com.alex.dashboarddemo.utils.GSDAFirebaseController
+import com.alex.dashboarddemo.utils.getInitialRefreshData
+import com.alex.dashboarddemo.utils.getMockDataFromKey
 import com.alex.dashboarddemo.utils.toDashboardModel
 import com.squareup.moshi.Moshi
 import kotlinx.coroutines.flow.Flow
@@ -17,23 +20,40 @@ class GSDARemoteDataSourceImpl(
 ) : GSDARemoteDataSource {
     override fun getRemoteConfig(key: String): Flow<GSDAResult<GSDADashboard>> = flow {
         emit(GSDAResult.Loading)
-        try {
+        val lastData = localData.getLocalData(key)
+        if (lastData != null) {
+            if (getInitialRefreshData(lastData.timeStamp)) {
+                emit(GSDAResult.Success(getRemoteConfigData(key, lastData)))
+            } else {
+                emit(GSDAResult.Success(getDataFromDBOrMockData(key, lastData)))
+            }
+        } else {
+            emit(GSDAResult.Success(getRemoteConfigData(key)))
+        }
+    }
+
+    private suspend fun getRemoteConfigData(
+        key: String,
+        dataDB: GSDARemoteConfig? = null,
+    ): GSDADashboard {
+        return try {
             val result = firebase.getRemoteInstance().getString(key)
             if (result.isNotEmpty()) {
-                val data = try {
-                    localData.saveLocalData(key, result)
-                    result.toDashboardModel(moshiInit)
-                } catch (e: Exception) {
-                    GSDADashboard(data = emptyList())
-                }
-                emit(GSDAResult.Success(data))
+                localData.deleteData(dataDB)
+                localData.saveLocalData(key, result)
+                result.toDashboardModel(moshiInit)
             } else {
-                firebase.getRemoteInstance().fetchAndActivate()
-                emit(GSDAResult.Success(GSDADashboard(data = emptyList())))
+                getDataFromDBOrMockData(key, dataDB)
             }
         } catch (e: Exception) {
-            firebase.getRemoteInstance().fetchAndActivate()
-            emit(GSDAResult.Success(GSDADashboard(data = emptyList())))
+            getDataFromDBOrMockData(key, dataDB)
         }
+    }
+
+    private fun getDataFromDBOrMockData(
+        key: String,
+        dataDB: GSDARemoteConfig?,
+    ): GSDADashboard {
+        return dataDB?.data?.toDashboardModel(moshiInit) ?: getMockDataFromKey(key, moshiInit)
     }
 }

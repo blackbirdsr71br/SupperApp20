@@ -3,22 +3,17 @@ package com.alex.dashboarddemo.data.repository
 import android.util.Log
 import com.alex.dashboarddemo.data.local.dao.GSDALocalRemoteConfigDao
 import com.alex.dashboarddemo.domain.entity.GSDARemoteConfig
-import com.alex.dashboarddemo.domain.model.GSDADashboard
 import com.alex.dashboarddemo.domain.repository.GSDALocalDataSource
-import com.alex.dashboarddemo.utils.toDashboardModel
-import com.squareup.moshi.Moshi
 
 class GSDALocalDataSourceImpl(
     private val remoteConfigDao: GSDALocalRemoteConfigDao,
-    private val moshiInit: Moshi,
 ) : GSDALocalDataSource {
 
-    override suspend fun getLocalData(key: String): GSDADashboard {
+    override suspend fun getLocalData(key: String): GSDARemoteConfig? {
         return try {
-            val localData = remoteConfigDao.getRemoteConfig(key).data
-            localData.toDashboardModel(moshiInit)
+            remoteConfigDao.getRemoteConfig(key)
         } catch (e: Exception) {
-            GSDADashboard(data = emptyList())
+            null
         }
     }
 
@@ -36,8 +31,9 @@ class GSDALocalDataSourceImpl(
         }
     }
 
-    override suspend fun deleteData(key: String) {
-        val localData = remoteConfigDao.getRemoteConfig(key)
-        remoteConfigDao.delete(localData)
+    override suspend fun deleteData(lastUpdate: GSDARemoteConfig?) {
+        if (lastUpdate != null) {
+            remoteConfigDao.deleteRemoteConfig()
+        }
     }
 }

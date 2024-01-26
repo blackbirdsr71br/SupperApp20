@@ -1,11 +1,11 @@
 package com.alex.dashboarddemo.domain.repository
 
-import com.alex.dashboarddemo.domain.model.GSDADashboard
+import com.alex.dashboarddemo.domain.entity.GSDARemoteConfig
 
 interface GSDALocalDataSource {
-    suspend fun getLocalData(key: String): GSDADashboard
+    suspend fun getLocalData(key: String): GSDARemoteConfig?
 
     suspend fun saveLocalData(key: String, remoteData: String)
 
-    suspend fun deleteData(key: String)
+    suspend fun deleteData(lastUpdate: GSDARemoteConfig?)
 }
