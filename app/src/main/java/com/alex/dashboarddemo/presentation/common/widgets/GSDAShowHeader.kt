@@ -9,10 +9,8 @@ import androidx.compose.material.TextButton
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.res.dimensionResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
-import com.alex.dashboarddemo.R
 import com.alex.dashboarddemo.presentation.common.components.GSDAPrimaryText
 import com.alex.dashboarddemo.presentation.common.components.GSDASecondaryText
 
@@ -20,17 +18,19 @@ import com.alex.dashboarddemo.presentation.common.components.GSDASecondaryText
 fun GSDAShowHeader(
     title: String,
     subtitle: String?,
-    hasMore: Boolean,
+    hasMore: Boolean
 ) {
     Column(
         modifier = Modifier.padding(
-            horizontal = dimensionResource(id = R.dimen.padding),
-        ),
+            start = 8.dp,
+            bottom = 12.dp,
+            end = 8.dp
+        )
     ) {
         Row(
             modifier = Modifier.padding(
-                vertical = 2.dp,
-            ),
+                vertical = 2.dp
+            )
         ) {
             GSDAPrimaryText {
                 Text(
@@ -38,18 +38,18 @@ fun GSDAShowHeader(
                         .weight(1f)
                         .align(Alignment.CenterVertically),
                     text = title,
-                    style = MaterialTheme.typography.h6,
+                    style = MaterialTheme.typography.h6
                 )
             }
             if (hasMore) {
                 TextButton(
                     onClick = {
-                    },
+                    }
                 ) {
                     Text(
                         modifier = Modifier,
                         text = "View All",
-                        style = MaterialTheme.typography.caption.copy(fontWeight = FontWeight.W600),
+                        style = MaterialTheme.typography.caption.copy(fontWeight = FontWeight.W600)
                     )
                 }
             }
@@ -58,7 +58,7 @@ fun GSDAShowHeader(
             if (subtitle != null) {
                 Text(
                     text = subtitle,
-                    style = MaterialTheme.typography.subtitle1,
+                    style = MaterialTheme.typography.subtitle1
                 )
             }
         }

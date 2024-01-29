@@ -29,7 +29,7 @@ fun GSDADashboardScreen(
             .fillMaxSize()
             .nestedScroll(nestedScroll),
         state = lazyState,
-        contentPadding = PaddingValues(vertical = 8.dp, horizontal = 8.dp)
+        contentPadding = PaddingValues(vertical = 8.dp, horizontal = 12.dp)
     ) {
         itemsIndexed(items = dashboard.data) { index, item ->
             when (item.viewType) {
