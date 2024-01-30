@@ -8,13 +8,12 @@ import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.width
+import androidx.compose.material.Card
+import androidx.compose.material.Icon
+import androidx.compose.material.Text
+import androidx.compose.material.TextButton
 import androidx.compose.material.icons.Icons
-import androidx.compose.material.icons.automirrored.filled.KeyboardArrowRight
-import androidx.compose.material3.Card
-import androidx.compose.material3.CardDefaults
-import androidx.compose.material3.Icon
-import androidx.compose.material3.Text
-import androidx.compose.material3.TextButton
+import androidx.compose.material.icons.filled.KeyboardArrowRight
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
@@ -30,8 +29,8 @@ import coil.request.ImageRequest
 import com.alex.dashboarddemo.R
 import com.alex.dashboarddemo.domain.model.GSDADashboard
 import com.alex.dashboarddemo.domain.model.GSDAGenericCard
-import com.alex.dashboarddemo.utils.getDrawableFromString
 import com.alex.dashboarddemo.ui.theme.GSDASpace
+import com.alex.dashboarddemo.utils.getDrawableFromString
 
 @Composable
 fun GSDAContentGridCard(
@@ -101,7 +100,7 @@ fun GSDAContentGridCard(
                     )
 
                     Icon(
-                        imageVector = Icons.AutoMirrored.Filled.KeyboardArrowRight,
+                        imageVector = Icons.Filled.KeyboardArrowRight,
                         tint = Color(0xFF01AD35),
                         contentDescription = "",
                     )
@@ -118,9 +117,7 @@ fun GSDAContentGridCard1() {
         modifier = Modifier
             .width(250.dp)
             .height(320.dp),
-        colors = CardDefaults.cardColors(
-            containerColor = Color(0xFF0B0621),
-        ),
+        backgroundColor = Color(0xFF0B0621),
     ) {
         GSDAContentGridCard(
             config =
