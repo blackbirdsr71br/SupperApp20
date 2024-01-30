@@ -283,7 +283,7 @@ object GSDAExploreData {
     {
       "viewType": "horizontalScroll",
       "header": {
-        "title": "Esto también te puede interesar",
+        "title": "Miauuu",
         "hasMore": false
       },
       "data": [

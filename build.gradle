@@ -37,14 +37,13 @@ buildscript {
             ],
             'room'         : '2.5.1',
             'gson'         : '2.10.1',
-            'firebase'     : '23.4.0'
     ]
     repositories {
         google()
         mavenCentral()
     }
     dependencies {
-        classpath 'com.android.tools.build:gradle:8.1.1'
+        classpath 'com.android.tools.build:gradle:8.1.4'
         classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:${versions.kotlin.stdlib}"
         classpath 'com.google.gms:google-services:4.4.0'
     }

@@ -13,6 +13,14 @@ class GSDAFirebaseController {
 
     init {
         remoteConfig.setConfigSettingsAsync(configSettings)
+        remoteConfig.fetchAndActivate().addOnCompleteListener {
+            if (it.isSuccessful) {
+                val updated = it.result
+                print("FirebaseRemoteConfigLordMiau: $updated")
+            } else {
+                print("FirebaseRemoteConfigLordMiau: Fetch failed")
+            }
+        }
     }
 
     fun getRemoteInstance() = remoteConfig

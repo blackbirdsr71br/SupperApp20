@@ -27,7 +27,7 @@ class GSDALocalDataSourceImpl(
                 ),
             )
         } catch (e: Exception) {
-            Log.e("GSDALocalDataSourceImpl", "Error: No insert data")
+            Log.e("GSDALocalDataSourceImpl", "Error: No insert data. Details $e")
         }
     }
 

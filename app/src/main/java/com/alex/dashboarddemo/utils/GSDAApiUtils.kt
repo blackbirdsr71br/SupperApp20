@@ -7,7 +7,7 @@ import com.squareup.moshi.Moshi
 
 fun getInitialRefreshData(
     lastUpdate: Long,
-    cacheTimeout: Int = 5,
+    cacheTimeout: Int = 1,
 ): Boolean {
     val currentTime = System.currentTimeMillis()
     val diffInMinutes = (currentTime - lastUpdate) / 1000 / 60

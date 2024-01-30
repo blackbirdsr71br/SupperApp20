@@ -9,6 +9,7 @@ import com.alex.dashboarddemo.utils.GSDAFirebaseController
 import com.alex.dashboarddemo.utils.getInitialRefreshData
 import com.alex.dashboarddemo.utils.getMockDataFromKey
 import com.alex.dashboarddemo.utils.toDashboardModel
+import com.google.firebase.remoteconfig.ktx.get
 import com.squareup.moshi.Moshi
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.flow
@@ -21,7 +22,7 @@ class GSDARemoteDataSourceImpl(
     override fun getRemoteConfig(key: String): Flow<GSDAResult<GSDADashboard>> = flow {
         emit(GSDAResult.Loading)
         val lastData = localData.getLocalData(key)
-        if (lastData != null) {
+        if (lastData != null && lastData.timeStamp != 0L) {
             if (getInitialRefreshData(lastData.timeStamp)) {
                 emit(GSDAResult.Success(getRemoteConfigData(key, lastData)))
             } else {
@@ -37,10 +38,9 @@ class GSDARemoteDataSourceImpl(
         dataDB: GSDARemoteConfig? = null,
     ): GSDADashboard {
         return try {
-            val result = firebase.getRemoteInstance().getString(key)
+            val result = firebase.getRemoteInstance()[key].asString()
             if (result.isNotEmpty()) {
                 localData.deleteData(dataDB)
-                localData.saveLocalData(key, result)
                 result.toDashboardModel(moshiInit)
             } else {
                 getDataFromDBOrMockData(key, dataDB)
