@@ -7,7 +7,7 @@ import com.squareup.moshi.Moshi
 
 fun getInitialRefreshData(
     lastUpdate: Long,
-    cacheTimeout: Int = 1,
+    cacheTimeout: Int = 5,
 ): Boolean {
     val currentTime = System.currentTimeMillis()
     val diffInMinutes = (currentTime - lastUpdate) / 1000 / 60
@@ -15,15 +15,19 @@ fun getInitialRefreshData(
     return (diffInMinutes >= cacheTimeout)
 }
 
-fun String.toDashboardModel(moshi: Moshi): GSDADashboard {
-    val dashboardData = moshi.adapter(GSDADashboard::class.java)
-    return dashboardData.fromJson(this) ?: GSDADashboard(data = emptyList())
+fun String.toDashboardModel(moshi: Moshi): GSDADashboard? {
+    return try {
+        val dashboardData = moshi.adapter(GSDADashboard::class.java)
+        dashboardData.fromJson(this)
+    } catch (e: Exception) {
+        null
+    }
 }
 
 fun getMockDataFromKey(
     key: String,
     moshiInit: Moshi,
-): GSDADashboard {
+): GSDADashboard? {
     return when (key) {
         GSDAExplore.value -> {
             json.toDashboardModel(moshiInit)

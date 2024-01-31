@@ -1,31 +1,30 @@
 package com.alex.dashboarddemo.data.repository
 
 import android.util.Log
-import com.alex.dashboarddemo.data.local.dao.GSDALocalRemoteConfigDao
+import androidx.room.withTransaction
+import com.alex.dashboarddemo.data.local.GSDARemoteConfigDB
 import com.alex.dashboarddemo.domain.entity.GSDARemoteConfig
 import com.alex.dashboarddemo.domain.repository.GSDALocalDataSource
 
 class GSDALocalDataSourceImpl(
-    private val remoteConfigDao: GSDALocalRemoteConfigDao,
+    private val remoteConfigDB: GSDARemoteConfigDB,
 ) : GSDALocalDataSource {
 
     override suspend fun getLocalData(key: String): GSDARemoteConfig? {
-        return try {
-            remoteConfigDao.getRemoteConfig(key)
-        } catch (e: Exception) {
-            null
-        }
+        return remoteConfigDB.remoteConfigDao().getRemoteConfig(key)
     }
 
     override suspend fun saveLocalData(key: String, remoteData: String) {
         try {
-            remoteConfigDao.insert(
-                GSDARemoteConfig(
-                    id = key,
-                    data = remoteData,
-                    timeStamp = System.currentTimeMillis(),
-                ),
-            )
+            remoteConfigDB.withTransaction {
+                remoteConfigDB.remoteConfigDao().insert(
+                    GSDARemoteConfig(
+                        id = key,
+                        data = remoteData,
+                        timeStamp = System.currentTimeMillis(),
+                    ),
+                )
+            }
         } catch (e: Exception) {
             Log.e("GSDALocalDataSourceImpl", "Error: No insert data. Details $e")
         }
@@ -33,7 +32,9 @@ class GSDALocalDataSourceImpl(
 
     override suspend fun deleteData(lastUpdate: GSDARemoteConfig?) {
         if (lastUpdate != null) {
-            remoteConfigDao.deleteRemoteConfig()
+            remoteConfigDB.withTransaction {
+                remoteConfigDB.remoteConfigDao().delete(lastUpdate)
+            }
         }
     }
 }

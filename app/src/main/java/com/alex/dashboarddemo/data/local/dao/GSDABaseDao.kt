@@ -9,9 +9,6 @@ import androidx.room.Update
 @Dao
 interface GSDABaseDao<T> {
     @Insert(onConflict = OnConflictStrategy.REPLACE)
-    suspend fun insertAll(entity: List<T>)
-
-    @Insert(onConflict = OnConflictStrategy.REPLACE)
     suspend fun insert(entities: T)
 
     @Update

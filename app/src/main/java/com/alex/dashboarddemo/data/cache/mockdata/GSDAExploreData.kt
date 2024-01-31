@@ -1,8 +1,9 @@
 package com.alex.dashboarddemo.data.cache.mockdata
 
 object GSDAExploreData {
+
     const val json = """
-{
+ {
   "data": [
     {
       "viewType": "verticalScroll",
@@ -30,7 +31,7 @@ object GSDAExploreData {
       "data": [
         {
           "viewType": "categoriesElement",
-          "imageUrl": "",
+          "imageUrl": "https://imagenes.superappbaz.com/banners/Etapas/sapp/photo_3_2024-01-26_12-50-04.jpg",
           "title": "Ofertas",
           "subTitle": "142 Places",
           "meta": {
@@ -46,7 +47,7 @@ object GSDAExploreData {
         },
         {
           "viewType": "categoriesElement",
-          "imageUrl": "",
+          "imageUrl": "https://imagenes.superappbaz.com/banners/Etapas/sapp/photo_2_2024-01-26_12-50-04.jpg",
           "title": "TV en vivo",
           "subTitle": "142 Places",
           "meta": {
@@ -207,6 +208,27 @@ object GSDAExploreData {
       ]
     },
     {
+      "viewType": "verticalScroll",
+      "data": [
+        {
+          "viewType": "staticBanner",
+          "imageUrl": "staticbanner1",
+          "title": "Starbucks",
+          "subTitle": "Beverages, Cafe",
+          "meta": {
+            "bgColor": "#EC407A",
+            "rating": "4.0",
+            "reviewCount": "200+",
+            "hasFreeDelivery": true
+          },
+          "action": {
+            "type": "1",
+            "value": "d43e24ca-3522-4106-91f6-09f0b80d1061"
+          }
+        }
+      ]
+    },
+    {
       "viewType": "horizontalScroll",
       "data": [
         {
@@ -260,30 +282,9 @@ object GSDAExploreData {
       ]
     },
     {
-      "viewType": "verticalScroll",
-      "data": [
-        {
-          "viewType": "staticBanner",
-          "imageUrl": "staticbanner1",
-          "title": "Starbucks",
-          "subTitle": "Beverages, Cafe",
-          "meta": {
-            "bgColor": "#EC407A",
-            "rating": "4.0",
-            "reviewCount": "200+",
-            "hasFreeDelivery": true
-          },
-          "action": {
-            "type": "1",
-            "value": "d43e24ca-3522-4106-91f6-09f0b80d1061"
-          }
-        }
-      ]
-    },
-    {
       "viewType": "horizontalScroll",
       "header": {
-        "title": "Miauuu",
+        "title": "Miauuuuu MockData",
         "hasMore": false
       },
       "data": [

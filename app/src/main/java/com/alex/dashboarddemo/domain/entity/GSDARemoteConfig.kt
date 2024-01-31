@@ -8,6 +8,6 @@ import com.alex.dashboarddemo.utils.GSDAConstants.DASHBOARD_DATABASE_REMOTE_CONF
 data class GSDARemoteConfig(
     @PrimaryKey
     val id: String,
-    val data: String,
-    val timeStamp: Long,
+    val data: String?,
+    val timeStamp: Long?,
 )
