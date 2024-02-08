@@ -14,7 +14,7 @@ private val lightThemeColors = lightColors(
 )
 
 @Composable
-fun JetDeliveryTheme(
+fun GSDADashboardTheme(
     content: @Composable () -> Unit,
 ) {
     MaterialTheme(

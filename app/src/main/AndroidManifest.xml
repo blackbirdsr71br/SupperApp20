@@ -15,7 +15,7 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         tools:targetApi="s"
-        tools:ignore="DataExtractionRules">
+        android:dataExtractionRules="@xml/data_extraction_rules">
         <activity
             android:name="com.alex.dashboarddemo.MainActivity"
             android:exported="true"

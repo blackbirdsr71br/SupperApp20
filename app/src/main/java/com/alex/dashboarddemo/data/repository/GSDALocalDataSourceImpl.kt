@@ -3,22 +3,22 @@ package com.alex.dashboarddemo.data.repository
 import android.util.Log
 import androidx.room.withTransaction
 import com.alex.dashboarddemo.data.local.GSDARemoteConfigDB
-import com.alex.dashboarddemo.domain.entity.GSDARemoteConfig
+import com.alex.dashboarddemo.domain.entity.GSDALocalRemoteConfig
 import com.alex.dashboarddemo.domain.repository.GSDALocalDataSource
 
 class GSDALocalDataSourceImpl(
     private val remoteConfigDB: GSDARemoteConfigDB,
 ) : GSDALocalDataSource {
 
-    override suspend fun getLocalData(key: String): GSDARemoteConfig? {
-        return remoteConfigDB.remoteConfigDao().getRemoteConfig(key)
+    override suspend fun getLocalData(key: String): GSDALocalRemoteConfig? {
+        return remoteConfigDB.localRemoteConfigDao().getRemoteConfig(key)
     }
 
     override suspend fun saveLocalData(key: String, remoteData: String) {
         try {
             remoteConfigDB.withTransaction {
-                remoteConfigDB.remoteConfigDao().insert(
-                    GSDARemoteConfig(
+                remoteConfigDB.localRemoteConfigDao().insert(
+                    GSDALocalRemoteConfig(
                         id = key,
                         data = remoteData,
                         timeStamp = System.currentTimeMillis(),
@@ -30,10 +30,10 @@ class GSDALocalDataSourceImpl(
         }
     }
 
-    override suspend fun deleteData(lastUpdate: GSDARemoteConfig?) {
+    override suspend fun deleteData(lastUpdate: GSDALocalRemoteConfig?) {
         if (lastUpdate != null) {
             remoteConfigDB.withTransaction {
-                remoteConfigDB.remoteConfigDao().delete(lastUpdate)
+                remoteConfigDB.localRemoteConfigDao().delete(lastUpdate)
             }
         }
     }

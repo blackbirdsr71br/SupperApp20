@@ -1,10 +1,10 @@
 package com.alex.dashboarddemo.di
 
 import com.alex.dashboarddemo.data.remote.GSDAApiService
-import com.alex.dashboarddemo.data.repository.GSDAFirebaseRemoteConfigDataSourceImpl
+import com.alex.dashboarddemo.data.repository.GSDAFirebaseDataSourceImpl
 import com.alex.dashboarddemo.data.repository.GSDARemoteDataSourceImpl
 import com.alex.dashboarddemo.domain.repository.GSDALocalDataSource
-import com.alex.dashboarddemo.domain.repository.GSDARemoteConfigDataSource
+import com.alex.dashboarddemo.domain.repository.GSDAFirebaseDataSource
 import com.alex.dashboarddemo.domain.repository.GSDARemoteDataSource
 import com.alex.dashboarddemo.utils.GSDAConstants.BASE_URL
 import com.google.firebase.ktx.Firebase
@@ -61,8 +61,8 @@ object GSDANetworkModula {
     @Singleton
     fun gsdaProvidesRemoteConfigDataSource(
         remoteConfig: FirebaseRemoteConfig,
-    ): GSDARemoteConfigDataSource {
-        return GSDAFirebaseRemoteConfigDataSourceImpl(
+    ): GSDAFirebaseDataSource {
+        return GSDAFirebaseDataSourceImpl(
             remoteConfig = remoteConfig,
         )
     }
@@ -76,7 +76,7 @@ object GSDANetworkModula {
     @Provides
     @Singleton
     fun gsdaProvidesRemoteDataSource(
-        firebase: GSDARemoteConfigDataSource,
+        firebase: GSDAFirebaseDataSource,
         moshi: Moshi,
         localData: GSDALocalDataSource,
     ): GSDARemoteDataSource {

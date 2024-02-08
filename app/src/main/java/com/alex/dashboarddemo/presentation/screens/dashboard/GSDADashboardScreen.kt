@@ -1,4 +1,4 @@
-package com.alex.dashboarddemo.presentation.screens.main
+package com.alex.dashboarddemo.presentation.screens.dashboard
 
 import android.annotation.SuppressLint
 import androidx.compose.animation.AnimatedVisibility
@@ -9,7 +9,6 @@ import androidx.compose.runtime.Composable
 import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
-import androidx.compose.runtime.remember
 import androidx.compose.runtime.rememberCoroutineScope
 import androidx.compose.runtime.saveable.rememberSaveable
 import androidx.compose.ui.graphics.Color
@@ -18,19 +17,19 @@ import androidx.navigation.compose.rememberNavController
 import com.alex.dashboarddemo.R
 import com.alex.dashboarddemo.mvi.GSDAHomeContract
 import com.alex.dashboarddemo.navigation.NavigateScreens
-import com.alex.dashboarddemo.navigation.Screen
-import com.alex.dashboarddemo.presentation.common.widgets.GSDAAppBottomNavigation
 import com.alex.dashboarddemo.presentation.common.model.GSDAHeaderModel
+import com.alex.dashboarddemo.presentation.common.widgets.GSDAAppBottomNavigation
 import com.alex.dashboarddemo.presentation.common.widgets.GSSAHeader
-import com.alex.dashboarddemo.ui.theme.JetDeliveryTheme
+import com.alex.dashboarddemo.ui.theme.GSDADashboardTheme
+import com.alex.dashboarddemo.utils.GSDAConstants.KEY_EXPLORE
 import kotlinx.coroutines.flow.collectLatest
 
 @SuppressLint("UnusedMaterialScaffoldPaddingParameter")
 @Composable
-fun GSDADashboardScreen(viewModel: GSDADashboardViewModel) {
+fun GSDADashboardScreen(
+    viewModel: GSDADashboardViewModel,
+) {
     val scope = rememberCoroutineScope()
-
-    val showRandom by remember { mutableStateOf(false) }
     val state = viewModel.uiState
 
     LaunchedEffect(scope) {
@@ -43,19 +42,19 @@ fun GSDADashboardScreen(viewModel: GSDADashboardViewModel) {
                 is GSDAHomeContract.DashBoardApiState.OnNavigate -> {
                     println("Navegando a la ruta de  ${it.getInfo.route}")
                 }
+
+                else -> {}
             }
         }
-    }
 
-    LaunchedEffect(scope) {
-        viewModel.setEvent(GSDAHomeContract.Event.OnInit(showRandom))
+        viewModel.setEvent(GSDAHomeContract.Event.OnInit(KEY_EXPLORE))
     }
 
     val showBottomBar = rememberSaveable { mutableStateOf(true) }
     val navController = rememberNavController()
     val navBackStackEntry by navController.currentBackStackEntryAsState()
     val currentDestination = navBackStackEntry?.destination
-    JetDeliveryTheme {
+    GSDADashboardTheme {
         Scaffold(
             topBar = {
                 val headerModelPreview =
@@ -74,7 +73,6 @@ fun GSDADashboardScreen(viewModel: GSDADashboardViewModel) {
             bottomBar = {
                 showBottomBar.value =
                     when (currentDestination?.route?.substringBeforeLast("/")) {
-                        Screen.MovieDetail.route -> false
                         else -> true
                     }
                 AnimatedVisibility(
@@ -92,7 +90,6 @@ fun GSDADashboardScreen(viewModel: GSDADashboardViewModel) {
         ) {
             NavigateScreens(
                 navController = navController,
-                viewModel = viewModel,
             )
         }
     }

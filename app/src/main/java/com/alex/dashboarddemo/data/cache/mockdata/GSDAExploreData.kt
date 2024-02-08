@@ -1,9 +1,8 @@
 package com.alex.dashboarddemo.data.cache.mockdata
 
 object GSDAExploreData {
-
     const val json = """
- {
+{
   "data": [
     {
       "viewType": "verticalScroll",

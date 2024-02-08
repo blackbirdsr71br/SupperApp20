@@ -39,26 +39,26 @@ fun GSDAShowHorizontalElements(item: GSDADashboard.GSDAItem) {
             GSDAShowHeader(
                 title = it1,
                 hasMore = it.hasMore,
-                subtitle = it.subtitle
+                subtitle = it.subtitle,
             )
         }
     }
     LazyRow(
-        modifier = Modifier.fillMaxWidth()
+        modifier = Modifier.fillMaxWidth(),
     ) {
         itemsIndexed(item.data) { index, data ->
             when (data.viewType) {
                 GSDASubItemViewType.CategoriesElement -> GSDACategoriesElement(
-                    item = data
+                    item = data,
                 )
 
                 GSDASubItemViewType.BannersElement -> GSDAGenericCard(
                     item = data,
-                    config = configData
+                    config = configData,
                 )
 
                 GSDASubItemViewType.StoreBanner -> GSDAStoreBanner(
-                    item = data
+                    item = data,
                 )
 
                 else -> {
@@ -77,15 +77,16 @@ fun GSDAShowVerticalElements(item: GSDADashboard.GSDAItem) {
             GSDAShowHeader(
                 title = it1,
                 hasMore = it.hasMore,
-                subtitle = it.subtitle
+                subtitle = it.subtitle,
             )
         }
     }
     item.data.forEachIndexed { index, data ->
         when (data.viewType) {
             GSDASubItemViewType.RestaurantElement -> GSDAShowRestaurantElement(
-                item = data
+                item = data,
             )
+
             GSDASubItemViewType.ImageCarousell -> GSDAImageCarousel()
             GSDASubItemViewType.StaticBanner -> GSDAStaticBanner(item = data)
 
@@ -107,7 +108,7 @@ fun GSDAShowVerticalGrid(item: GSDADashboard.GSDAItem) {
             .nestedScroll(nestedScroll)
             .semantics { contentDescription = "" },
         state = lazyGState,
-        columns = GridCells.Fixed(2)
+        columns = GridCells.Fixed(2),
     ) {
         items(item.data.size) { index ->
             GSDAContentGridCard(gridList1[index])
@@ -122,14 +123,14 @@ fun GSDAShowGridElements(item: GSDADashboard.GSDAItem) {
             GSDAShowHeader(
                 title = it1,
                 hasMore = it.hasMore,
-                subtitle = it.subtitle
+                subtitle = it.subtitle,
             )
         }
     }
     item.data.forEachIndexed { index, data ->
         when (data.viewType) {
             GSDASubItemViewType.RestaurantElement -> GSDAShowRestaurantElement(
-                item = data
+                item = data,
             )
 
             else -> {

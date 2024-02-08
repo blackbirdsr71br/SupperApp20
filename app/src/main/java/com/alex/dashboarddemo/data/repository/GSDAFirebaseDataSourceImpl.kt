@@ -1,6 +1,6 @@
 package com.alex.dashboarddemo.data.repository
 
-import com.alex.dashboarddemo.domain.repository.GSDARemoteConfigDataSource
+import com.alex.dashboarddemo.domain.repository.GSDAFirebaseDataSource
 import com.google.firebase.remoteconfig.FirebaseRemoteConfig
 import com.google.firebase.remoteconfig.ktx.remoteConfigSettings
 import kotlinx.coroutines.CoroutineScope
@@ -8,9 +8,9 @@ import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.tasks.await
 
-class GSDAFirebaseRemoteConfigDataSourceImpl(
+class GSDAFirebaseDataSourceImpl(
     private val remoteConfig: FirebaseRemoteConfig,
-) : GSDARemoteConfigDataSource {
+) : GSDAFirebaseDataSource {
 
     private val remoteConfigSettings = remoteConfigSettings {
         minimumFetchIntervalInSeconds = 3600

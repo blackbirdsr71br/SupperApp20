@@ -1,10 +1,10 @@
 package com.alex.dashboarddemo.data.repository
 
 import com.alex.dashboarddemo.data.remote.GSDAResult
-import com.alex.dashboarddemo.domain.entity.GSDARemoteConfig
+import com.alex.dashboarddemo.domain.entity.GSDALocalRemoteConfig
 import com.alex.dashboarddemo.domain.model.GSDADashboard
 import com.alex.dashboarddemo.domain.repository.GSDALocalDataSource
-import com.alex.dashboarddemo.domain.repository.GSDARemoteConfigDataSource
+import com.alex.dashboarddemo.domain.repository.GSDAFirebaseDataSource
 import com.alex.dashboarddemo.domain.repository.GSDARemoteDataSource
 import com.alex.dashboarddemo.utils.getInitialRefreshData
 import com.alex.dashboarddemo.utils.getMockDataFromKey
@@ -15,7 +15,7 @@ import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.flow
 
 class GSDARemoteDataSourceImpl(
-    private val firebase: GSDARemoteConfigDataSource,
+    private val firebase: GSDAFirebaseDataSource,
     private val moshiInit: Moshi,
     private val localData: GSDALocalDataSource,
 ) : GSDARemoteDataSource {
@@ -35,7 +35,7 @@ class GSDARemoteDataSourceImpl(
 
     private suspend fun getRemoteConfigData(
         key: String,
-        dataDB: GSDARemoteConfig? = null,
+        dataDB: GSDALocalRemoteConfig? = null,
     ): GSDADashboard? {
         return try {
             val result = firebase.getRemoteInstance()[key].asString()
@@ -59,7 +59,7 @@ class GSDARemoteDataSourceImpl(
 
     private fun getDataFromDBOrMockData(
         key: String,
-        dataDB: GSDARemoteConfig?,
+        dataDB: GSDALocalRemoteConfig?,
     ): GSDADashboard? {
         return dataDB?.data?.toDashboardModel(moshiInit) ?: getMockDataFromKey(key, moshiInit)
     }

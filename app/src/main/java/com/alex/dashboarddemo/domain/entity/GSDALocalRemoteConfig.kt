@@ -5,7 +5,7 @@ import androidx.room.PrimaryKey
 import com.alex.dashboarddemo.utils.GSDAConstants.DASHBOARD_DATABASE_REMOTE_CONFIG_TABLE
 
 @Entity(tableName = DASHBOARD_DATABASE_REMOTE_CONFIG_TABLE)
-data class GSDARemoteConfig(
+data class GSDALocalRemoteConfig(
     @PrimaryKey
     val id: String,
     val data: String?,

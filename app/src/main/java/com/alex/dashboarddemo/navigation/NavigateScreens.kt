@@ -1,89 +1,54 @@
 package com.alex.dashboarddemo.navigation
 
-import android.widget.Toast
-import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.padding
 import androidx.compose.runtime.Composable
-import androidx.compose.runtime.collectAsState
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.unit.dp
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
-import com.alex.dashboarddemo.data.cache.preview.GSDAPreviewDataProvider.categories
-import com.alex.dashboarddemo.data.cache.preview.GSDAPreviewDataProvider.products
-import com.alex.dashboarddemo.data.cache.preview.GSDAPreviewDataProvider.standAloneStore
-import com.alex.dashboarddemo.presentation.common.components.GSDAShowError
-import com.alex.dashboarddemo.presentation.common.components.GSDAShowLoading
-import com.alex.dashboarddemo.presentation.screens.GSDAProductGenericScreen
-import com.alex.dashboarddemo.presentation.screens.GSDAStandAloneStoreScreen
-import com.alex.dashboarddemo.presentation.screens.main.GSDADashboardViewModel
-import com.alex.dashboarddemo.presentation.screens.main.widget.GSDADashboardScreen
+import com.alex.dashboarddemo.presentation.screens.benefits.GSDABenefitsScreen
+import com.alex.dashboarddemo.presentation.screens.credit.GSDACreditScreen
+import com.alex.dashboarddemo.presentation.screens.directory.GSDADirectoryScreen
+import com.alex.dashboarddemo.presentation.screens.explore.GSDAExploreScreen
+import com.alex.dashboarddemo.presentation.screens.profile.GSDAProfileScreen
 
 @Composable
 fun NavigateScreens(
     navController: NavHostController,
-    viewModel: GSDADashboardViewModel,
 ) {
-    val data = viewModel.dashboardItems.collectAsState().value
-
     NavHost(
         navController = navController,
         startDestination = Screen.Explore.route,
         modifier = Modifier.padding(0.dp),
     ) {
-        composable(Screen.LoginScreen.route) {}
-
         composable(Screen.Explore.route) {
-            when {
-                data.isLoading -> {
-                    GSDAShowLoading()
-                }
-
-                data.items != null -> {
-                    GSDADashboardScreen(dashboard = data.items)
-                }
-
-                !data.errorMessage.isNullOrEmpty() -> {
-                    GSDAShowError(
-                        message = data.errorMessage,
-                        onRetry = {
-                            // viewModel.loadData(showRandom)
-                        },
-                    )
-                }
-            }
-        }
-        composable(Screen.Directory.route) {
-            GSDAProductGenericScreen(
-                productList = products,
-                txtTitle = "Ofertas",
-                txtSubTitle = "",
-                onBackClick = {},
-                onFilterClick = {},
-            )
-        }
-        composable(Screen.Popular.route) {
+            GSDAExploreScreen()
         }
         composable(Screen.Credit.route) {
-            val context = LocalContext.current
-            GSDAStandAloneStoreScreen(
-                standAloneGrid = standAloneStore,
-                standAloneCategories = categories,
-                onBackButtonClicked = {
-                    Toast.makeText(context, "Back button clicked!", Toast.LENGTH_SHORT).show()
-                },
-                onSearchButtonClicked = {
-                    Toast.makeText(context, "Search button clicked!", Toast.LENGTH_SHORT).show()
-                },
-                onShoppingCartButtonClicked = {
-                    Toast.makeText(context, "Cart button clicked!", Toast.LENGTH_SHORT).show()
-                },
-                modifier = Modifier.fillMaxSize(),
-            )
+            /*navController.navigate(Screen.Credit.route) {
+                launchSingleTop = true
+            }*/
+            GSDACreditScreen()
         }
-        composable(Screen.Benefits.route) {}
-        composable(Screen.Profile.route) {}
+        composable(Screen.Directory.route) {
+            /*navController.navigate(Screen.Directory.route) {
+                launchSingleTop = true
+            }*/
+            GSDADirectoryScreen()
+        }
+
+        composable(Screen.Benefits.route) {
+            /*navController.navigate(Screen.Benefits.route) {
+                launchSingleTop = true
+            }*/
+            GSDABenefitsScreen()
+        }
+        composable(Screen.Profile.route) {
+            /*navController.navigate(Screen.Profile.route) {
+                launchSingleTop = true
+            }*/
+            GSDAProfileScreen()
+        }
     }
 }

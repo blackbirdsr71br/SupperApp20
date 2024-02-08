@@ -34,8 +34,8 @@ fun GSDAAppBottomNavigation(
     ) {
         val items = listOf(
             Screen.Explore.route to Icons.Filled.Home,
-            Screen.Directory.route to Icons.Filled.Search,
             Screen.Credit.route to Icons.AutoMirrored.Filled.List,
+            Screen.Directory.route to Icons.Filled.Search,
             Screen.Benefits.route to Icons.Filled.AccountBox,
             Screen.Profile.route to Icons.Filled.Person,
         )

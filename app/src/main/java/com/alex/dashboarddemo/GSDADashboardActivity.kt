@@ -4,8 +4,8 @@ import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.activity.viewModels
-import com.alex.dashboarddemo.presentation.screens.main.GSDADashboardScreen
-import com.alex.dashboarddemo.presentation.screens.main.GSDADashboardViewModel
+import com.alex.dashboarddemo.presentation.screens.dashboard.GSDADashboardScreen
+import com.alex.dashboarddemo.presentation.screens.dashboard.GSDADashboardViewModel
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
@@ -16,7 +16,9 @@ class MainActivity : ComponentActivity() {
         super.onCreate(savedInstanceState)
 
         setContent {
-            GSDADashboardScreen(dashboardVM)
+            GSDADashboardScreen(
+                dashboardVM,
+            )
         }
     }
 }
