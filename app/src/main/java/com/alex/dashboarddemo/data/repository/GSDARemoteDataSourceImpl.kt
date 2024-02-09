@@ -3,8 +3,8 @@ package com.alex.dashboarddemo.data.repository
 import com.alex.dashboarddemo.data.remote.GSDAResult
 import com.alex.dashboarddemo.domain.entity.GSDALocalRemoteConfig
 import com.alex.dashboarddemo.domain.model.GSDADashboard
-import com.alex.dashboarddemo.domain.repository.GSDALocalDataSource
 import com.alex.dashboarddemo.domain.repository.GSDAFirebaseDataSource
+import com.alex.dashboarddemo.domain.repository.GSDALocalDataSource
 import com.alex.dashboarddemo.domain.repository.GSDARemoteDataSource
 import com.alex.dashboarddemo.utils.getInitialRefreshData
 import com.alex.dashboarddemo.utils.getMockDataFromKey
@@ -38,6 +38,7 @@ class GSDARemoteDataSourceImpl(
         dataDB: GSDALocalRemoteConfig? = null,
     ): GSDADashboard? {
         return try {
+            firebase.fetchRemoteConfig()
             val result = firebase.getRemoteInstance()[key].asString()
             if (result.isNotEmpty()) {
                 if (dataDB != null) {

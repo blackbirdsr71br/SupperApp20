@@ -8,6 +8,7 @@ import com.alex.dashboarddemo.mvi.GSDAHomeContract
 import com.alex.dashboarddemo.mvi.GSDAHomeContract.DashBoardApiState.*
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
 import javax.inject.Inject
 
@@ -17,6 +18,7 @@ open class GSDADashboardViewModel @Inject constructor(
 ) : GSDABaseViewModel<GSDAHomeContract.Event, GSDAHomeContract.DashBoardState, GSDAHomeContract.Effect>() {
     private fun getConfig(key: String) {
         viewModelScope.launch(Dispatchers.IO) {
+            delay(10000)
             useCase.getRemoteConfigUseCase.invoke(key).collect {
                 when (it) {
                     is GSDAResult.Loading -> {
