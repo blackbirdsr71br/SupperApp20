@@ -8,10 +8,10 @@ import retrofit2.converter.moshi.MoshiConverterFactory
 import retrofit2.http.GET
 
 interface ApiService {
-    @GET("dashbaz")
+    @GET("serverdriven")
     suspend fun getDashboard(): Dashboard
 
-    @GET("dashbaz_random")
+    @GET("serverdriven")
     suspend fun getRandomDashboard(): Dashboard
 }
 
@@ -27,7 +27,7 @@ object NetworkClient {
             .client(okHttpClient)
 
     val service: ApiService by lazy {
-        retrofit.baseUrl("https://demo5027027.mockable.io/")
+        retrofit.baseUrl("http://demo5027027.mockable.io/")
             .build().create(ApiService::class.java)
     }
 }

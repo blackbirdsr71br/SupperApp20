@@ -11,7 +11,7 @@ import io.ktor.serialization.gson.gson
 import okhttp3.logging.HttpLoggingInterceptor
 import retrofit2.http.GET
 
-const val BASE_URL = "https://demo5027027.mockable.io/"
+const val BASE_URL = "http://demo5027027.mockable.io/"
 
 interface KtorApiService {
     @GET("serverui")

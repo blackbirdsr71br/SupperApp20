@@ -20,7 +20,7 @@ import com.alex.dashboarddemo.components.SecondaryText
 @Composable
 fun ShowHeader(
     title: String?,
-    subtitle: String,
+    subtitle: String?,
     hasMore: Boolean
 ) {
     Column(
@@ -56,10 +56,12 @@ fun ShowHeader(
             }
         }
         SecondaryText {
-            Text(
-                text = subtitle,
-                style = MaterialTheme.typography.subtitle1
-            )
+            if (subtitle != null) {
+                Text(
+                    text = subtitle,
+                    style = MaterialTheme.typography.subtitle1
+                )
+            }
         }
     }
 }

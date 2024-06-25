@@ -51,7 +51,7 @@ enum class ItemViewType {
 }
 
 enum class SubItemViewType {
-    @Json(name = "categoriesElement")
+    @Json(name = "categoryElement")
     CategoriesElement,
 
     @Json(name = "bannersElement")
